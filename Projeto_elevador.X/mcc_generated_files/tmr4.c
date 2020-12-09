@@ -55,6 +55,8 @@
   Section: Global Variables Definitions
 */
 
+void (*TMR4_InterruptHandler)(void);
+
 /**
   Section: TMR4 APIs
 */
@@ -63,17 +65,23 @@ void TMR4_Initialize(void)
 {
     // Set TMR4 to the options selected in the User Interface
 
-    // PR4 15; 
-    PR4 = 0x0F;
+    // PR4 222; 
+    PR4 = 0xDE;
 
     // TMR4 0; 
     TMR4 = 0x00;
 
-    // Clearing IF flag.
+    // Clearing IF flag before enabling the interrupt.
     PIR3bits.TMR4IF = 0;
 
-    // T4CKPS 1:16; T4OUTPS 1:1; TMR4ON on; 
-    T4CON = 0x06;
+    // Enabling TMR4 interrupt.
+    PIE3bits.TMR4IE = 1;
+
+    // Set Default Interrupt Handler
+    TMR4_SetInterruptHandler(TMR4_DefaultInterruptHandler);
+
+    // T4CKPS 1:64; T4OUTPS 1:1; TMR4ON on; 
+    T4CON = 0x07;
 }
 
 void TMR4_StartTimer(void)
@@ -108,17 +116,28 @@ void TMR4_LoadPeriodRegister(uint8_t periodVal)
    PR4 = periodVal;
 }
 
-bool TMR4_HasOverflowOccured(void)
+void TMR4_ISR(void)
 {
-    // check if  overflow has occurred by checking the TMRIF bit
-    bool status = PIR3bits.TMR4IF;
-    if(status)
+
+    // clear the TMR4 interrupt flag
+    PIR3bits.TMR4IF = 0;
+
+    if(TMR4_InterruptHandler)
     {
-        // Clearing IF flag.
-        PIR3bits.TMR4IF = 0;
+        TMR4_InterruptHandler();
     }
-    return status;
 }
+
+
+void TMR4_SetInterruptHandler(void (* InterruptHandler)(void)){
+    TMR4_InterruptHandler = InterruptHandler;
+}
+
+void TMR4_DefaultInterruptHandler(void){
+    // add your TMR4 interrupt custom code
+    // or set custom function using TMR4_SetInterruptHandler()
+}
+
 /**
   End of File
 */
