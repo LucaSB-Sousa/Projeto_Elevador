@@ -32,6 +32,7 @@ void gerenciamento();
 int and_dst;                    //Variável para armazenas o andar de destino
 int and_origem;                 //Variável para armazenas o andar de origem
 int pulses;
+int sentido;
 float I_m;
 float temp_mt;
 int aux_tempo = 0;
@@ -158,5 +159,172 @@ void controle()
 
 void gerenciamento()
 {
+    
+    int fila_up[10];
+    int fila_down[10];
+    int and_sol[10];
+    int fila_origem[10];
+    
+    //Confere se houve uma nova solicitação
+    if(and_sol[0]!=and_dst || fila_origem[0]!=and_origem)
+        {
+            if(and_ating<and_sol[0])
+                { //subir 
+                    sentido = 1; 
+                    if(and_origem>and_ating && and_dst>and_origem)
+                        {
+                            fila_up = fila_inicio(and_origem,fila_up)
+                            fila_up = fila_inicio(and_dst,fila_up);
+                        }
+                }
+            if(and_ating>and_sol[0])
+                { //descer 
+                    sentido = 0; 
+                    if(and_origem<and_ating && and_dst<and_origem)
+                        {
+                            fila_down = fila_inicio(and_origem,fila_down);
+                            fila_down = fila_inicio(and_dst,fila_down);
+                        }
+                }
 
+            //Organizar a fila
+
+            //Parar o elevador no primeiro valor da fila
+
+            if(sentido==1 && and_ating==fila_up)
+                {
+                    //parar no and_ating
+                }
+            if(sentido==0 && and_ating==fila_down)
+                {
+                    //parar no and_ating
+                }
+
+//            if(fila_up[0]==max)
+//                {
+//                    fila_up = [0,0,0,0,0,0,0,0,0,0];
+//                    sentido = 0;
+//                }
+//            if(fila_down[0]==min)
+//                {
+//                    fila_down = [0,0,0,0,0,0,0,0,0,0];
+//                }
+
+            //Retroceder fila
+            //Retira o andar de destino solicitado na fila
+            fila_up = fila_retr(fila_up);
+            //Retira o andar de origem solicitado na fila
+            fila_down = fila_retr(fila_down);  
+        }
+    //Coloca o andar de destino solicitado na fila
+    //and_sol = fila_inicio(and_dst,and_sol);
+    //Coloca o andar de origem solicitado na fila
+    //fila_origem = fila_inicio(and_origem,fila_origem);
+    
+    
+        
+        for(int j=0;j<=9;j++){ 
+                if(and_ating<and_sol[0]){ //subir 
+                    sentido = 1; 
+                    comunicacao();
+                    if(and_origem>and_ating && and_dst>and_ating){
+                    
+                    }
+                }
+            }
+        
+        for(int i=0;i<=10;i++){
+            if(and_origem_up==and_atingido){
+                //parar elevador
+                //colocar andar solicitado nessa origem na fila de subida
+        }  
+            
+    }
+        // colocar em ordem decrescente a fila [2,3,4]
+    }
+    
+    if(and_ating>and_dst){ //descer 
+        sentido = 0;
+        for(int j=0;j<=9;j++){ 
+            if(j==and_sol[j]){
+                break;
+            }
+            if(and_sol[j]<and_ating){
+                fila_down[j] = and_sol[j];
+            }
+        }
+        
+        for(int i=0;i<=10;i++){
+            if(and_origem_down==and_atingido){
+                //parar elevador
+                //colocar andar solicitado nessa origemna fila de descida
+        }
+            
+    }
+        
+    }
+    
+    for(int i=0;i<=10;i++){
+        if(and_origem_down==and_atingido){
+            //parar elevador
+        }
+    }
+    
+    switch(and_final){
+        case 1:
+            if(and_ating==1){
+                //parar
+            }
+        case 2:
+            if(and_ating==1){
+                //parar
+            }
+        case 3:
+            if(and_ating==1){
+                //parar
+            }
+        case 4:
+            if(and_ating==1){
+                //parar
+            }
+        default:
+            if(and_ating==1){
+                //parar
+            }
+            
+    }
+    
+    
+    
+}
+
+int fila_inicio(int andar_dst, int and_s[10]){
+    for(int i=0;i<=9;i++){
+        if(i==0){
+            and_s[1] = and_s[0];
+            and_s[0] = andar_dst
+        }
+        if(i<0){
+            and_s[i+1] = and_s[i];
+        }
+        if(i==9){
+            break;
+        }
+    }
+    return and_s;
+}
+ 
+int fila_retr(int and_s[10]){
+    for(int i=0;i<=9;i++){
+        if(i==0){
+            and_s[0] = and_s[1];
+        }
+        if(i<0){
+            and_s[i] = and_s[i+1];
+        }
+        if(i==9){
+            and_s[9] = 0;
+        }
+    }
+    return and_s;
 }
