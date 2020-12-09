@@ -51,18 +51,23 @@
 #include <xc.h>
 #include "ccp4.h"
 
+static void (*CCP4_CallBack)(uint16_t);
 
 /**
   Section: Capture Module APIs:
 */
 
+static void CCP4_DefaultCallBack(uint16_t capturedValue)
+{
+    // Add your code here
+}
 
 void CCP4_Initialize(void)
 {
     // Set the CCP4 to the options selected in the User Interface
 	
-	// CCP4M Falling edge; DC4B 0; 
-	CCP4CON = 0x04;    
+	// CCP4M Rising edge; DC4B 0; 
+	CCP4CON = 0x05;    
 	
 	// CCPR4L 0; 
 	CCPR4L = 0x00;    
@@ -70,29 +75,34 @@ void CCP4_Initialize(void)
 	// CCPR4H 0; 
 	CCPR4H = 0x00;    
     
+    // Set the default call back function for CCP4
+    CCP4_SetCallBack(CCP4_DefaultCallBack);
 
     
+    // Clear the CCP4 interrupt flag
+    PIR3bits.CCP4IF = 0;
+
+    // Enable the CCP4 interrupt
+    PIE3bits.CCP4IE = 1;
 }
 
-bool CCP4_IsCapturedDataReady(void)
-{
-    // Check if data is ready to read from capture module by reading "CCPIF" flag.
-    bool status = PIR3bits.CCP4IF;
-    if(status)
-        PIR3bits.CCP4IF = 0;
-    return (status);
-}
-
-uint16_t CCP4_CaptureRead(void)
+void CCP4_CaptureISR(void)
 {
     CCP4_PERIOD_REG_T module;
 
+    // Clear the CCP4 interrupt flag
+    PIR3bits.CCP4IF = 0;
+    
     // Copy captured value.
     module.ccpr4l = CCPR4L;
     module.ccpr4h = CCPR4H;
     
     // Return 16bit captured value
-    return module.ccpr4_16Bit;
+    CCP4_CallBack(module.ccpr4_16Bit);
+}
+
+void CCP4_SetCallBack(void (*customCallBack)(uint16_t)){
+    CCP4_CallBack = customCallBack;
 }
 /**
  End of File

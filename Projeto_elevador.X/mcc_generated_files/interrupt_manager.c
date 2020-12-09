@@ -58,9 +58,13 @@ void __interrupt() INTERRUPT_InterruptManager (void)
     }
     else if(INTCONbits.PEIE == 1)
     {
-        if(PIE1bits.TMR1IE == 1 && PIR1bits.TMR1IF == 1)
+        if(PIE3bits.CCP4IE == 1 && PIR3bits.CCP4IF == 1)
         {
-            TMR1_ISR();
+            CCP4_CaptureISR();
+        } 
+        else if(PIE3bits.TMR4IE == 1 && PIR3bits.TMR4IF == 1)
+        {
+            TMR4_ISR();
         } 
         else
         {

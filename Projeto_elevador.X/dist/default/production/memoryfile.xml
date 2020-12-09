@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <executable name="dist/default/production\Projeto_elevador.X.production.hex">
+    <memory name="program">
+      <units>words</units>
+      <length>4096</length>
+      <used>2520</used>
+      <free>1576</free>
+    </memory>
+    <memory name="data">
+      <units>bytes</units>
+      <length>384</length>
+      <used>139</used>
+      <free>245</free>
+    </memory>
+  </executable>
+</project>
