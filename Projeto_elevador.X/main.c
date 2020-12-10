@@ -29,15 +29,16 @@ void controle();
 void gerenciamento();
 
 //DECLARAÇÃO DAS VARIÁVEIS:
-int and_dst;                    //Variável para armazenas o andar de destino
-int and_origem;                 //Variável para armazenas o andar de origem
-int pulses;
-float I_m;
-float temp_mt;
+int and_dst = 0;                    //Variável para armazenas o andar de destino
+int and_origem = 0;                 //Variável para armazenas o andar de origem
+int pulses = 0;
+int sentido = 0;
+float I_m = 0;
+float temp_mt = 0;
 int aux_tempo = 0;
-uint8_t state_motor;
-uint8_t and_ating;
-uint16_t ccp_value;
+uint8_t state_motor = 0;
+uint8_t and_ating = 0;
+uint16_t ccp_value = 0;
 uint8_t byte[5];
 
 //FUNÇÕES DE INTERRUPÇÃO
@@ -86,6 +87,11 @@ void get_pulse(uint16_t capturedValue)
     {
         TMR1_WriteTimer(0);
         ccp_value = capturedValue;
+        if(sentido == 1){
+            pulses++;
+        }else if(sentido == 0 && pulses >= 0){
+            pulses--;
+        }
     }
 
 // APLICAÇÃO PROPRIAMENTE DITA
@@ -158,13 +164,13 @@ void controle()
     int a = 52;                                 // Valor da aceleração boa para o motor (cálculado por torricelli)
     int max_dutyValue = 1023;                   // Valor máximo aceito pelo PWM (v = 20 mm/s))
     int min_dutyValue = 256;                    // Valor do PWM para v = 5 mm/s
-    int destiny = 240;                          // Variável para receber o andar de destino
+    int destiny = 240;                          // Variável para receber o andar de destino [OBS: Validar com o Matheus essa variável]
     int route = destiny - 40;                   // Controla o número de pulsos com v = 20 mm/s
     int dutyValue = 0;                          // Inicia dutyValue em zero
-    int pulse = 0;                              // Inicia número de pulsos em zero
+    //int pulse = 0;                            // Inicia número de pulsos em zero
 
     for(count = 0; count < 20; count++){        // Loop responsável pela aceleração do motor
-        pulse+=1;                               // Contador para número de pulsos
+        //pulse+=1;                               // Contador para número de pulsos
         dutyValue+=a;                           // Adiciona valor de aceleração no dutyValue
         if(dutyValue > max_dutyValue){          // Comparação se o valor de dutyValue não ultrapassa o máximo permitido
             PWM3_LoadDutyValue(max_dutyValue);  // Caso sim, esse valor é substituído pelo valor máximo
@@ -175,12 +181,13 @@ void controle()
     }
     count = 0;                                  // Reinicia o contador para o próximo loop
     for(count = 0; count < route ; count++){    // Loop responsável pela velocidade máxima constante
-        pulse+=1;                               // Contador de pulsos
+        //pulse+=1;                               // Contador de pulsos
         PWM3_LoadDutyValue(max_dutyValue);      // Envia max_dutyValue para o PWM
     }
+    
     count = 0;                                  // Reinicia o contador para o próximo loop
     for(count = 0; count < 20; count++){        // Loop responsável pela desaceleração do motor
-        pulse+=1;                               // Contador de pulsos
+        //pulse+=1;                               // Contador de pulsos
         dutyValue-=a;                           // Subtrai valor da aceleração do dutyValue
         if(dutyValue < min_dutyValue){          // Comparação se o valor de dutyValue não ultrapassa o mínimo permitido na desaceleração
             PWM3_LoadDutyValue(min_dutyValue);  // Caso sim, esse valor é substituído pelo valor mínimo para v = 5 mm/s
