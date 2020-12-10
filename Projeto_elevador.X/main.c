@@ -1,36 +1,36 @@
 /******************************************************************************
  ******************************************************************************
- ***    UNIVERSIDADE DE BRASÍLIA - UNB                                      ***
- ***    DISCIPLINA: FGA0096 - ELETRÔNICA EMBARCADA        TURMA: A          ***
- ***    PROFESSOR: Guillermo Alvarez Bestard, Dr. Eng. Mecatrônica          ***
- ***    ALUNO: Lucas dos Santos Barros de Sousa   MATRÍCULA:180022555       ***
- ***    ALUNO: Matheus Oliveira Dias              MATRÍCULA:18/0025104      ***
- ***    ALUNO: Victor Hugo Ciurlini               MATRÍCULA:11/0021223      ***
- ***               TRABALHO FINAL ELETRÔNICA EMBARCADA                      ***
+ ***    UNIVERSIDADE DE BRASï¿½LIA - UNB                                      ***
+ ***    DISCIPLINA: FGA0096 - ELETRï¿½NICA EMBARCADA        TURMA: A          ***
+ ***    PROFESSOR: Guillermo Alvarez Bestard, Dr. Eng. Mecatrï¿½nica          ***
+ ***    ALUNO: Lucas dos Santos Barros de Sousa   MATRï¿½CULA:180022555       ***
+ ***    ALUNO: Matheus Oliveira Dias              MATRï¿½CULA:18/0025104      ***
+ ***    ALUNO: Victor Hugo Ciurlini               MATRï¿½CULA:11/0021223      ***
+ ***               TRABALHO FINAL ELETRï¿½NICA EMBARCADA                      ***
  ******************************************************************************
  ******************************************************************************/
 
-/* DESCRIÇÃO DE FUNCIONAMENTO*/
+/* DESCRIï¿½ï¿½O DE FUNCIONAMENTO*/
 
 
-//DECLARAÇÃO DE BIBLIOTECAS:
+//DECLARAï¿½ï¿½O DE BIBLIOTECAS:
 #include "mcc_generated_files/mcc.h"
 
-//DEFINIÇÕES
-#define conv_I  0.1                         //O coeficiente de conversão da corrente é de 0.5, visto que o valor máx de cprrente é de 1000 mA, no entanto como teremos que transmitir o valor de corrente/5 para evitar mais operacoes pelo uC já multiplicamos o valor por 1/5=0.2, logo 0.5*0.2=0.1          
-#define conv_temp  0.3                      //O coeficiente de conversão da temperatura é de 0.1, visto que o valor máx de temperatura assumido é de 100ºC, no entanto como teremos que transmitir o valor de temperatura*3 para evitar mais operacoes pelo uC já multiplicamos aqui logo 0.1*3=0.3
+//DEFINIï¿½ï¿½ES
+#define conv_I  0.1                         //O coeficiente de conversï¿½o da corrente ï¿½ de 0.5, visto que o valor mï¿½x de cprrente ï¿½ de 1000 mA, no entanto como teremos que transmitir o valor de corrente/5 para evitar mais operacoes pelo uC jï¿½ multiplicamos o valor por 1/5=0.2, logo 0.5*0.2=0.1          
+#define conv_temp  0.3                      //O coeficiente de conversï¿½o da temperatura ï¿½ de 0.1, visto que o valor mï¿½x de temperatura assumido ï¿½ de 100ï¿½C, no entanto como teremos que transmitir o valor de temperatura*3 para evitar mais operacoes pelo uC jï¿½ multiplicamos aqui logo 0.1*3=0.3
 #define conv_second  0.0000005
-#define distance_1_pulse_mult2  1.5        // 15 mm/20 pulsos = 0.75 mm, no entanto usaremos: 0.75*2 = 1.5 para evitar mais uma operação a fim de cumprir o preparo de envio
-#define distance_1_pulse_mult5  3.75        // 15 mm/20 pulsos = 0.75 mm,no entanto usaremos: 0.75*5 = 3.75 para evitar mais uma operação a fim de cumprir o preparo de envio
+#define distance_1_pulse_mult2  1.5        // 15 mm/20 pulsos = 0.75 mm, no entanto usaremos: 0.75*2 = 1.5 para evitar mais uma operaï¿½ï¿½o a fim de cumprir o preparo de envio
+#define distance_1_pulse_mult5  3.75        // 15 mm/20 pulsos = 0.75 mm,no entanto usaremos: 0.75*5 = 3.75 para evitar mais uma operaï¿½ï¿½o a fim de cumprir o preparo de envio
 
-//DECLARAÇÃO DOS PROTÓTIPOS DAS FUNÇÕES: 
+//DECLARAï¿½ï¿½O DOS PROTï¿½TIPOS DAS FUNï¿½ï¿½ES: 
 void comunicacao ();
 void controle();
 void gerenciamento();
 
-//DECLARAÇÃO DAS VARIÁVEIS:
-int and_dst = 0;                    //Variável para armazenas o andar de destino
-int and_origem = 0;                 //Variável para armazenas o andar de origem
+//DECLARAï¿½ï¿½O DAS VARIï¿½VEIS:
+int and_dst = 0;                    //Variï¿½vel para armazenas o andar de destino
+int and_origem = 0;                 //Variï¿½vel para armazenas o andar de origem
 int pulses = 0;
 int sentido = 0;
 float I_m = 0;
@@ -41,9 +41,9 @@ uint8_t and_ating = 0;
 uint16_t ccp_value = 0;
 uint8_t byte[5];
 
-//FUNÇÕES DE INTERRUPÇÃO
+//FUNï¿½ï¿½ES DE INTERRUPï¿½ï¿½O
 
-//INTERRUPÇÃO PARA ENVIO DOS DADOS A CADA 100mS (5 BYTES)
+//INTERRUPï¿½ï¿½O PARA ENVIO DOS DADOS A CADA 100mS (5 BYTES)
 void send_data()
 	{
         aux_tempo++;
@@ -94,16 +94,16 @@ void get_pulse(uint16_t capturedValue)
         }
     }
 
-// APLICAÇÃO PROPRIAMENTE DITA
+// APLICAï¿½ï¿½O PROPRIAMENTE DITA
 void main(void)
 {
     
-  //FUNÇÕES DE INICIALIZAÇÃO
+  //FUNï¿½ï¿½ES DE INICIALIZAï¿½ï¿½O
     SYSTEM_Initialize();
     INTERRUPT_GlobalInterruptEnable();
     INTERRUPT_PeripheralInterruptEnable();
     
-   //PASSAGEM DE PARÂMETROS PARA FUNÇÕES DE INTERRUPÇÃO 
+   //PASSAGEM DE PARï¿½METROS PARA FUNï¿½ï¿½ES DE INTERRUPï¿½ï¿½O 
     TMR4_SetInterruptHandler(send_data);
     IOCBF0_SetInterruptHandler(sensor1);
     IOCBF3_SetInterruptHandler(sensor2);
@@ -119,9 +119,9 @@ void main(void)
     // LOOP PRINCIPAL
     while (1)
     {
-       comunicacao ();    // Chama a função responsável por tratar a comunicação
-       controle();        // Chama a função responsável por tratar o controle do motor
-       gerenciamento();   // Chama a função responsável por gerenciar as solicitações
+       comunicacao ();    // Chama a funï¿½ï¿½o responsï¿½vel por tratar a comunicaï¿½ï¿½o
+       controle();        // Chama a funï¿½ï¿½o responsï¿½vel por tratar o controle do motor
+       gerenciamento();   // Chama a funï¿½ï¿½o responsï¿½vel por gerenciar as solicitaï¿½ï¿½es
     }
 }
 
@@ -140,8 +140,8 @@ void comunicacao ()
             and_origem = (int)((aux & 0x0C)>>2);    //Pega os bits 2,3 e os transforma em inteiros
             and_dst = (int)(aux & 0x02);            //Pega os bits 0,1 e os transforma em inteiros 
         }
-// OBS PARA LUCAS: TALVEZ NÃO SEJA NECESSÁRIO O DESLOCAMENTO >>1 ANALISAR ROTEIRO!!!
-//VERIFICAR SE O VETOR FUNCIONA! SE NÃO FUNCIONAR MUDE A LÓGICA DO ENVIO E DESCOMENTE ABAIXO
+// OBS PARA LUCAS: TALVEZ Nï¿½O SEJA NECESSï¿½RIO O DESLOCAMENTO >>1 ANALISAR ROTEIRO!!!
+//VERIFICAR SE O VETOR FUNCIONA! SE Nï¿½O FUNCIONAR MUDE A Lï¿½GICA DO ENVIO E DESCOMENTE ABAIXO
 //    byte_0 = ((state_motor<<4)& 0x20)|(and_ating & 0x02);
 //    byte_1 = 0x80 |((((uint8_t)position)>>1)& 0x7F);  
 //    byte_2 = 0x80 |((((uint8_t)speed)>>1)& 0x7F);
@@ -158,41 +158,41 @@ void comunicacao ()
 
 void controle()
 {
-    I_m = conv_I*ADC_GetConversion(0);          // Realiza a leitura da corrente, converte para mA usando *conv_I, já esta preparado para envio, veja as definições! (Resolução da medição 0.5 mA )
-    temp_mt = conv_temp*ADC_GetConversion(1);   // Realiza a leitura da temperatura, converte para C usando *conv_temp, já esta preparado para envio, veja as definições! (Resolução da medição 0.1 ºC))
-    int count = 0;                              // Contador responsável pelos loops
-    int a = 52;                                 // Valor da aceleração boa para o motor (cálculado por torricelli)
-    int max_dutyValue = 1023;                   // Valor máximo aceito pelo PWM (v = 20 mm/s))
+    I_m = conv_I*ADC_GetConversion(0);          // Realiza a leitura da corrente, converte para mA usando *conv_I, jï¿½ esta preparado para envio, veja as definiï¿½ï¿½es! (Resoluï¿½ï¿½o da mediï¿½ï¿½o 0.5 mA )
+    temp_mt = conv_temp*ADC_GetConversion(1);   // Realiza a leitura da temperatura, converte para C usando *conv_temp, jï¿½ esta preparado para envio, veja as definiï¿½ï¿½es! (Resoluï¿½ï¿½o da mediï¿½ï¿½o 0.1 ï¿½C))
+    int count = 0;                              // Contador responsï¿½vel pelos loops
+    int a = 52;                                 // Valor da aceleraï¿½ï¿½o boa para o motor (cï¿½lculado por torricelli)
+    int max_dutyValue = 1023;                   // Valor mï¿½ximo aceito pelo PWM (v = 20 mm/s))
     int min_dutyValue = 256;                    // Valor do PWM para v = 5 mm/s
-    int destiny = 240;                          // Variável para receber o andar de destino [OBS: Validar com o Matheus essa variável]
-    int route = destiny - 40;                   // Controla o número de pulsos com v = 20 mm/s
+    int destiny = 240;                          // Variï¿½vel para receber o andar de destino [OBS: Validar com o Matheus essa variï¿½vel]
+    int route = destiny - 40;                   // Controla o nï¿½mero de pulsos com v = 20 mm/s
     int dutyValue = 0;                          // Inicia dutyValue em zero
-    //int pulse = 0;                            // Inicia número de pulsos em zero
+    //int pulse = 0;                            // Inicia nï¿½mero de pulsos em zero
 
-    for(count = 0; count < 20; count++){        // Loop responsável pela aceleração do motor
-        //pulse+=1;                               // Contador para número de pulsos
-        dutyValue+=a;                           // Adiciona valor de aceleração no dutyValue
-        if(dutyValue > max_dutyValue){          // Comparação se o valor de dutyValue não ultrapassa o máximo permitido
-            PWM3_LoadDutyValue(max_dutyValue);  // Caso sim, esse valor é substituído pelo valor máximo
+    for(count = 0; count < 20; count++){        // Loop responsï¿½vel pela aceleraï¿½ï¿½o do motor
+        //pulse+=1;                               // Contador para nï¿½mero de pulsos
+        dutyValue+=a;                           // Adiciona valor de aceleraï¿½ï¿½o no dutyValue
+        if(dutyValue > max_dutyValue){          // Comparaï¿½ï¿½o se o valor de dutyValue nï¿½o ultrapassa o mï¿½ximo permitido
+            PWM3_LoadDutyValue(max_dutyValue);  // Caso sim, esse valor ï¿½ substituï¿½do pelo valor mï¿½ximo
         }else{                                  // Else
-            PWM3_LoadDutyValue(dutyValue);      // Envia dutyValue com o valor acrescido de aceleração do motor
+            PWM3_LoadDutyValue(dutyValue);      // Envia dutyValue com o valor acrescido de aceleraï¿½ï¿½o do motor
         }
         
     }
-    count = 0;                                  // Reinicia o contador para o próximo loop
-    for(count = 0; count < route ; count++){    // Loop responsável pela velocidade máxima constante
+    count = 0;                                  // Reinicia o contador para o prï¿½ximo loop
+    for(count = 0; count < route ; count++){    // Loop responsï¿½vel pela velocidade mï¿½xima constante
         //pulse+=1;                               // Contador de pulsos
         PWM3_LoadDutyValue(max_dutyValue);      // Envia max_dutyValue para o PWM
     }
     
-    count = 0;                                  // Reinicia o contador para o próximo loop
-    for(count = 0; count < 20; count++){        // Loop responsável pela desaceleração do motor
+    count = 0;                                  // Reinicia o contador para o prï¿½ximo loop
+    for(count = 0; count < 20; count++){        // Loop responsï¿½vel pela desaceleraï¿½ï¿½o do motor
         //pulse+=1;                               // Contador de pulsos
-        dutyValue-=a;                           // Subtrai valor da aceleração do dutyValue
-        if(dutyValue < min_dutyValue){          // Comparação se o valor de dutyValue não ultrapassa o mínimo permitido na desaceleração
-            PWM3_LoadDutyValue(min_dutyValue);  // Caso sim, esse valor é substituído pelo valor mínimo para v = 5 mm/s
+        dutyValue-=a;                           // Subtrai valor da aceleraï¿½ï¿½o do dutyValue
+        if(dutyValue < min_dutyValue){          // Comparaï¿½ï¿½o se o valor de dutyValue nï¿½o ultrapassa o mï¿½nimo permitido na desaceleraï¿½ï¿½o
+            PWM3_LoadDutyValue(min_dutyValue);  // Caso sim, esse valor ï¿½ substituï¿½do pelo valor mï¿½nimo para v = 5 mm/s
         }else{                                  // Else
-        PWM3_LoadDutyValue(dutyValue);          // Envia dutyValue com o valor decrescido de aceleração do motor
+        PWM3_LoadDutyValue(dutyValue);          // Envia dutyValue com o valor decrescido de aceleraï¿½ï¿½o do motor
         }
     }
     PWM3_LoadDutyValue(0);                      // Para o motor
@@ -201,5 +201,172 @@ void controle()
 
 void gerenciamento()
 {
+    
+    int fila_up[10];
+    int fila_down[10];
+    int and_sol[10];
+    int fila_origem[10];
+    
+    //Confere se houve uma nova solicitaï¿½ï¿½o
+    if(and_sol[0]!=and_dst || fila_origem[0]!=and_origem)
+        {
+            if(and_ating<and_sol[0])
+                { //subir 
+                    sentido = 1; 
+                    if(and_origem>and_ating && and_dst>and_origem)
+                        {
+                            fila_up = fila_inicio(and_origem,fila_up)
+                            fila_up = fila_inicio(and_dst,fila_up);
+                        }
+                }
+            if(and_ating>and_sol[0])
+                { //descer 
+                    sentido = 0; 
+                    if(and_origem<and_ating && and_dst<and_origem)
+                        {
+                            fila_down = fila_inicio(and_origem,fila_down);
+                            fila_down = fila_inicio(and_dst,fila_down);
+                        }
+                }
 
+            //Organizar a fila
+
+            //Parar o elevador no primeiro valor da fila
+
+            if(sentido==1 && and_ating==fila_up)
+                {
+                    //parar no and_ating
+                }
+            if(sentido==0 && and_ating==fila_down)
+                {
+                    //parar no and_ating
+                }
+
+//            if(fila_up[0]==max)
+//                {
+//                    fila_up = [0,0,0,0,0,0,0,0,0,0];
+//                    sentido = 0;
+//                }
+//            if(fila_down[0]==min)
+//                {
+//                    fila_down = [0,0,0,0,0,0,0,0,0,0];
+//                }
+
+            //Retroceder fila
+            //Retira o andar de destino solicitado na fila
+            fila_up = fila_retr(fila_up);
+            //Retira o andar de origem solicitado na fila
+            fila_down = fila_retr(fila_down);  
+        }
+    //Coloca o andar de destino solicitado na fila
+    //and_sol = fila_inicio(and_dst,and_sol);
+    //Coloca o andar de origem solicitado na fila
+    //fila_origem = fila_inicio(and_origem,fila_origem);
+    
+    
+        
+        for(int j=0;j<=9;j++){ 
+                if(and_ating<and_sol[0]){ //subir 
+                    sentido = 1; 
+                    comunicacao();
+                    if(and_origem>and_ating && and_dst>and_ating){
+                    
+                    }
+                }
+            }
+        
+        for(int i=0;i<=10;i++){
+            if(and_origem_up==and_atingido){
+                //parar elevador
+                //colocar andar solicitado nessa origem na fila de subida
+        }  
+            
+    }
+        // colocar em ordem decrescente a fila [2,3,4]
+    }
+    
+    if(and_ating>and_dst){ //descer 
+        sentido = 0;
+        for(int j=0;j<=9;j++){ 
+            if(j==and_sol[j]){
+                break;
+            }
+            if(and_sol[j]<and_ating){
+                fila_down[j] = and_sol[j];
+            }
+        }
+        
+        for(int i=0;i<=10;i++){
+            if(and_origem_down==and_atingido){
+                //parar elevador
+                //colocar andar solicitado nessa origemna fila de descida
+        }
+            
+    }
+        
+    }
+    
+    for(int i=0;i<=10;i++){
+        if(and_origem_down==and_atingido){
+            //parar elevador
+        }
+    }
+    
+    switch(and_final){
+        case 1:
+            if(and_ating==1){
+                //parar
+            }
+        case 2:
+            if(and_ating==1){
+                //parar
+            }
+        case 3:
+            if(and_ating==1){
+                //parar
+            }
+        case 4:
+            if(and_ating==1){
+                //parar
+            }
+        default:
+            if(and_ating==1){
+                //parar
+            }
+            
+    }
+    
+    
+    
+}
+
+int fila_inicio(int andar_dst, int and_s[10]){
+    for(int i=0;i<=9;i++){
+        if(i==0){
+            and_s[1] = and_s[0];
+            and_s[0] = andar_dst
+        }
+        if(i<0){
+            and_s[i+1] = and_s[i];
+        }
+        if(i==9){
+            break;
+        }
+    }
+    return and_s;
+}
+ 
+int fila_retr(int and_s[10]){
+    for(int i=0;i<=9;i++){
+        if(i==0){
+            and_s[0] = and_s[1];
+        }
+        if(i<0){
+            and_s[i] = and_s[i+1];
+        }
+        if(i==9){
+            and_s[9] = 0;
+        }
+    }
+    return and_s;
 }
