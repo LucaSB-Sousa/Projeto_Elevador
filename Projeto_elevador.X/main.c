@@ -113,9 +113,9 @@ void main(void)
     // LOOP PRINCIPAL
     while (1)
     {
-       comunicacao ();    // Chama a função resonsável por tratar a comunicação
-       controle();        // Chama a função resonsável por tratar o controle do motor
-       gerenciamento();   // Chama a função resonsável por gerenciar as solicitações
+       comunicacao ();    // Chama a função responsável por tratar a comunicação
+       controle();        // Chama a função responsável por tratar o controle do motor
+       gerenciamento();   // Chama a função responsável por gerenciar as solicitações
     }
 }
 
@@ -152,8 +152,44 @@ void comunicacao ()
 
 void controle()
 {
-   I_m = conv_I*ADC_GetConversion(0);         //Realiza a leitura da corrente, converte para mA usando *conv_I, já esta preparado para envio, veja as definições! (Resolução da medição 0.5 mA )
-   temp_mt = conv_temp*ADC_GetConversion(1);   //Realiza a leitura da temperatura, converte para C usando *conv_temp, já esta preparado para envio, veja as definições! (Resolução da medição 0.1 ºC))
+    I_m = conv_I*ADC_GetConversion(0);          // Realiza a leitura da corrente, converte para mA usando *conv_I, já esta preparado para envio, veja as definições! (Resolução da medição 0.5 mA )
+    temp_mt = conv_temp*ADC_GetConversion(1);   // Realiza a leitura da temperatura, converte para C usando *conv_temp, já esta preparado para envio, veja as definições! (Resolução da medição 0.1 ºC))
+    int count = 0;                              // Contador responsável pelos loops
+    int a = 52;                                 // Valor da aceleração boa para o motor (cálculado por torricelli)
+    int max_dutyValue = 1023;                   // Valor máximo aceito pelo PWM (v = 20 mm/s))
+    int min_dutyValue = 256;                    // Valor do PWM para v = 5 mm/s
+    int destiny = 240;                          // Variável para receber o andar de destino
+    int route = destiny - 40;                   // Controla o número de pulsos com v = 20 mm/s
+    int dutyValue = 0;                          // Inicia dutyValue em zero
+    int pulse = 0;                              // Inicia número de pulsos em zero
+
+    for(count = 0; count < 20; count++){        // Loop responsável pela aceleração do motor
+        pulse+=1;                               // Contador para número de pulsos
+        dutyValue+=a;                           // Adiciona valor de aceleração no dutyValue
+        if(dutyValue > max_dutyValue){          // Comparação se o valor de dutyValue não ultrapassa o máximo permitido
+            PWM3_LoadDutyValue(max_dutyValue);  // Caso sim, esse valor é substituído pelo valor máximo
+        }else{                                  // Else
+            PWM3_LoadDutyValue(dutyValue);      // Envia dutyValue com o valor acrescido de aceleração do motor
+        }
+        
+    }
+    count = 0;                                  // Reinicia o contador para o próximo loop
+    for(count = 0; count < route ; count++){    // Loop responsável pela velocidade máxima constante
+        pulse+=1;                               // Contador de pulsos
+        PWM3_LoadDutyValue(max_dutyValue);      // Envia max_dutyValue para o PWM
+    }
+    count = 0;                                  // Reinicia o contador para o próximo loop
+    for(count = 0; count < 20; count++){        // Loop responsável pela desaceleração do motor
+        pulse+=1;                               // Contador de pulsos
+        dutyValue-=a;                           // Subtrai valor da aceleração do dutyValue
+        if(dutyValue < min_dutyValue){          // Comparação se o valor de dutyValue não ultrapassa o mínimo permitido na desaceleração
+            PWM3_LoadDutyValue(min_dutyValue);  // Caso sim, esse valor é substituído pelo valor mínimo para v = 5 mm/s
+        }else{                                  // Else
+        PWM3_LoadDutyValue(dutyValue);          // Envia dutyValue com o valor decrescido de aceleração do motor
+        }
+    }
+    PWM3_LoadDutyValue(0);                      // Para o motor
+
 }
 
 void gerenciamento()
