@@ -3,63 +3,77 @@
 [d edition pro ]
 [d chip 16F1827 ]
 [d frameptr 6 ]
-"85 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/adc.c
-[e E2476 . `uc
+"85 C:\Users\Acer\Desktop\MATHEUS\Matheus - UnB\Embarcada\GitHub\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/adc.c
+[e E2474 . `uc
 Im 0
 Temp 1
 channel_Temp 29
 channel_DAC 30
 channel_FVR 31
 ]
-"154 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador.X\main.c
-[e E2580 . `uc
+"186 C:\Users\Acer\Desktop\MATHEUS\Matheus - UnB\Embarcada\GitHub\Projeto_Elevador\Projeto_elevador.X\main.c
+[e E2578 . `uc
 Im 0
 Temp 1
 channel_Temp 29
 channel_DAC 30
 channel_FVR 31
 ]
-"43 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\fltol.c
+"1 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\abs.c
+[v _abs abs `(i  1 e 2 0 ]
+"43 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\fltol.c
 [v ___fltol __fltol `(l  1 e 4 0 ]
-"10 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\sprcadd.c
+"10 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
-"8 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\sprcdiv.c
+"8 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
 [v ___fldiv __fldiv `(d  1 e 4 0 ]
-"8 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\sprcmul.c
+"8 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
-"4 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\Umul8_16.c
+"15 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
-"10 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\xxtofl.c
+"10 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
-"6 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\pic\__eeprom.c
+"6 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\pic\__eeprom.c
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"45 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador.X\main.c
+"70 C:\Users\Acer\Desktop\MATHEUS\Matheus - UnB\Embarcada\GitHub\Projeto_Elevador\Projeto_elevador.X\main.c
 [v _send_data send_data `(v  1 e 1 0 ]
-"64
+"89
 [v _sensor1 sensor1 `(v  1 e 1 0 ]
-"69
+"95
 [v _sensor2 sensor2 `(v  1 e 1 0 ]
-"74
+"101
 [v _sensor3 sensor3 `(v  1 e 1 0 ]
-"79
+"107
 [v _sensor4 sensor4 `(v  1 e 1 0 ]
-"84
+"113
 [v _get_pulse get_pulse `(v  1 e 1 0 ]
-"91
+"125
 [v _main main `(v  1 e 1 0 ]
-"123
+"155
 [v _comunicacao comunicacao `(v  1 e 1 0 ]
-"152
+"184
 [v _controle controle `(v  1 e 1 0 ]
-"158
+"229
 [v _gerenciamento gerenciamento `(v  1 e 1 0 ]
-"67 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/adc.c
+"339
+[v _col_up col_up `(v  1 e 1 0 ]
+"365
+[v _col_down col_down `(v  1 e 1 0 ]
+"400
+[v _min_up min_up `(v  1 e 1 0 ]
+"432
+[v _max_down max_down `(v  1 e 1 0 ]
+"468
+[v _update update `(v  1 e 1 0 ]
+"67 C:\Users\Acer\Desktop\MATHEUS\Matheus - UnB\Embarcada\GitHub\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/adc.c
 [v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
 "112
 [v _ADC_GetConversion ADC_GetConversion `(us  1 e 2 0 ]
-"60 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/ccp4.c
+"60 C:\Users\Acer\Desktop\MATHEUS\Matheus - UnB\Embarcada\GitHub\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/ccp4.c
 [v _CCP4_DefaultCallBack CCP4_DefaultCallBack `(v  1 s 1 CCP4_DefaultCallBack ]
 "65
 [v _CCP4_Initialize CCP4_Initialize `(v  1 e 1 0 ]
@@ -67,7 +81,7 @@ channel_FVR 31
 [v _CCP4_CaptureISR CCP4_CaptureISR `(v  1 e 1 0 ]
 "104
 [v _CCP4_SetCallBack CCP4_SetCallBack `(v  1 e 1 0 ]
-"66 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/eusart.c
+"66 C:\Users\Acer\Desktop\MATHEUS\Matheus - UnB\Embarcada\GitHub\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/eusart.c
 [v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
 "94
 [v _EUSART_is_tx_ready EUSART_is_tx_ready `(a  1 e 1 0 ]
@@ -89,17 +103,17 @@ channel_FVR 31
 [v _EUSART_SetOverrunErrorHandler EUSART_SetOverrunErrorHandler `(v  1 e 1 0 ]
 "165
 [v _EUSART_SetErrorHandler EUSART_SetErrorHandler `(v  1 e 1 0 ]
-"58 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/fvr.c
+"58 C:\Users\Acer\Desktop\MATHEUS\Matheus - UnB\Embarcada\GitHub\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/fvr.c
 [v _FVR_Initialize FVR_Initialize `(v  1 e 1 0 ]
-"52 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/interrupt_manager.c
+"52 C:\Users\Acer\Desktop\MATHEUS\Matheus - UnB\Embarcada\GitHub\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
-"50 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/mcc.c
+"50 C:\Users\Acer\Desktop\MATHEUS\Matheus - UnB\Embarcada\GitHub\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 "66
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 "76
 [v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
-"60 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/pin_manager.c
+"60 C:\Users\Acer\Desktop\MATHEUS\Matheus - UnB\Embarcada\GitHub\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
 "135
 [v _PIN_MANAGER_IOC PIN_MANAGER_IOC `(v  1 e 1 0 ]
@@ -127,15 +141,17 @@ channel_FVR 31
 [v _IOCBF5_SetInterruptHandler IOCBF5_SetInterruptHandler `(v  1 e 1 0 ]
 "274
 [v _IOCBF5_DefaultInterruptHandler IOCBF5_DefaultInterruptHandler `(v  1 e 1 0 ]
-"64 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/pwm3.c
+"64 C:\Users\Acer\Desktop\MATHEUS\Matheus - UnB\Embarcada\GitHub\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/pwm3.c
 [v _PWM3_Initialize PWM3_Initialize `(v  1 e 1 0 ]
-"63 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/tmr1.c
+"82
+[v _PWM3_LoadDutyValue PWM3_LoadDutyValue `(v  1 e 1 0 ]
+"63 C:\Users\Acer\Desktop\MATHEUS\Matheus - UnB\Embarcada\GitHub\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/tmr1.c
 [v _TMR1_Initialize TMR1_Initialize `(v  1 e 1 0 ]
 "113
 [v _TMR1_WriteTimer TMR1_WriteTimer `(v  1 e 1 0 ]
-"62 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/tmr2.c
+"62 C:\Users\Acer\Desktop\MATHEUS\Matheus - UnB\Embarcada\GitHub\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/tmr2.c
 [v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
-"64 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/tmr4.c
+"64 C:\Users\Acer\Desktop\MATHEUS\Matheus - UnB\Embarcada\GitHub\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/tmr4.c
 [v _TMR4_Initialize TMR4_Initialize `(v  1 e 1 0 ]
 "119
 [v _TMR4_ISR TMR4_ISR `(v  1 e 1 0 ]
@@ -152,7 +168,7 @@ channel_FVR 31
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
-"374 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1827.h
+"374 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f1827.h
 [s S602 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
@@ -306,6 +322,18 @@ channel_FVR 31
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @158 ]
 "2039
 [v _LATA LATA `VEuc  1 e 1 @268 ]
+[s S1157 . 1 `uc 1 LATA0 1 0 :1:0 
+`uc 1 LATA1 1 0 :1:1 
+`uc 1 LATA2 1 0 :1:2 
+`uc 1 LATA3 1 0 :1:3 
+`uc 1 LATA4 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 LATA6 1 0 :1:6 
+`uc 1 LATA7 1 0 :1:7 
+]
+"2056
+[u S1166 . 1 `S1157 1 . 1 0 ]
+[v _LATAbits LATAbits `VES1166  1 e 1 @268 ]
 "2096
 [v _LATB LATB `VEuc  1 e 1 @269 ]
 "2430
@@ -469,32 +497,53 @@ channel_FVR 31
 ]
 [u S464 . 1 `S452 1 . 1 0 `S460 1 . 1 0 ]
 [v _T4CONbits T4CONbits `VES464  1 e 1 @1047 ]
-"31 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador.X\main.c
+"41 C:\Users\Acer\Desktop\MATHEUS\Matheus - UnB\Embarcada\GitHub\Projeto_Elevador\Projeto_elevador.X\main.c
 [v _and_dst and_dst `i  1 e 2 0 ]
-"32
+"42
 [v _and_origem and_origem `i  1 e 2 0 ]
-"33
+"43
 [v _pulses pulses `i  1 e 2 0 ]
-"34
+"44
+[v _sentido sentido `i  1 e 2 0 ]
+"45
 [v _I_m I_m `f  1 e 4 0 ]
-"35
+"46
 [v _temp_mt temp_mt `f  1 e 4 0 ]
-"36
+"47
 [v _aux_tempo aux_tempo `i  1 e 2 0 ]
-"38
+"48
+[v _sentido2 sentido2 `i  1 e 2 0 ]
+"50
+[v _distancia distancia `i  1 e 2 0 ]
+"53
+[v _fila_up fila_up `[10]i  1 e 20 0 ]
+"54
+[v _fila_down fila_down `[10]i  1 e 20 0 ]
+"55
+[v _origem_down origem_down `[10]i  1 e 20 0 ]
+"56
+[v _origem_up origem_up `[10]i  1 e 20 0 ]
+"57
+[v _max_fila_up max_fila_up `i  1 e 2 0 ]
+[v _max_origem_down max_origem_down `i  1 e 2 0 ]
+[v _min_origem_up min_origem_up `i  1 e 2 0 ]
+[v _min_fila_down min_fila_down `i  1 e 2 0 ]
+"59
+[v _and_ating2 and_ating2 `i  1 e 2 0 ]
+"63
 [v _and_ating and_ating `uc  1 e 1 0 ]
-"39
+"64
 [v _ccp_value ccp_value `us  1 e 2 0 ]
-"40
+"65
 [v _byte byte `[5]uc  1 e 5 0 ]
-"54 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/ccp4.c
+"54 C:\Users\Acer\Desktop\MATHEUS\Matheus - UnB\Embarcada\GitHub\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/ccp4.c
 [v _CCP4_CallBack CCP4_CallBack `*.37(v  1 s 2 CCP4_CallBack ]
 [s S22 . 1 `uc 1 perr 1 0 :1:0 
 `uc 1 ferr 1 0 :1:1 
 `uc 1 oerr 1 0 :1:2 
 `uc 1 reserved 1 0 :5:3 
 ]
-"52 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/eusart.c
+"52 C:\Users\Acer\Desktop\MATHEUS\Matheus - UnB\Embarcada\GitHub\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/eusart.c
 [u S27 . 1 `S22 1 . 1 0 `uc 1 status 1 0 ]
 [v _eusartRxLastError eusartRxLastError `VES27  1 e 1 0 ]
 "58
@@ -503,7 +552,7 @@ channel_FVR 31
 [v _EUSART_OverrunErrorHandler EUSART_OverrunErrorHandler `*.37(v  1 e 2 0 ]
 "60
 [v _EUSART_ErrorHandler EUSART_ErrorHandler `*.37(v  1 e 2 0 ]
-"54 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/pin_manager.c
+"54 C:\Users\Acer\Desktop\MATHEUS\Matheus - UnB\Embarcada\GitHub\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/pin_manager.c
 [v _IOCBF0_InterruptHandler IOCBF0_InterruptHandler `*.37(v  1 e 2 0 ]
 "55
 [v _IOCBF3_InterruptHandler IOCBF3_InterruptHandler `*.37(v  1 e 2 0 ]
@@ -511,46 +560,127 @@ channel_FVR 31
 [v _IOCBF4_InterruptHandler IOCBF4_InterruptHandler `*.37(v  1 e 2 0 ]
 "57
 [v _IOCBF5_InterruptHandler IOCBF5_InterruptHandler `*.37(v  1 e 2 0 ]
-"57 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/tmr1.c
+"57 C:\Users\Acer\Desktop\MATHEUS\Matheus - UnB\Embarcada\GitHub\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/tmr1.c
 [v _timer1ReloadVal timer1ReloadVal `VEus  1 e 2 0 ]
-"58 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/tmr4.c
+"58 C:\Users\Acer\Desktop\MATHEUS\Matheus - UnB\Embarcada\GitHub\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/tmr4.c
 [v _TMR4_InterruptHandler TMR4_InterruptHandler `*.37(v  1 e 2 0 ]
-"91 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador.X\main.c
+"125 C:\Users\Acer\Desktop\MATHEUS\Matheus - UnB\Embarcada\GitHub\Projeto_Elevador\Projeto_elevador.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"119
+"153
 } 0
-"158
+"229
 [v _gerenciamento gerenciamento `(v  1 e 1 0 ]
 {
-"161
+"337
 } 0
-"152
+"339
+[v _col_up col_up `(v  1 e 1 0 ]
+{
+"363
+} 0
+"400
+[v _min_up min_up `(v  1 e 1 0 ]
+{
+"404
+[v min_up@i i `i  1 a 2 3 ]
+"430
+} 0
+"365
+[v _col_down col_down `(v  1 e 1 0 ]
+{
+"388
+} 0
+"432
+[v _max_down max_down `(v  1 e 1 0 ]
+{
+"435
+[v max_down@i i `i  1 a 2 3 ]
+"466
+} 0
+"1 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\abs.c
+[v _abs abs `(i  1 e 2 0 ]
+{
+[v abs@a a `i  1 p 2 0 ]
+"4
+} 0
+"184 C:\Users\Acer\Desktop\MATHEUS\Matheus - UnB\Embarcada\GitHub\Projeto_Elevador\Projeto_elevador.X\main.c
 [v _controle controle `(v  1 e 1 0 ]
 {
-"156
+"188
+[v controle@count count `i  1 a 2 60 ]
+"194
+[v controle@dutyValue dutyValue `i  1 a 2 58 ]
+"190
+[v controle@max_dutyValue max_dutyValue `i  1 a 2 56 ]
+"191
+[v controle@min_dutyValue min_dutyValue `i  1 a 2 54 ]
+"189
+[v controle@a a `i  1 a 2 52 ]
+"193
+[v controle@route route `i  1 a 2 50 ]
+"192
+[v controle@destiny destiny `i  1 a 2 48 ]
+"227
 } 0
-"112 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/adc.c
+"468
+[v _update update `(v  1 e 1 0 ]
+{
+"522
+[v update@i_1262 i `i  1 a 2 8 ]
+"480
+[v update@i i `i  1 a 2 6 ]
+"506
+[v update@i_1261 i `i  1 a 2 4 ]
+"470
+[v update@aux aux `uc  1 a 1 3 ]
+"556
+} 0
+"99 C:\Users\Acer\Desktop\MATHEUS\Matheus - UnB\Embarcada\GitHub\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/eusart.c
+[v _EUSART_is_rx_ready EUSART_is_rx_ready `(a  1 e 1 0 ]
+{
+"102
+} 0
+"113
+[v _EUSART_Read EUSART_Read `(uc  1 e 1 0 ]
+{
+"130
+} 0
+"15 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v ___wmul@product product `ui  1 a 2 4 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 0 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
+"53
+} 0
+"82 C:\Users\Acer\Desktop\MATHEUS\Matheus - UnB\Embarcada\GitHub\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/pwm3.c
+[v _PWM3_LoadDutyValue PWM3_LoadDutyValue `(v  1 e 1 0 ]
+{
+[v PWM3_LoadDutyValue@dutyValue dutyValue `us  1 p 2 0 ]
+"89
+} 0
+"112 C:\Users\Acer\Desktop\MATHEUS\Matheus - UnB\Embarcada\GitHub\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/adc.c
 [v _ADC_GetConversion ADC_GetConversion `(us  1 e 2 0 ]
 {
-[v ADC_GetConversion@channel channel `E2476  1 a 1 wreg ]
-[v ADC_GetConversion@channel channel `E2476  1 a 1 wreg ]
+[v ADC_GetConversion@channel channel `E2474  1 a 1 wreg ]
+[v ADC_GetConversion@channel channel `E2474  1 a 1 wreg ]
 "115
-[v ADC_GetConversion@channel channel `E2476  1 a 1 3 ]
+[v ADC_GetConversion@channel channel `E2474  1 a 1 3 ]
 "133
 } 0
-"123 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador.X\main.c
+"155 C:\Users\Acer\Desktop\MATHEUS\Matheus - UnB\Embarcada\GitHub\Projeto_Elevador\Projeto_elevador.X\main.c
 [v _comunicacao comunicacao `(v  1 e 1 0 ]
 {
-"129
-[v comunicacao@position position `f  1 a 4 4 ]
-"128
-[v comunicacao@speed speed `f  1 a 4 0 ]
-"127
-[v comunicacao@aux aux `uc  1 a 1 8 ]
-"150
+"161
+[v comunicacao@position position `f  1 a 4 75 ]
+"160
+[v comunicacao@speed speed `f  1 a 4 71 ]
+"182
 } 0
-"10 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\xxtofl.c
+"10 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
 {
 [v ___xxtofl@sign sign `uc  1 a 1 wreg ]
@@ -565,7 +695,7 @@ channel_FVR 31
 [v ___xxtofl@sign sign `uc  1 a 1 12 ]
 "44
 } 0
-"43 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\fltol.c
+"43 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\fltol.c
 [v ___fltol __fltol `(l  1 e 4 0 ]
 {
 "45
@@ -575,20 +705,20 @@ channel_FVR 31
 [v ___fltol@f1 f1 `d  1 p 4 0 ]
 "70
 } 0
-"8 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\sprcmul.c
+"8 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S1473 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S1560 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S1478 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
-[u S1481 . 4 `l 1 i 4 0 `d 1 f 4 0 `S1473 1 fAsBytes 4 0 `S1478 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S1481  1 a 4 38 ]
+[s S1565 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
+[u S1568 . 4 `l 1 i 4 0 `d 1 f 4 0 `S1560 1 fAsBytes 4 0 `S1565 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S1568  1 a 4 38 ]
 "12
 [v ___flmul@grs grs `ul  1 a 4 32 ]
-[s S1550 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[s S1637 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S1553 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S1550 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S1553  1 a 2 42 ]
+[u S1640 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S1637 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S1640  1 a 2 42 ]
 "10
 [v ___flmul@bexp bexp `uc  1 a 1 37 ]
 "11
@@ -600,7 +730,7 @@ channel_FVR 31
 [v ___flmul@a a `d  1 p 4 22 ]
 "205
 } 0
-"4 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\Umul8_16.c
+"4 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
 {
 [v __Umul8_16@multiplier multiplier `uc  1 a 1 wreg ]
@@ -614,7 +744,7 @@ channel_FVR 31
 [v __Umul8_16@multiplier multiplier `uc  1 a 1 8 ]
 "60
 } 0
-"8 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\sprcdiv.c
+"8 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
 [v ___fldiv __fldiv `(d  1 e 4 0 ]
 {
 "21
@@ -634,17 +764,7 @@ channel_FVR 31
 [v ___fldiv@b b `d  1 p 4 48 ]
 "185
 } 0
-"99 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/eusart.c
-[v _EUSART_is_rx_ready EUSART_is_rx_ready `(a  1 e 1 0 ]
-{
-"102
-} 0
-"113
-[v _EUSART_Read EUSART_Read `(uc  1 e 1 0 ]
-{
-"130
-} 0
-"50 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/mcc.c
+"50 C:\Users\Acer\Desktop\MATHEUS\Matheus - UnB\Embarcada\GitHub\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 {
 "64
@@ -654,7 +774,7 @@ channel_FVR 31
 {
 "80
 } 0
-"64 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/tmr4.c
+"64 C:\Users\Acer\Desktop\MATHEUS\Matheus - UnB\Embarcada\GitHub\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/tmr4.c
 [v _TMR4_Initialize TMR4_Initialize `(v  1 e 1 0 ]
 {
 "85
@@ -665,22 +785,22 @@ channel_FVR 31
 [v TMR4_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
 "134
 } 0
-"62 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/tmr2.c
+"62 C:\Users\Acer\Desktop\MATHEUS\Matheus - UnB\Embarcada\GitHub\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/tmr2.c
 [v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
 {
 "77
 } 0
-"63 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/tmr1.c
+"63 C:\Users\Acer\Desktop\MATHEUS\Matheus - UnB\Embarcada\GitHub\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/tmr1.c
 [v _TMR1_Initialize TMR1_Initialize `(v  1 e 1 0 ]
 {
 "84
 } 0
-"64 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/pwm3.c
+"64 C:\Users\Acer\Desktop\MATHEUS\Matheus - UnB\Embarcada\GitHub\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/pwm3.c
 [v _PWM3_Initialize PWM3_Initialize `(v  1 e 1 0 ]
 {
 "80
 } 0
-"60 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/pin_manager.c
+"60 C:\Users\Acer\Desktop\MATHEUS\Matheus - UnB\Embarcada\GitHub\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
 {
 "133
@@ -709,17 +829,17 @@ channel_FVR 31
 [v IOCBF0_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
 "179
 } 0
-"66 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/mcc.c
+"66 C:\Users\Acer\Desktop\MATHEUS\Matheus - UnB\Embarcada\GitHub\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/mcc.c
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 {
 "74
 } 0
-"58 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/fvr.c
+"58 C:\Users\Acer\Desktop\MATHEUS\Matheus - UnB\Embarcada\GitHub\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/fvr.c
 [v _FVR_Initialize FVR_Initialize `(v  1 e 1 0 ]
 {
 "62
 } 0
-"66 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/eusart.c
+"66 C:\Users\Acer\Desktop\MATHEUS\Matheus - UnB\Embarcada\GitHub\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/eusart.c
 [v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
 {
 "92
@@ -742,7 +862,7 @@ channel_FVR 31
 [v EUSART_SetErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
 "167
 } 0
-"65 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/ccp4.c
+"65 C:\Users\Acer\Desktop\MATHEUS\Matheus - UnB\Embarcada\GitHub\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/ccp4.c
 [v _CCP4_Initialize CCP4_Initialize `(v  1 e 1 0 ]
 {
 "87
@@ -753,17 +873,17 @@ channel_FVR 31
 [v CCP4_SetCallBack@customCallBack customCallBack `*.37(v  1 p 2 0 ]
 "106
 } 0
-"67 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/adc.c
+"67 C:\Users\Acer\Desktop\MATHEUS\Matheus - UnB\Embarcada\GitHub\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/adc.c
 [v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
 {
 "83
 } 0
-"52 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/interrupt_manager.c
+"52 C:\Users\Acer\Desktop\MATHEUS\Matheus - UnB\Embarcada\GitHub\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
 {
 "78
 } 0
-"119 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/tmr4.c
+"119 C:\Users\Acer\Desktop\MATHEUS\Matheus - UnB\Embarcada\GitHub\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/tmr4.c
 [v _TMR4_ISR TMR4_ISR `(v  1 e 1 0 ]
 {
 "129
@@ -773,14 +893,14 @@ channel_FVR 31
 {
 "139
 } 0
-"45 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador.X\main.c
+"70 C:\Users\Acer\Desktop\MATHEUS\Matheus - UnB\Embarcada\GitHub\Projeto_Elevador\Projeto_elevador.X\main.c
 [v _send_data send_data `(v  1 e 1 0 ]
 {
-"50
+"75
 [v send_data@i i `i  1 a 2 2 ]
-"62
+"87
 } 0
-"94 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/eusart.c
+"94 C:\Users\Acer\Desktop\MATHEUS\Matheus - UnB\Embarcada\GitHub\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/eusart.c
 [v _EUSART_is_tx_ready EUSART_is_tx_ready `(a  1 e 1 0 ]
 {
 "97
@@ -793,7 +913,7 @@ channel_FVR 31
 [v EUSART_Write@txData txData `uc  1 a 1 0 ]
 "139
 } 0
-"135 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/pin_manager.c
+"135 C:\Users\Acer\Desktop\MATHEUS\Matheus - UnB\Embarcada\GitHub\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_IOC PIN_MANAGER_IOC `(v  1 e 1 0 ]
 {
 "157
@@ -808,12 +928,12 @@ channel_FVR 31
 {
 "277
 } 0
-"79 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador.X\main.c
+"107 C:\Users\Acer\Desktop\MATHEUS\Matheus - UnB\Embarcada\GitHub\Projeto_Elevador\Projeto_elevador.X\main.c
 [v _sensor4 sensor4 `(v  1 e 1 0 ]
 {
-"82
+"111
 } 0
-"222 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/pin_manager.c
+"222 C:\Users\Acer\Desktop\MATHEUS\Matheus - UnB\Embarcada\GitHub\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/pin_manager.c
 [v _IOCBF4_ISR IOCBF4_ISR `(v  1 e 1 0 ]
 {
 "232
@@ -823,12 +943,12 @@ channel_FVR 31
 {
 "247
 } 0
-"74 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador.X\main.c
+"101 C:\Users\Acer\Desktop\MATHEUS\Matheus - UnB\Embarcada\GitHub\Projeto_Elevador\Projeto_elevador.X\main.c
 [v _sensor3 sensor3 `(v  1 e 1 0 ]
 {
-"77
+"105
 } 0
-"192 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/pin_manager.c
+"192 C:\Users\Acer\Desktop\MATHEUS\Matheus - UnB\Embarcada\GitHub\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/pin_manager.c
 [v _IOCBF3_ISR IOCBF3_ISR `(v  1 e 1 0 ]
 {
 "202
@@ -838,12 +958,12 @@ channel_FVR 31
 {
 "217
 } 0
-"69 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador.X\main.c
+"95 C:\Users\Acer\Desktop\MATHEUS\Matheus - UnB\Embarcada\GitHub\Projeto_Elevador\Projeto_elevador.X\main.c
 [v _sensor2 sensor2 `(v  1 e 1 0 ]
 {
-"72
+"99
 } 0
-"162 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/pin_manager.c
+"162 C:\Users\Acer\Desktop\MATHEUS\Matheus - UnB\Embarcada\GitHub\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/pin_manager.c
 [v _IOCBF0_ISR IOCBF0_ISR `(v  1 e 1 0 ]
 {
 "172
@@ -853,12 +973,12 @@ channel_FVR 31
 {
 "187
 } 0
-"64 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador.X\main.c
+"89 C:\Users\Acer\Desktop\MATHEUS\Matheus - UnB\Embarcada\GitHub\Projeto_Elevador\Projeto_elevador.X\main.c
 [v _sensor1 sensor1 `(v  1 e 1 0 ]
 {
-"67
+"93
 } 0
-"89 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/ccp4.c
+"89 C:\Users\Acer\Desktop\MATHEUS\Matheus - UnB\Embarcada\GitHub\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/ccp4.c
 [v _CCP4_CaptureISR CCP4_CaptureISR `(v  1 e 1 0 ]
 {
 [s S737 . 2 `uc 1 ccpr4l 1 0 `uc 1 ccpr4h 1 1 ]
@@ -873,13 +993,13 @@ channel_FVR 31
 {
 "63
 } 0
-"84 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador.X\main.c
+"113 C:\Users\Acer\Desktop\MATHEUS\Matheus - UnB\Embarcada\GitHub\Projeto_Elevador\Projeto_elevador.X\main.c
 [v _get_pulse get_pulse `(v  1 e 1 0 ]
 {
 [v get_pulse@capturedValue capturedValue `us  1 p 2 2 ]
-"88
+"122
 } 0
-"113 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/tmr1.c
+"113 C:\Users\Acer\Desktop\MATHEUS\Matheus - UnB\Embarcada\GitHub\Projeto_Elevador\Projeto_elevador.X\mcc_generated_files/tmr1.c
 [v _TMR1_WriteTimer TMR1_WriteTimer `(v  1 e 1 0 ]
 {
 [v TMR1_WriteTimer@timerVal timerVal `us  1 p 2 0 ]

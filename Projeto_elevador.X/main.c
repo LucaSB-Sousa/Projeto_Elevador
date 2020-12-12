@@ -27,6 +27,15 @@
 void comunicacao ();
 void controle();
 void gerenciamento();
+void col_up();
+void col_down();
+void subir();
+void descer();
+void parar();
+void max_down();
+void min_up();
+void update();
+
 
 //DECLARAï¿½ï¿½O DAS VARIï¿½VEIS:
 int and_dst = 0;                    //Variï¿½vel para armazenas o andar de destino
@@ -36,6 +45,20 @@ int sentido = 0;
 float I_m = 0;
 float temp_mt = 0;
 int aux_tempo = 0;
+int sentido2;
+int andar;
+int distancia;
+
+//Variaveis - gerenciamento
+int fila_up[10] = {0,0,0,0,0,0,0,0,0,0};
+int fila_down[10] = {0,0,0,0,0,0,0,0,0,0};
+int origem_down[10] = {0,0,0,0,0,0,0,0,0,0};
+int origem_up[10] = {0,0,0,0,0,0,0,0,0,0};
+int max_fila_up,max_origem_down,min_origem_up,min_fila_down;
+int out_value=0;
+int and_ating2;
+//------------------------------------------------------------------------------
+
 uint8_t state_motor = 0;
 uint8_t and_ating = 0;
 uint16_t ccp_value = 0;
@@ -65,22 +88,26 @@ void send_data()
 
 void sensor1()
     {
-        and_ating=0;
+        and_ating=1;
+        and_ating2=0;
     }
 
 void sensor2()
     {
-        and_ating=1;
+        and_ating=2;
+        and_ating2=1;
     }
 
 void sensor3()
     {
-        and_ating=2;
+        and_ating=3;
+        and_ating2=2;
     }
 
 void sensor4()
     {
-        and_ating=3;
+        and_ating=4;
+        and_ating2=3;
     }
 
 void get_pulse(uint16_t capturedValue)
@@ -125,21 +152,19 @@ void main(void)
     }
 }
 
-
-
 void comunicacao ()
 {
  //   uint8_t byte_0,byte_1,byte_2,byte_3,byte_4;
  //   uint8_t byte[5];
-    uint8_t aux;// and_dst,and_ating;       
+//    uint8_t aux;// and_dst,and_ating;       
     float speed = distance_1_pulse_mult5/(((float)ccp_value)*conv_second);
     float position = distance_1_pulse_mult2*pulses;
-    if(EUSART_is_rx_ready())
-        {
-            aux= EUSART_Read();
-            and_origem = (int)((aux & 0x0C)>>2);    //Pega os bits 2,3 e os transforma em inteiros
-            and_dst = (int)(aux & 0x02);            //Pega os bits 0,1 e os transforma em inteiros 
-        }
+//    if(EUSART_is_rx_ready())
+//        {
+//            aux= EUSART_Read();
+//            and_origem = (int)((aux & 0x0C)>>2);    //Pega os bits 2,3 e os transforma em inteiros
+//            and_dst = (int)(aux & 0x02);            //Pega os bits 0,1 e os transforma em inteiros 
+//        }
 // OBS PARA LUCAS: TALVEZ Nï¿½O SEJA NECESSï¿½RIO O DESLOCAMENTO >>1 ANALISAR ROTEIRO!!!
 //VERIFICAR SE O VETOR FUNCIONA! SE Nï¿½O FUNCIONAR MUDE A Lï¿½GICA DO ENVIO E DESCOMENTE ABAIXO
 //    byte_0 = ((state_motor<<4)& 0x20)|(and_ating & 0x02);
@@ -148,7 +173,7 @@ void comunicacao ()
 //    byte_3 = 0x80 |((((uint8_t)I_m)>>1)& 0x7F);
 //    byte_4 = 0x80 |((((uint8_t)temp_mt)>>1)& 0x7F);
     
-    byte[0] = ((state_motor<<4)& 0x20)|(and_ating & 0x02);
+    byte[0] = ((state_motor<<4)& 0x20)|(and_ating2 & 0x02);
     byte[1] = 0x80 |((((uint8_t)position)>>1)& 0x7F);  
     byte[2] = 0x80 |((((uint8_t)speed)>>1)& 0x7F);
     byte[3] = 0x80 |((((uint8_t)I_m)>>1)& 0x7F);
@@ -164,7 +189,7 @@ void controle()
     int a = 52;                                 // Valor da aceleraï¿½ï¿½o boa para o motor (cï¿½lculado por torricelli)
     int max_dutyValue = 1023;                   // Valor mï¿½ximo aceito pelo PWM (v = 20 mm/s))
     int min_dutyValue = 256;                    // Valor do PWM para v = 5 mm/s
-    int destiny = 240;                          // Variï¿½vel para receber o andar de destino [OBS: Validar com o Matheus essa variï¿½vel]
+    int destiny = distancia*60;                          // Variï¿½vel para receber o andar de destino [OBS: Validar com o Matheus essa variï¿½vel]
     int route = destiny - 40;                   // Controla o nï¿½mero de pulsos com v = 20 mm/s
     int dutyValue = 0;                          // Inicia dutyValue em zero
     //int pulse = 0;                            // Inicia nï¿½mero de pulsos em zero
@@ -195,178 +220,337 @@ void controle()
         PWM3_LoadDutyValue(dutyValue);          // Envia dutyValue com o valor decrescido de aceleraï¿½ï¿½o do motor
         }
     }
+    update();
+
     PWM3_LoadDutyValue(0);                      // Para o motor
 
 }
 
-void gerenciamento()
+void gerenciamento() {
+    
+    update();
+//
+//
+//  //Ler porta serial
+//
+//                                        if(and_dst>and_origem) /*se a solicitação for de subida*/
+//                                        {
+//                                          int i=0;
+//                                          for(i=8;i>=0;i--) /*organiza a fila de subida*/
+//                                          {
+//                                              if(i==0){
+//                                                  fila_up[1] = fila_up[0];
+//                                                  fila_up[0] = and_dst;
+//
+//                                              }
+//                                              if(i>0){
+//                                                  fila_up[i+1] = fila_up[i];
+//                                              }
+//                                          }
+//
+//                                          for(i=8;i>=0;i--) /*organiza a fila de origem de subida*/
+//                                          {
+//                                              if(i==0){
+//                                                  origem_up[1] = origem_up[0];
+//                                                  origem_up[0] = and_origem;
+//
+//                                              }
+//                                              if(i>0){
+//                                                  origem_up[i+1] = origem_up[i];
+//                                              }
+//                                          }
+//                                        }
+//
+//                                        int i;
+//                                        max_fila_up = fila_up[0];
+//                                        for(i=1;i<=9;i++)   /*define o andar máximo da fila de subida*/
+//                                        {
+//                                                if(fila_up[i]>max_fila_up)
+//                                                {
+//                                                    max_fila_up = fila_up[i];
+//                                                }
+//                                        }
+//                                        if(max_fila_up==0)
+//                                        {
+//                                            max_fila_up=1;
+//                                        }
+//
+//                                        if(and_dst<and_origem)  /*se a solicitação for de descida*/
+//                                        {
+//                                            int i=0;
+//                                          for(i=8;i>=0;i--) /*organiza a fila de descida*/
+//                                          {
+//                                              if(i==0){
+//                                                  fila_down[1] = fila_down[0];
+//                                                  fila_down[0] = and_dst;
+//
+//                                              }
+//                                              if(i>0){
+//                                                  fila_down[i+1] = fila_down[i];
+//                                              }
+//                                          }
+//
+//                                          for(i=8;i>=0;i--) /*organiza a fila de origem para descida*/
+//                                          {
+//                                              if(i==0){
+//                                                  origem_down[1] = origem_down[0];
+//                                                  origem_down[0] = and_origem;
+//                                              }
+//                                              if(i>0){
+//                                                  origem_down[i+1] = origem_down[i];
+//                                              }
+//                                          }
+//                                        }
+//
+//
+//                                        min_fila_down = 4;
+//                                        for(i=0;i<=9;i++)   /*define o menor andar da fila de descida*/
+//                                        {
+//                                            if(fila_down[i]<min_fila_down&&fila_down[i]>0)
+//                                            {
+//                                                min_fila_down = fila_down[i];
+//                                            }
+//                                        }
+//
+//
+//
+           /*se houver solicitação de subida muda o sentido para '1': subida*/
+          if(fila_up[0]!=out_value||fila_up[1]!=out_value||fila_up[2]!=out_value||fila_up[3]!=out_value||fila_up[4]!=out_value||fila_up[5]!=out_value||fila_up[6]!=out_value||fila_up[7]!=out_value||fila_up[8]!=out_value||fila_up[9]!=out_value)
+          {
+            sentido2=1;
+            col_up();
+          }
+
+          /*se houver solicitação de descida muda o sentido para '0': descida*/
+          else if(origem_down[0]!=out_value||origem_down[1]!=out_value||origem_down[2]!=out_value||origem_down[3]!=out_value||origem_down[4]!=out_value||origem_down[5]!=out_value||origem_down[6]!=out_value||origem_down[7]!=out_value||origem_down[8]!=out_value||origem_down[9]!=out_value)
+          {
+            sentido2=0;
+            col_down();
+          }
+
+          /*se não houver nova solicitação muda o sentido para '2': parado*/
+          else
+          {
+            sentido2=2;
+          }
+
+}
+//
+void col_up() /*rotina de subida coletiva*/
+    {
+        while(and_ating!=min_origem_up)
+        {   
+            distancia=abs(and_ating-min_origem_up);
+            if(and_ating>min_origem_up)  /*se estiver acima do andar maximo de origem o elevador desce*/
+            {
+                LATAbits.LATA2 = 0;
+            }
+            if(and_ating<min_origem_up)  /*se estiver abaixo do andar maximo de origem o elevador sobe*/
+            {
+                //Dir_SetHigh();
+                LATAbits.LATA2 = 1;
+            }  
+        }
+        LATAbits.LATA2 = 1;
+        do
+        {   
+            if(and_ating==min_origem_up) /*continua enquanto não atingir o maior andar solicitado*/
+            {
+                min_up();
+                distancia=abs(and_ating-min_origem_up);
+            }
+        }while (and_ating!=max_fila_up);
+    }
+
+void col_down()  /*rotina de descida coletiva*/
+    {
+        while(and_ating!=max_origem_down)  /*continua enquanto não atingir o maior andar de origem para descer uma vez só*/
+        {   
+            distancia = abs(and_ating-max_origem_down);
+            if(and_ating>max_origem_down)  /*se estiver acima do andar maximo de origem o elevador desce*/
+            {
+                LATAbits.LATA2 = 0;
+            }
+            if(and_ating<max_origem_down)  /*se estiver abaixo do andar maximo de origem o elevador sobe*/
+            {
+                LATAbits.LATA2 = 1;
+            }
+        }
+        LATAbits.LATA2 = 0;
+        do
+        {   
+            if(and_ating==max_origem_down)  /*continua enquanto não atingir o menor andar solicitado*/
+            {
+                max_down();
+                distancia=abs(and_ating-max_origem_down);           
+            }
+        }while(and_ating!=min_fila_down);
+    }
+
+//void subir(int andar, int distancia)
+//{
+//    Dir_SetHigh();
+//}
+//
+//void descer(int andar, int distancia)
+//{
+//    Dir_SetLow();
+//}
+
+void min_up()
 {
     
-    int fila_up[10];
-    int fila_down[10];
-    int and_sol[10];
-    int fila_origem[10];
-    
-    //Confere se houve uma nova solicitaï¿½ï¿½o
-    if(and_sol[0]!=and_dst || fila_origem[0]!=and_origem)
+    min_origem_up = 4;
+    int i;
+    for(i=0;i<=9;i++)   /*define o menor andar de origem para subir*/
+    {
+        if(origem_up[i]<min_origem_up&&origem_up[i]>0)
         {
-            if(and_ating<and_sol[0])
-                { //subir 
-                    sentido = 1; 
-                    if(and_origem>and_ating && and_dst>and_origem)
-                        {
-                            fila_up = fila_inicio(and_origem,fila_up)
-                            fila_up = fila_inicio(and_dst,fila_up);
-                        }
-                }
-            if(and_ating>and_sol[0])
-                { //descer 
-                    sentido = 0; 
-                    if(and_origem<and_ating && and_dst<and_origem)
-                        {
-                            fila_down = fila_inicio(and_origem,fila_down);
-                            fila_down = fila_inicio(and_dst,fila_down);
-                        }
-                }
-
-            //Organizar a fila
-
-            //Parar o elevador no primeiro valor da fila
-
-            if(sentido==1 && and_ating==fila_up)
-                {
-                    //parar no and_ating
-                }
-            if(sentido==0 && and_ating==fila_down)
-                {
-                    //parar no and_ating
-                }
-
-//            if(fila_up[0]==max)
-//                {
-//                    fila_up = [0,0,0,0,0,0,0,0,0,0];
-//                    sentido = 0;
-//                }
-//            if(fila_down[0]==min)
-//                {
-//                    fila_down = [0,0,0,0,0,0,0,0,0,0];
-//                }
-
-            //Retroceder fila
-            //Retira o andar de destino solicitado na fila
-            fila_up = fila_retr(fila_up);
-            //Retira o andar de origem solicitado na fila
-            fila_down = fila_retr(fila_down);  
+            min_origem_up = origem_up[i];
         }
-    //Coloca o andar de destino solicitado na fila
-    //and_sol = fila_inicio(and_dst,and_sol);
-    //Coloca o andar de origem solicitado na fila
-    //fila_origem = fila_inicio(and_origem,fila_origem);
-    
-    
-        
-        for(int j=0;j<=9;j++){ 
-                if(and_ating<and_sol[0]){ //subir 
-                    sentido = 1; 
-                    comunicacao();
-                    if(and_origem>and_ating && and_dst>and_ating){
-                    
-                    }
-                }
-            }
-        
-        for(int i=0;i<=10;i++){
-            if(and_origem_up==and_atingido){
-                //parar elevador
-                //colocar andar solicitado nessa origem na fila de subida
-        }  
-            
-    }
-        // colocar em ordem decrescente a fila [2,3,4]
-    }
-    
-    if(and_ating>and_dst){ //descer 
-        sentido = 0;
-        for(int j=0;j<=9;j++){ 
-            if(j==and_sol[j]){
-                break;
-            }
-            if(and_sol[j]<and_ating){
-                fila_down[j] = and_sol[j];
-            }
-        }
-        
-        for(int i=0;i<=10;i++){
-            if(and_origem_down==and_atingido){
-                //parar elevador
-                //colocar andar solicitado nessa origemna fila de descida
-        }
-            
-    }
-        
-    }
-    
-    for(int i=0;i<=10;i++){
-        if(and_origem_down==and_atingido){
-            //parar elevador
+        if(fila_up[i]<min_origem_up&&fila_up[i]>0)
+        {
+            min_origem_up = fila_up[i];
         }
     }
     
-    switch(and_final){
-        case 1:
-            if(and_ating==1){
-                //parar
-            }
-        case 2:
-            if(and_ating==1){
-                //parar
-            }
-        case 3:
-            if(and_ating==1){
-                //parar
-            }
-        case 4:
-            if(and_ating==1){
-                //parar
-            }
-        default:
-            if(and_ating==1){
-                //parar
-            }
-            
+    for(i=0;i<=9;i++)   /*define o menor andar de origem para subir*/
+    {
+        if(origem_up[i]==min_origem_up)
+        {
+            origem_up[i]=out_value;
+        }
+        if(fila_up[i]==min_origem_up)
+        {
+            fila_up[i]=out_value;
+        }
     }
     
+  
+}
+
+void max_down(){
+    
+    max_origem_down = origem_down[0];
+    int i;
+    for(i=1;i<=9;i++)   /*define maior andar solicitando descida*/
+    {
+        if(origem_down[i]>max_origem_down)
+        {
+            max_origem_down = origem_down[i];
+        }
+        if(fila_down[i]>max_origem_down)
+        {
+            max_origem_down = fila_down[i];
+        }
+    }
+    
+    for(i=0;i<=9;i++)   /*define o menor andar de origem para subir*/
+    {
+        if(origem_down[i]==max_origem_down)
+        {
+            origem_down[i]=out_value;
+        }
+        if(fila_up[i]==max_origem_down)
+        {
+            fila_down[i]=out_value;
+        }
+    }
+    
+    if(max_origem_down==0)
+    {
+        max_origem_down=1;
+    }
     
     
 }
 
-int fila_inicio(int andar_dst, int and_s[10]){
-    for(int i=0;i<=9;i++){
-        if(i==0){
-            and_s[1] = and_s[0];
-            and_s[0] = andar_dst
+void update()
+{
+    uint8_t aux;// and_dst,and_ating;
+    if(EUSART_is_rx_ready())
+        {
+            aux= EUSART_Read();
+            and_origem = (int)((aux & 0x0C)>>2);    //Pega os bits 2,3 e os transforma em inteiros
+            and_dst = (int)(aux & 0x02);            //Pega os bits 0,1 e os transforma em inteiros 
         }
-        if(i<0){
-            and_s[i+1] = and_s[i];
-        }
-        if(i==9){
-            break;
+    
+    if(and_dst>and_origem) /*se a solicitação for de subida*/
+    {
+      int i=0;
+      for(i=8;i>=0;i--) /*organiza a fila de subida*/
+      {
+          if(i==0){
+              fila_up[1] = fila_up[0];
+              fila_up[0] = and_dst;
+
+          }
+          if(i>0){
+              fila_up[i+1] = fila_up[i];
+          }
+      }
+
+      for(i=8;i>=0;i--) /*organiza a fila de origem de subida*/
+      {
+          if(i==0){
+              origem_up[1] = origem_up[0];
+              origem_up[0] = and_origem;
+
+          }
+          if(i>0){
+              origem_up[i+1] = origem_up[i];
+          }
+      }
+    }
+
+    int i;
+    max_fila_up = fila_up[0];
+    for(i=1;i<=9;i++)   /*define o andar máximo da fila de subida*/
+    {
+            if(fila_up[i]>max_fila_up)
+            {
+                max_fila_up = fila_up[i];
+            }
+    }
+    if(max_fila_up==0)
+    {
+        max_fila_up=1;
+    }
+
+    if(and_dst<and_origem)  /*se a solicitação for de descida*/
+    {
+        int i=0;
+      for(i=8;i>=0;i--) /*organiza a fila de descida*/
+      {
+          if(i==0){
+              fila_down[1] = fila_down[0];
+              fila_down[0] = and_dst;
+
+          }
+          if(i>0){
+              fila_down[i+1] = fila_down[i];
+          }
+      }
+
+      for(i=8;i>=0;i--) /*organiza a fila de origem para descida*/
+      {
+          if(i==0){
+              origem_down[1] = origem_down[0];
+              origem_down[0] = and_origem;
+          }
+          if(i>0){
+              origem_down[i+1] = origem_down[i];
+          }
+      }
+    }
+
+
+    min_fila_down = 4;
+    for(i=0;i<=9;i++)   /*define o menor andar da fila de descida*/
+    {
+        if(fila_down[i]<min_fila_down&&fila_down[i]>0)
+        {
+            min_fila_down = fila_down[i];
         }
     }
-    return and_s;
-}
- 
-int fila_retr(int and_s[10]){
-    for(int i=0;i<=9;i++){
-        if(i==0){
-            and_s[0] = and_s[1];
-        }
-        if(i<0){
-            and_s[i] = and_s[i+1];
-        }
-        if(i==9){
-            and_s[9] = 0;
-        }
-    }
-    return and_s;
 }
