@@ -147,7 +147,6 @@ void main(void)
     while (1)
     {
        comunicacao ();    // Chama a funï¿½ï¿½o responsï¿½vel por tratar a comunicaï¿½ï¿½o
-       controle();        // Chama a funï¿½ï¿½o responsï¿½vel por tratar o controle do motor
        gerenciamento();   // Chama a funï¿½ï¿½o responsï¿½vel por gerenciar as solicitaï¿½ï¿½es
     }
 }
@@ -181,7 +180,7 @@ void comunicacao ()
 
 }
 
-void controle()
+void controle()                                     //rotina responsável por controlar o motor
 {
     I_m = conv_I*ADC_GetConversion(0);          // Realiza a leitura da corrente, converte para mA usando *conv_I, jï¿½ esta preparado para envio, veja as definiï¿½ï¿½es! (Resoluï¿½ï¿½o da mediï¿½ï¿½o 0.5 mA )
     temp_mt = conv_temp*ADC_GetConversion(1);   // Realiza a leitura da temperatura, converte para C usando *conv_temp, jï¿½ esta preparado para envio, veja as definiï¿½ï¿½es! (Resoluï¿½ï¿½o da mediï¿½ï¿½o 0.1 ï¿½C))
@@ -256,6 +255,7 @@ void gerenciamento() {                          //rotina de gerenciamento do ate
           sentido = 0;
            LATAbits.LATA2 = 0;      //sentido de descida
          }
+     controle();                    //chama rotina responsável por controlar o motor
 
    }
 
@@ -275,7 +275,7 @@ void col_up()                                       //rotina de subida coletiva
                 //Dir_SetHigh();
                 LATAbits.LATA2 = 1;
             }  
-            controle();
+            controle();                             //chama rotina responsável por controlar o motor
         }
         LATAbits.LATA2 = 1;                         //como vai só subir a partir disso, define o sentido como subida
         do                                          //enquanto não atingir o maior andar solicitado
@@ -284,7 +284,7 @@ void col_up()                                       //rotina de subida coletiva
             {
                 min_up();
                 distancia=abs(and_ating-min_origem_up);
-                controle();
+                controle();                         //chama rotina responsável por controlar o motor
             }
         }while (and_ating!=max_fila_up);
     }
@@ -302,7 +302,7 @@ void col_down()                                         //rotina de descida cole
             {
                 LATAbits.LATA2 = 1;
             }
-            controle();
+            controle();                                 //chama rotina responsável por controlar o motor
         }
         LATAbits.LATA2 = 0;                             //como vai só descer a partir disso, define o sentido como descida
         do
@@ -311,7 +311,7 @@ void col_down()                                         //rotina de descida cole
             {
                 max_down();
                 distancia=abs(and_ating-max_origem_down);    //se atingir o andar máximo da fila atualiza o andar máximo e a distância       
-                controle();
+                controle();                                  //chama rotina responsável por controlar o motor
             }
         }while(and_ating!=min_fila_down);
     }
