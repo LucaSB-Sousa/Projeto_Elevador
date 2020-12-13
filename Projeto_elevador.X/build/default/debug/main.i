@@ -4609,10 +4609,10 @@ int andar;
 int distancia;
 
 
-int fila_up[8] = {0,0,0,0,0,0,0,0};
-int fila_down[8] = {0,0,0,0,0,0,0,0};
-int origem_down[8] = {0,0,0,0,0,0,0,0};
-int origem_up[8] = {0,0,0,0,0,0,0,0};
+int fila_up[5] = {0,0,0,0,0};
+int fila_down[5] = {0,0,0,0,0};
+int origem_down[5] = {0,0,0,0,0};
+int origem_up[5] = {0,0,0,0,0};
 int max_fila_up,max_origem_down,min_origem_up,min_fila_down;
 int out_value=0;
 int and_ating2;
@@ -4779,14 +4779,14 @@ void gerenciamento() {
 
 
 
-   if(fila_up[0]!=out_value||fila_up[1]!=out_value||fila_up[2]!=out_value||fila_up[3]!=out_value||fila_up[4]!=out_value||fila_up[5]!=out_value||fila_up[6]!=out_value||fila_up[7]!=out_value)
+   if(fila_up[0]!=out_value||fila_up[1]!=out_value||fila_up[2]!=out_value||fila_up[3]!=out_value||fila_up[4]!=out_value)
    {
      sentido2=1;
      col_up();
    }
 
 
-   else if(origem_down[0]!=out_value||origem_down[1]!=out_value||origem_down[2]!=out_value||origem_down[3]!=out_value||origem_down[4]!=out_value||origem_down[5]!=out_value||origem_down[6]!=out_value||origem_down[7]!=out_value)
+   else if(origem_down[0]!=out_value||origem_down[1]!=out_value||origem_down[2]!=out_value||origem_down[3]!=out_value||origem_down[4]!=out_value)
    {
      sentido2=0;
      col_down();
@@ -4821,6 +4821,7 @@ void col_up()
 
                 LATAbits.LATA2 = 1;
             }
+            controle();
         }
         LATAbits.LATA2 = 1;
         do
@@ -4829,6 +4830,7 @@ void col_up()
             {
                 min_up();
                 distancia=abs(and_ating-min_origem_up);
+                controle();
             }
         }while (and_ating!=max_fila_up);
     }
@@ -4846,6 +4848,7 @@ void col_down()
             {
                 LATAbits.LATA2 = 1;
             }
+            controle();
         }
         LATAbits.LATA2 = 0;
         do
@@ -4854,6 +4857,7 @@ void col_down()
             {
                 max_down();
                 distancia=abs(and_ating-max_origem_down);
+                controle();
             }
         }while(and_ating!=min_fila_down);
     }
@@ -4863,7 +4867,7 @@ void min_up()
 
     min_origem_up = 4;
     int i;
-    for(i=0;i<=7;i++)
+    for(i=0;i<=4;i++)
     {
         if(origem_up[i]<min_origem_up&&origem_up[i]>0)
         {
@@ -4875,7 +4879,7 @@ void min_up()
         }
     }
 
-    for(i=0;i<=7;i++)
+    for(i=0;i<=4;i++)
     {
         if(origem_up[i]==min_origem_up)
         {
@@ -4894,7 +4898,7 @@ void max_down(){
 
     max_origem_down = origem_down[0];
     int i;
-    for(i=1;i<=7;i++)
+    for(i=1;i<=4;i++)
     {
         if(origem_down[i]>max_origem_down)
         {
@@ -4906,7 +4910,7 @@ void max_down(){
         }
     }
 
-    for(i=0;i<=7;i++)
+    for(i=0;i<=4;i++)
     {
         if(origem_down[i]==max_origem_down)
         {
@@ -4941,7 +4945,7 @@ void update()
     if(and_dst>and_origem)
     {
       int i=0;
-      for(i=6;i>=0;i--)
+      for(i=3;i>=0;i--)
       {
           if(i==0){
               fila_up[1] = fila_up[0];
@@ -4953,7 +4957,7 @@ void update()
           }
       }
 
-      for(i=6;i>=0;i--)
+      for(i=3;i>=0;i--)
       {
           if(i==0){
               origem_up[1] = origem_up[0];
@@ -4968,7 +4972,7 @@ void update()
 
     int i;
     max_fila_up = fila_up[0];
-    for(i=1;i<=7;i++)
+    for(i=1;i<=4;i++)
     {
             if(fila_up[i]>max_fila_up)
             {
@@ -4983,7 +4987,7 @@ void update()
     if(and_dst<and_origem)
     {
         int i=0;
-      for(i=6;i>=0;i--)
+      for(i=3;i>=0;i--)
       {
           if(i==0){
               fila_down[1] = fila_down[0];
@@ -4995,7 +4999,7 @@ void update()
           }
       }
 
-      for(i=6;i>=0;i--)
+      for(i=3;i>=0;i--)
       {
           if(i==0){
               origem_down[1] = origem_down[0];
@@ -5009,7 +5013,7 @@ void update()
 
 
     min_fila_down = 4;
-    for(i=0;i<=7;i++)
+    for(i=0;i<=4;i++)
     {
         if(fila_down[i]<min_fila_down&&fila_down[i]>0)
         {

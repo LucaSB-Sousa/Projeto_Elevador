@@ -50,10 +50,10 @@ int andar;
 int distancia;
 
 //Variaveis - gerenciamento
-int fila_up[8] = {0,0,0,0,0,0,0,0};
-int fila_down[8] = {0,0,0,0,0,0,0,0};
-int origem_down[8] = {0,0,0,0,0,0,0,0};
-int origem_up[8] = {0,0,0,0,0,0,0,0};
+int fila_up[5] = {0,0,0,0,0};
+int fila_down[5] = {0,0,0,0,0};
+int origem_down[5] = {0,0,0,0,0};
+int origem_up[5] = {0,0,0,0,0};
 int max_fila_up,max_origem_down,min_origem_up,min_fila_down;
 int out_value=0;
 int and_ating2;
@@ -233,14 +233,14 @@ void gerenciamento() {                          //rotina de gerenciamento do ate
 //    max_down();                                             //atualiza valor maximo de descida
 
     //se houver solicitação de subida muda o sentido para '1': subida
-   if(fila_up[0]!=out_value||fila_up[1]!=out_value||fila_up[2]!=out_value||fila_up[3]!=out_value||fila_up[4]!=out_value||fila_up[5]!=out_value||fila_up[6]!=out_value||fila_up[7]!=out_value)
+   if(fila_up[0]!=out_value||fila_up[1]!=out_value||fila_up[2]!=out_value||fila_up[3]!=out_value||fila_up[4]!=out_value)
    {
      sentido2=1; 
      col_up();  //chama rotina de subida 
    }
 
    //se houver solicitação de descida muda o sentido para '0': descida//
-   else if(origem_down[0]!=out_value||origem_down[1]!=out_value||origem_down[2]!=out_value||origem_down[3]!=out_value||origem_down[4]!=out_value||origem_down[5]!=out_value||origem_down[6]!=out_value||origem_down[7]!=out_value)
+   else if(origem_down[0]!=out_value||origem_down[1]!=out_value||origem_down[2]!=out_value||origem_down[3]!=out_value||origem_down[4]!=out_value)
    {
      sentido2=0;
      col_down();   //chama rotina de descida
@@ -275,6 +275,7 @@ void col_up()                                       //rotina de subida coletiva
                 //Dir_SetHigh();
                 LATAbits.LATA2 = 1;
             }  
+            controle();
         }
         LATAbits.LATA2 = 1;                         //como vai só subir a partir disso, define o sentido como subida
         do                                          //enquanto não atingir o maior andar solicitado
@@ -283,6 +284,7 @@ void col_up()                                       //rotina de subida coletiva
             {
                 min_up();
                 distancia=abs(and_ating-min_origem_up);
+                controle();
             }
         }while (and_ating!=max_fila_up);
     }
@@ -300,6 +302,7 @@ void col_down()                                         //rotina de descida cole
             {
                 LATAbits.LATA2 = 1;
             }
+            controle();
         }
         LATAbits.LATA2 = 0;                             //como vai só descer a partir disso, define o sentido como descida
         do
@@ -308,6 +311,7 @@ void col_down()                                         //rotina de descida cole
             {
                 max_down();
                 distancia=abs(and_ating-max_origem_down);    //se atingir o andar máximo da fila atualiza o andar máximo e a distância       
+                controle();
             }
         }while(and_ating!=min_fila_down);
     }
@@ -317,7 +321,7 @@ void min_up()                                               //rotina que atualiz
     
     min_origem_up = 4;
     int i;
-    for(i=0;i<=7;i++)                                       //define o menor andar solicitando subida
+    for(i=0;i<=4;i++)                                       //define o menor andar solicitando subida
     {
         if(origem_up[i]<min_origem_up&&origem_up[i]>0)
         {
@@ -329,7 +333,7 @@ void min_up()                                               //rotina que atualiz
         }
     }
     
-    for(i=0;i<=7;i++)                                       //retira o valor mínimo da fila de subida
+    for(i=0;i<=4;i++)                                       //retira o valor mínimo da fila de subida
     {
         if(origem_up[i]==min_origem_up)
         {
@@ -348,7 +352,7 @@ void max_down(){                                            //rotina que atualiz
     
     max_origem_down = origem_down[0];
     int i;
-    for(i=1;i<=7;i++)                                       //define maior andar solicitando descida
+    for(i=1;i<=4;i++)                                       //define maior andar solicitando descida
     {
         if(origem_down[i]>max_origem_down)
         {
@@ -360,7 +364,7 @@ void max_down(){                                            //rotina que atualiz
         }
     }
     
-    for(i=0;i<=7;i++)                                       //retira o valor máximo da fila de subida
+    for(i=0;i<=4;i++)                                       //retira o valor máximo da fila de subida
     {
         if(origem_down[i]==max_origem_down)
         {
@@ -395,7 +399,7 @@ void update()                                               //rotina que atualiz
     if(and_dst>and_origem)                                  //se a solicitação for de subida
     {
       int i=0;
-      for(i=6;i>=0;i--)                                     //insere a solicitação na fila de subida
+      for(i=3;i>=0;i--)                                     //insere a solicitação na fila de subida
       {
           if(i==0){
               fila_up[1] = fila_up[0];
@@ -407,7 +411,7 @@ void update()                                               //rotina que atualiz
           }
       }
 
-      for(i=6;i>=0;i--)                                     //insere a solicitação na fila de origem de subida
+      for(i=3;i>=0;i--)                                     //insere a solicitação na fila de origem de subida
       {
           if(i==0){
               origem_up[1] = origem_up[0];
@@ -422,7 +426,7 @@ void update()                                               //rotina que atualiz
 
     int i;
     max_fila_up = fila_up[0];
-    for(i=1;i<=7;i++)                                       //define o andar máximo da fila de subida
+    for(i=1;i<=4;i++)                                       //define o andar máximo da fila de subida
     {
             if(fila_up[i]>max_fila_up)
             {
@@ -437,7 +441,7 @@ void update()                                               //rotina que atualiz
     if(and_dst<and_origem)                                  //se a solicitação for de descida
     {
         int i=0;
-      for(i=6;i>=0;i--)                                     //insere a nova solicitação na fila de descida
+      for(i=3;i>=0;i--)                                     //insere a nova solicitação na fila de descida
       {
           if(i==0){
               fila_down[1] = fila_down[0];
@@ -449,7 +453,7 @@ void update()                                               //rotina que atualiz
           }
       }
 
-      for(i=6;i>=0;i--)                                     //insere a nova solicitação na fila de origem para descida
+      for(i=3;i>=0;i--)                                     //insere a nova solicitação na fila de origem para descida
       {
           if(i==0){
               origem_down[1] = origem_down[0];
@@ -463,7 +467,7 @@ void update()                                               //rotina que atualiz
 
 
     min_fila_down = 4;
-    for(i=0;i<=7;i++)                                       //define o menor andar da fila de descida
+    for(i=0;i<=4;i++)                                       //define o menor andar da fila de descida
     {
         if(fila_down[i]<min_fila_down&&fila_down[i]>0)
         {

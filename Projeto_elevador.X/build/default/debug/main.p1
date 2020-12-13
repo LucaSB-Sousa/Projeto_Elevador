@@ -636,13 +636,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 50: int distancia;
 [v _distancia `i ~T0 @X0 1 e ]
 "53
-[; ;main.c: 53: int fila_up[8] = {0,0,0,0,0,0,0,0};
-[v _fila_up `i ~T0 @X0 -> 8 `i e ]
+[; ;main.c: 53: int fila_up[5] = {0,0,0,0,0};
+[v _fila_up `i ~T0 @X0 -> 5 `i e ]
 [i _fila_up
 :U ..
--> 0 `i
--> 0 `i
--> 0 `i
 -> 0 `i
 -> 0 `i
 -> 0 `i
@@ -651,13 +648,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 "54
-[; ;main.c: 54: int fila_down[8] = {0,0,0,0,0,0,0,0};
-[v _fila_down `i ~T0 @X0 -> 8 `i e ]
+[; ;main.c: 54: int fila_down[5] = {0,0,0,0,0};
+[v _fila_down `i ~T0 @X0 -> 5 `i e ]
 [i _fila_down
 :U ..
--> 0 `i
--> 0 `i
--> 0 `i
 -> 0 `i
 -> 0 `i
 -> 0 `i
@@ -666,13 +660,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 "55
-[; ;main.c: 55: int origem_down[8] = {0,0,0,0,0,0,0,0};
-[v _origem_down `i ~T0 @X0 -> 8 `i e ]
+[; ;main.c: 55: int origem_down[5] = {0,0,0,0,0};
+[v _origem_down `i ~T0 @X0 -> 5 `i e ]
 [i _origem_down
 :U ..
--> 0 `i
--> 0 `i
--> 0 `i
 -> 0 `i
 -> 0 `i
 -> 0 `i
@@ -681,13 +672,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 "56
-[; ;main.c: 56: int origem_up[8] = {0,0,0,0,0,0,0,0};
-[v _origem_up `i ~T0 @X0 -> 8 `i e ]
+[; ;main.c: 56: int origem_up[5] = {0,0,0,0,0};
+[v _origem_up `i ~T0 @X0 -> 5 `i e ]
 [i _origem_up
 :U ..
--> 0 `i
--> 0 `i
--> 0 `i
 -> 0 `i
 -> 0 `i
 -> 0 `i
@@ -1169,8 +1157,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 231:     update();
 [e ( _update ..  ]
 "236
-[; ;main.c: 236:    if(fila_up[0]!=out_value||fila_up[1]!=out_value||fila_up[2]!=out_value||fila_up[3]!=out_value||fila_up[4]!=out_value||fila_up[5]!=out_value||fila_up[6]!=out_value||fila_up[7]!=out_value)
-[e $ ! || || || || || || || != *U + &U _fila_up * -> -> -> 0 `i `ui `ux -> -> # *U &U _fila_up `ui `ux _out_value != *U + &U _fila_up * -> -> -> 1 `i `ui `ux -> -> # *U &U _fila_up `ui `ux _out_value != *U + &U _fila_up * -> -> -> 2 `i `ui `ux -> -> # *U &U _fila_up `ui `ux _out_value != *U + &U _fila_up * -> -> -> 3 `i `ui `ux -> -> # *U &U _fila_up `ui `ux _out_value != *U + &U _fila_up * -> -> -> 4 `i `ui `ux -> -> # *U &U _fila_up `ui `ux _out_value != *U + &U _fila_up * -> -> -> 5 `i `ui `ux -> -> # *U &U _fila_up `ui `ux _out_value != *U + &U _fila_up * -> -> -> 6 `i `ui `ux -> -> # *U &U _fila_up `ui `ux _out_value != *U + &U _fila_up * -> -> -> 7 `i `ui `ux -> -> # *U &U _fila_up `ui `ux _out_value 395  ]
+[; ;main.c: 236:    if(fila_up[0]!=out_value||fila_up[1]!=out_value||fila_up[2]!=out_value||fila_up[3]!=out_value||fila_up[4]!=out_value)
+[e $ ! || || || || != *U + &U _fila_up * -> -> -> 0 `i `ui `ux -> -> # *U &U _fila_up `ui `ux _out_value != *U + &U _fila_up * -> -> -> 1 `i `ui `ux -> -> # *U &U _fila_up `ui `ux _out_value != *U + &U _fila_up * -> -> -> 2 `i `ui `ux -> -> # *U &U _fila_up `ui `ux _out_value != *U + &U _fila_up * -> -> -> 3 `i `ui `ux -> -> # *U &U _fila_up `ui `ux _out_value != *U + &U _fila_up * -> -> -> 4 `i `ui `ux -> -> # *U &U _fila_up `ui `ux _out_value 395  ]
 "237
 [; ;main.c: 237:    {
 {
@@ -1185,9 +1173,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e $U 396  ]
 "243
-[; ;main.c: 243:    else if(origem_down[0]!=out_value||origem_down[1]!=out_value||origem_down[2]!=out_value||origem_down[3]!=out_value||origem_down[4]!=out_value||origem_down[5]!=out_value||origem_down[6]!=out_value||origem_down[7]!=out_value)
+[; ;main.c: 243:    else if(origem_down[0]!=out_value||origem_down[1]!=out_value||origem_down[2]!=out_value||origem_down[3]!=out_value||origem_down[4]!=out_value)
 [e :U 395 ]
-[e $ ! || || || || || || || != *U + &U _origem_down * -> -> -> 0 `i `ui `ux -> -> # *U &U _origem_down `ui `ux _out_value != *U + &U _origem_down * -> -> -> 1 `i `ui `ux -> -> # *U &U _origem_down `ui `ux _out_value != *U + &U _origem_down * -> -> -> 2 `i `ui `ux -> -> # *U &U _origem_down `ui `ux _out_value != *U + &U _origem_down * -> -> -> 3 `i `ui `ux -> -> # *U &U _origem_down `ui `ux _out_value != *U + &U _origem_down * -> -> -> 4 `i `ui `ux -> -> # *U &U _origem_down `ui `ux _out_value != *U + &U _origem_down * -> -> -> 5 `i `ui `ux -> -> # *U &U _origem_down `ui `ux _out_value != *U + &U _origem_down * -> -> -> 6 `i `ui `ux -> -> # *U &U _origem_down `ui `ux _out_value != *U + &U _origem_down * -> -> -> 7 `i `ui `ux -> -> # *U &U _origem_down `ui `ux _out_value 397  ]
+[e $ ! || || || || != *U + &U _origem_down * -> -> -> 0 `i `ui `ux -> -> # *U &U _origem_down `ui `ux _out_value != *U + &U _origem_down * -> -> -> 1 `i `ui `ux -> -> # *U &U _origem_down `ui `ux _out_value != *U + &U _origem_down * -> -> -> 2 `i `ui `ux -> -> # *U &U _origem_down `ui `ux _out_value != *U + &U _origem_down * -> -> -> 3 `i `ui `ux -> -> # *U &U _origem_down `ui `ux _out_value != *U + &U _origem_down * -> -> -> 4 `i `ui `ux -> -> # *U &U _origem_down `ui `ux _out_value 397  ]
 "244
 [; ;main.c: 244:    {
 {
@@ -1283,667 +1271,679 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 405 ]
 "278
-[; ;main.c: 278:         }
+[; ;main.c: 278:             controle();
+[e ( _controle ..  ]
+"279
+[; ;main.c: 279:         }
 }
 [e :U 401 ]
 "266
 [; ;main.c: 266:         while(and_ating!=min_origem_up)
 [e $ != -> _and_ating `i _min_origem_up 402  ]
 [e :U 403 ]
-"279
-[; ;main.c: 279:         LATAbits.LATA2 = 1;
-[e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
 "280
-[; ;main.c: 280:         do
-[e :U 408 ]
+[; ;main.c: 280:         LATAbits.LATA2 = 1;
+[e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
 "281
-[; ;main.c: 281:         {
-{
+[; ;main.c: 281:         do
+[e :U 408 ]
 "282
-[; ;main.c: 282:             if(and_ating==min_origem_up)
-[e $ ! == -> _and_ating `i _min_origem_up 409  ]
-"283
-[; ;main.c: 283:             {
+[; ;main.c: 282:         {
 {
+"283
+[; ;main.c: 283:             if(and_ating==min_origem_up)
+[e $ ! == -> _and_ating `i _min_origem_up 409  ]
 "284
-[; ;main.c: 284:                 min_up();
-[e ( _min_up ..  ]
+[; ;main.c: 284:             {
+{
 "285
-[; ;main.c: 285:                 distancia=abs(and_ating-min_origem_up);
-[e = _distancia ( _abs (1 - -> _and_ating `i _min_origem_up ]
+[; ;main.c: 285:                 min_up();
+[e ( _min_up ..  ]
 "286
-[; ;main.c: 286:             }
+[; ;main.c: 286:                 distancia=abs(and_ating-min_origem_up);
+[e = _distancia ( _abs (1 - -> _and_ating `i _min_origem_up ]
+"287
+[; ;main.c: 287:                 controle();
+[e ( _controle ..  ]
+"288
+[; ;main.c: 288:             }
 }
 [e :U 409 ]
-"287
-[; ;main.c: 287:         }while (and_ating!=max_fila_up);
+"289
+[; ;main.c: 289:         }while (and_ating!=max_fila_up);
 }
 [e $ != -> _and_ating `i _max_fila_up 408  ]
 [e :U 407 ]
-"288
-[; ;main.c: 288:     }
+"290
+[; ;main.c: 290:     }
 [e :UE 400 ]
 }
-"290
-[; ;main.c: 290: void col_down()
+"292
+[; ;main.c: 292: void col_down()
 [v _col_down `(v ~T0 @X0 1 ef ]
-"291
-[; ;main.c: 291:     {
+"293
+[; ;main.c: 293:     {
 {
 [e :U _col_down ]
 [f ]
-"292
-[; ;main.c: 292:         while(and_ating!=max_origem_down)
+"294
+[; ;main.c: 294:         while(and_ating!=max_origem_down)
 [e $U 411  ]
 [e :U 412 ]
-"293
-[; ;main.c: 293:         {
-{
-"294
-[; ;main.c: 294:             distancia = abs(and_ating-max_origem_down);
-[e = _distancia ( _abs (1 - -> _and_ating `i _max_origem_down ]
 "295
-[; ;main.c: 295:             if(and_ating>max_origem_down)
-[e $ ! > -> _and_ating `i _max_origem_down 414  ]
-"296
-[; ;main.c: 296:             {
+[; ;main.c: 295:         {
 {
+"296
+[; ;main.c: 296:             distancia = abs(and_ating-max_origem_down);
+[e = _distancia ( _abs (1 - -> _and_ating `i _max_origem_down ]
 "297
-[; ;main.c: 297:                 LATAbits.LATA2 = 0;
-[e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
+[; ;main.c: 297:             if(and_ating>max_origem_down)
+[e $ ! > -> _and_ating `i _max_origem_down 414  ]
 "298
-[; ;main.c: 298:             }
+[; ;main.c: 298:             {
+{
+"299
+[; ;main.c: 299:                 LATAbits.LATA2 = 0;
+[e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
+"300
+[; ;main.c: 300:             }
 }
 [e :U 414 ]
-"299
-[; ;main.c: 299:             if(and_ating<max_origem_down)
-[e $ ! < -> _and_ating `i _max_origem_down 415  ]
-"300
-[; ;main.c: 300:             {
-{
 "301
-[; ;main.c: 301:                 LATAbits.LATA2 = 1;
-[e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
+[; ;main.c: 301:             if(and_ating<max_origem_down)
+[e $ ! < -> _and_ating `i _max_origem_down 415  ]
 "302
-[; ;main.c: 302:             }
+[; ;main.c: 302:             {
+{
+"303
+[; ;main.c: 303:                 LATAbits.LATA2 = 1;
+[e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
+"304
+[; ;main.c: 304:             }
 }
 [e :U 415 ]
-"303
-[; ;main.c: 303:         }
+"305
+[; ;main.c: 305:             controle();
+[e ( _controle ..  ]
+"306
+[; ;main.c: 306:         }
 }
 [e :U 411 ]
-"292
-[; ;main.c: 292:         while(and_ating!=max_origem_down)
+"294
+[; ;main.c: 294:         while(and_ating!=max_origem_down)
 [e $ != -> _and_ating `i _max_origem_down 412  ]
 [e :U 413 ]
-"304
-[; ;main.c: 304:         LATAbits.LATA2 = 0;
-[e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
-"305
-[; ;main.c: 305:         do
-[e :U 418 ]
-"306
-[; ;main.c: 306:         {
-{
 "307
-[; ;main.c: 307:             if(and_ating==max_origem_down)
-[e $ ! == -> _and_ating `i _max_origem_down 419  ]
+[; ;main.c: 307:         LATAbits.LATA2 = 0;
+[e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
 "308
-[; ;main.c: 308:             {
-{
+[; ;main.c: 308:         do
+[e :U 418 ]
 "309
-[; ;main.c: 309:                 max_down();
-[e ( _max_down ..  ]
+[; ;main.c: 309:         {
+{
 "310
-[; ;main.c: 310:                 distancia=abs(and_ating-max_origem_down);
-[e = _distancia ( _abs (1 - -> _and_ating `i _max_origem_down ]
+[; ;main.c: 310:             if(and_ating==max_origem_down)
+[e $ ! == -> _and_ating `i _max_origem_down 419  ]
 "311
-[; ;main.c: 311:             }
+[; ;main.c: 311:             {
+{
+"312
+[; ;main.c: 312:                 max_down();
+[e ( _max_down ..  ]
+"313
+[; ;main.c: 313:                 distancia=abs(and_ating-max_origem_down);
+[e = _distancia ( _abs (1 - -> _and_ating `i _max_origem_down ]
+"314
+[; ;main.c: 314:                 controle();
+[e ( _controle ..  ]
+"315
+[; ;main.c: 315:             }
 }
 [e :U 419 ]
-"312
-[; ;main.c: 312:         }while(and_ating!=min_fila_down);
+"316
+[; ;main.c: 316:         }while(and_ating!=min_fila_down);
 }
 [e $ != -> _and_ating `i _min_fila_down 418  ]
 [e :U 417 ]
-"313
-[; ;main.c: 313:     }
+"317
+[; ;main.c: 317:     }
 [e :UE 410 ]
 }
-"315
-[; ;main.c: 315: void min_up()
+"319
+[; ;main.c: 319: void min_up()
 [v _min_up `(v ~T0 @X0 1 ef ]
-"316
-[; ;main.c: 316: {
+"320
+[; ;main.c: 320: {
 {
 [e :U _min_up ]
 [f ]
-"318
-[; ;main.c: 318:     min_origem_up = 4;
+"322
+[; ;main.c: 322:     min_origem_up = 4;
 [e = _min_origem_up -> 4 `i ]
-"319
-[; ;main.c: 319:     int i;
+"323
+[; ;main.c: 323:     int i;
 [v _i `i ~T0 @X0 1 a ]
-"320
-[; ;main.c: 320:     for(i=0;i<=7;i++)
+"324
+[; ;main.c: 324:     for(i=0;i<=4;i++)
 {
 [e = _i -> 0 `i ]
-[e $ <= _i -> 7 `i 421  ]
+[e $ <= _i -> 4 `i 421  ]
 [e $U 422  ]
 [e :U 421 ]
-"321
-[; ;main.c: 321:     {
-{
-"322
-[; ;main.c: 322:         if(origem_up[i]<min_origem_up&&origem_up[i]>0)
-[e $ ! && < *U + &U _origem_up * -> -> _i `ui `ux -> -> # *U &U _origem_up `ui `ux _min_origem_up > *U + &U _origem_up * -> -> _i `ui `ux -> -> # *U &U _origem_up `ui `ux -> 0 `i 424  ]
-"323
-[; ;main.c: 323:         {
-{
-"324
-[; ;main.c: 324:             min_origem_up = origem_up[i];
-[e = _min_origem_up *U + &U _origem_up * -> -> _i `ui `ux -> -> # *U &U _origem_up `ui `ux ]
 "325
-[; ;main.c: 325:         }
-}
-[e :U 424 ]
+[; ;main.c: 325:     {
+{
 "326
-[; ;main.c: 326:         if(fila_up[i]<min_origem_up&&fila_up[i]>0)
-[e $ ! && < *U + &U _fila_up * -> -> _i `ui `ux -> -> # *U &U _fila_up `ui `ux _min_origem_up > *U + &U _fila_up * -> -> _i `ui `ux -> -> # *U &U _fila_up `ui `ux -> 0 `i 425  ]
+[; ;main.c: 326:         if(origem_up[i]<min_origem_up&&origem_up[i]>0)
+[e $ ! && < *U + &U _origem_up * -> -> _i `ui `ux -> -> # *U &U _origem_up `ui `ux _min_origem_up > *U + &U _origem_up * -> -> _i `ui `ux -> -> # *U &U _origem_up `ui `ux -> 0 `i 424  ]
 "327
 [; ;main.c: 327:         {
 {
 "328
-[; ;main.c: 328:             min_origem_up = fila_up[i];
-[e = _min_origem_up *U + &U _fila_up * -> -> _i `ui `ux -> -> # *U &U _fila_up `ui `ux ]
+[; ;main.c: 328:             min_origem_up = origem_up[i];
+[e = _min_origem_up *U + &U _origem_up * -> -> _i `ui `ux -> -> # *U &U _origem_up `ui `ux ]
 "329
 [; ;main.c: 329:         }
 }
-[e :U 425 ]
+[e :U 424 ]
 "330
-[; ;main.c: 330:     }
+[; ;main.c: 330:         if(fila_up[i]<min_origem_up&&fila_up[i]>0)
+[e $ ! && < *U + &U _fila_up * -> -> _i `ui `ux -> -> # *U &U _fila_up `ui `ux _min_origem_up > *U + &U _fila_up * -> -> _i `ui `ux -> -> # *U &U _fila_up `ui `ux -> 0 `i 425  ]
+"331
+[; ;main.c: 331:         {
+{
+"332
+[; ;main.c: 332:             min_origem_up = fila_up[i];
+[e = _min_origem_up *U + &U _fila_up * -> -> _i `ui `ux -> -> # *U &U _fila_up `ui `ux ]
+"333
+[; ;main.c: 333:         }
+}
+[e :U 425 ]
+"334
+[; ;main.c: 334:     }
 }
 [e ++ _i -> 1 `i ]
-[e $ <= _i -> 7 `i 421  ]
+[e $ <= _i -> 4 `i 421  ]
 [e :U 422 ]
 }
-"332
-[; ;main.c: 332:     for(i=0;i<=7;i++)
+"336
+[; ;main.c: 336:     for(i=0;i<=4;i++)
 {
 [e = _i -> 0 `i ]
-[e $ <= _i -> 7 `i 426  ]
+[e $ <= _i -> 4 `i 426  ]
 [e $U 427  ]
 [e :U 426 ]
-"333
-[; ;main.c: 333:     {
-{
-"334
-[; ;main.c: 334:         if(origem_up[i]==min_origem_up)
-[e $ ! == *U + &U _origem_up * -> -> _i `ui `ux -> -> # *U &U _origem_up `ui `ux _min_origem_up 429  ]
-"335
-[; ;main.c: 335:         {
-{
-"336
-[; ;main.c: 336:             origem_up[i]=out_value;
-[e = *U + &U _origem_up * -> -> _i `ui `ux -> -> # *U &U _origem_up `ui `ux _out_value ]
 "337
-[; ;main.c: 337:         }
-}
-[e :U 429 ]
+[; ;main.c: 337:     {
+{
 "338
-[; ;main.c: 338:         if(fila_up[i]==min_origem_up)
-[e $ ! == *U + &U _fila_up * -> -> _i `ui `ux -> -> # *U &U _fila_up `ui `ux _min_origem_up 430  ]
+[; ;main.c: 338:         if(origem_up[i]==min_origem_up)
+[e $ ! == *U + &U _origem_up * -> -> _i `ui `ux -> -> # *U &U _origem_up `ui `ux _min_origem_up 429  ]
 "339
 [; ;main.c: 339:         {
 {
 "340
-[; ;main.c: 340:             fila_up[i]=out_value;
-[e = *U + &U _fila_up * -> -> _i `ui `ux -> -> # *U &U _fila_up `ui `ux _out_value ]
+[; ;main.c: 340:             origem_up[i]=out_value;
+[e = *U + &U _origem_up * -> -> _i `ui `ux -> -> # *U &U _origem_up `ui `ux _out_value ]
 "341
 [; ;main.c: 341:         }
 }
-[e :U 430 ]
+[e :U 429 ]
 "342
-[; ;main.c: 342:     }
+[; ;main.c: 342:         if(fila_up[i]==min_origem_up)
+[e $ ! == *U + &U _fila_up * -> -> _i `ui `ux -> -> # *U &U _fila_up `ui `ux _min_origem_up 430  ]
+"343
+[; ;main.c: 343:         {
+{
+"344
+[; ;main.c: 344:             fila_up[i]=out_value;
+[e = *U + &U _fila_up * -> -> _i `ui `ux -> -> # *U &U _fila_up `ui `ux _out_value ]
+"345
+[; ;main.c: 345:         }
+}
+[e :U 430 ]
+"346
+[; ;main.c: 346:     }
 }
 [e ++ _i -> 1 `i ]
-[e $ <= _i -> 7 `i 426  ]
+[e $ <= _i -> 4 `i 426  ]
 [e :U 427 ]
 }
-"345
-[; ;main.c: 345: }
+"349
+[; ;main.c: 349: }
 [e :UE 420 ]
 }
-"347
-[; ;main.c: 347: void max_down(){
+"351
+[; ;main.c: 351: void max_down(){
 [v _max_down `(v ~T0 @X0 1 ef ]
 {
 [e :U _max_down ]
 [f ]
-"349
-[; ;main.c: 349:     max_origem_down = origem_down[0];
+"353
+[; ;main.c: 353:     max_origem_down = origem_down[0];
 [e = _max_origem_down *U + &U _origem_down * -> -> -> 0 `i `ui `ux -> -> # *U &U _origem_down `ui `ux ]
-"350
-[; ;main.c: 350:     int i;
+"354
+[; ;main.c: 354:     int i;
 [v _i `i ~T0 @X0 1 a ]
-"351
-[; ;main.c: 351:     for(i=1;i<=7;i++)
+"355
+[; ;main.c: 355:     for(i=1;i<=4;i++)
 {
 [e = _i -> 1 `i ]
-[e $ <= _i -> 7 `i 432  ]
+[e $ <= _i -> 4 `i 432  ]
 [e $U 433  ]
 [e :U 432 ]
-"352
-[; ;main.c: 352:     {
-{
-"353
-[; ;main.c: 353:         if(origem_down[i]>max_origem_down)
-[e $ ! > *U + &U _origem_down * -> -> _i `ui `ux -> -> # *U &U _origem_down `ui `ux _max_origem_down 435  ]
-"354
-[; ;main.c: 354:         {
-{
-"355
-[; ;main.c: 355:             max_origem_down = origem_down[i];
-[e = _max_origem_down *U + &U _origem_down * -> -> _i `ui `ux -> -> # *U &U _origem_down `ui `ux ]
 "356
-[; ;main.c: 356:         }
-}
-[e :U 435 ]
+[; ;main.c: 356:     {
+{
 "357
-[; ;main.c: 357:         if(fila_down[i]>max_origem_down)
-[e $ ! > *U + &U _fila_down * -> -> _i `ui `ux -> -> # *U &U _fila_down `ui `ux _max_origem_down 436  ]
+[; ;main.c: 357:         if(origem_down[i]>max_origem_down)
+[e $ ! > *U + &U _origem_down * -> -> _i `ui `ux -> -> # *U &U _origem_down `ui `ux _max_origem_down 435  ]
 "358
 [; ;main.c: 358:         {
 {
 "359
-[; ;main.c: 359:             max_origem_down = fila_down[i];
-[e = _max_origem_down *U + &U _fila_down * -> -> _i `ui `ux -> -> # *U &U _fila_down `ui `ux ]
+[; ;main.c: 359:             max_origem_down = origem_down[i];
+[e = _max_origem_down *U + &U _origem_down * -> -> _i `ui `ux -> -> # *U &U _origem_down `ui `ux ]
 "360
 [; ;main.c: 360:         }
 }
-[e :U 436 ]
+[e :U 435 ]
 "361
-[; ;main.c: 361:     }
+[; ;main.c: 361:         if(fila_down[i]>max_origem_down)
+[e $ ! > *U + &U _fila_down * -> -> _i `ui `ux -> -> # *U &U _fila_down `ui `ux _max_origem_down 436  ]
+"362
+[; ;main.c: 362:         {
+{
+"363
+[; ;main.c: 363:             max_origem_down = fila_down[i];
+[e = _max_origem_down *U + &U _fila_down * -> -> _i `ui `ux -> -> # *U &U _fila_down `ui `ux ]
+"364
+[; ;main.c: 364:         }
+}
+[e :U 436 ]
+"365
+[; ;main.c: 365:     }
 }
 [e ++ _i -> 1 `i ]
-[e $ <= _i -> 7 `i 432  ]
+[e $ <= _i -> 4 `i 432  ]
 [e :U 433 ]
 }
-"363
-[; ;main.c: 363:     for(i=0;i<=7;i++)
+"367
+[; ;main.c: 367:     for(i=0;i<=4;i++)
 {
 [e = _i -> 0 `i ]
-[e $ <= _i -> 7 `i 437  ]
+[e $ <= _i -> 4 `i 437  ]
 [e $U 438  ]
 [e :U 437 ]
-"364
-[; ;main.c: 364:     {
-{
-"365
-[; ;main.c: 365:         if(origem_down[i]==max_origem_down)
-[e $ ! == *U + &U _origem_down * -> -> _i `ui `ux -> -> # *U &U _origem_down `ui `ux _max_origem_down 440  ]
-"366
-[; ;main.c: 366:         {
-{
-"367
-[; ;main.c: 367:             origem_down[i]=out_value;
-[e = *U + &U _origem_down * -> -> _i `ui `ux -> -> # *U &U _origem_down `ui `ux _out_value ]
 "368
-[; ;main.c: 368:         }
-}
-[e :U 440 ]
+[; ;main.c: 368:     {
+{
 "369
-[; ;main.c: 369:         if(fila_up[i]==max_origem_down)
-[e $ ! == *U + &U _fila_up * -> -> _i `ui `ux -> -> # *U &U _fila_up `ui `ux _max_origem_down 441  ]
+[; ;main.c: 369:         if(origem_down[i]==max_origem_down)
+[e $ ! == *U + &U _origem_down * -> -> _i `ui `ux -> -> # *U &U _origem_down `ui `ux _max_origem_down 440  ]
 "370
 [; ;main.c: 370:         {
 {
 "371
-[; ;main.c: 371:             fila_down[i]=out_value;
-[e = *U + &U _fila_down * -> -> _i `ui `ux -> -> # *U &U _fila_down `ui `ux _out_value ]
+[; ;main.c: 371:             origem_down[i]=out_value;
+[e = *U + &U _origem_down * -> -> _i `ui `ux -> -> # *U &U _origem_down `ui `ux _out_value ]
 "372
 [; ;main.c: 372:         }
 }
-[e :U 441 ]
+[e :U 440 ]
 "373
-[; ;main.c: 373:     }
+[; ;main.c: 373:         if(fila_up[i]==max_origem_down)
+[e $ ! == *U + &U _fila_up * -> -> _i `ui `ux -> -> # *U &U _fila_up `ui `ux _max_origem_down 441  ]
+"374
+[; ;main.c: 374:         {
+{
+"375
+[; ;main.c: 375:             fila_down[i]=out_value;
+[e = *U + &U _fila_down * -> -> _i `ui `ux -> -> # *U &U _fila_down `ui `ux _out_value ]
+"376
+[; ;main.c: 376:         }
+}
+[e :U 441 ]
+"377
+[; ;main.c: 377:     }
 }
 [e ++ _i -> 1 `i ]
-[e $ <= _i -> 7 `i 437  ]
+[e $ <= _i -> 4 `i 437  ]
 [e :U 438 ]
 }
-"375
-[; ;main.c: 375:     if(max_origem_down==0)
+"379
+[; ;main.c: 379:     if(max_origem_down==0)
 [e $ ! == _max_origem_down -> 0 `i 442  ]
-"376
-[; ;main.c: 376:     {
+"380
+[; ;main.c: 380:     {
 {
-"377
-[; ;main.c: 377:         max_origem_down=1;
+"381
+[; ;main.c: 381:         max_origem_down=1;
 [e = _max_origem_down -> 1 `i ]
-"378
-[; ;main.c: 378:     }
+"382
+[; ;main.c: 382:     }
 }
 [e :U 442 ]
-"381
-[; ;main.c: 381: }
+"385
+[; ;main.c: 385: }
 [e :UE 431 ]
 }
-"383
-[; ;main.c: 383: void update()
+"387
+[; ;main.c: 387: void update()
 [v _update `(v ~T0 @X0 1 ef ]
-"384
-[; ;main.c: 384: {
+"388
+[; ;main.c: 388: {
 {
 [e :U _update ]
 [f ]
-"385
-[; ;main.c: 385:     uint8_t aux;
-[v _aux `uc ~T0 @X0 1 a ]
-"386
-[; ;main.c: 386:     if(EUSART_is_rx_ready())
-[e $ ! != -> ( _EUSART_is_rx_ready ..  `i -> 0 `i 444  ]
-"387
-[; ;main.c: 387:         {
-{
-"388
-[; ;main.c: 388:             aux= EUSART_Read();
-[e = _aux ( _EUSART_Read ..  ]
 "389
-[; ;main.c: 389:             and_origem = (int)((aux & 0x0C)>>2);
-[e = _and_origem >> & -> _aux `i -> 12 `i -> 2 `i ]
+[; ;main.c: 389:     uint8_t aux;
+[v _aux `uc ~T0 @X0 1 a ]
+"390
+[; ;main.c: 390:     if(EUSART_is_rx_ready())
+[e $ ! != -> ( _EUSART_is_rx_ready ..  `i -> 0 `i 444  ]
 "391
-[; ;main.c: 391:             and_dst = (int)(aux & 0x02);
-[e = _and_dst & -> _aux `i -> 2 `i ]
+[; ;main.c: 391:         {
+{
+"392
+[; ;main.c: 392:             aux= EUSART_Read();
+[e = _aux ( _EUSART_Read ..  ]
 "393
-[; ;main.c: 393:         }
+[; ;main.c: 393:             and_origem = (int)((aux & 0x0C)>>2);
+[e = _and_origem >> & -> _aux `i -> 12 `i -> 2 `i ]
+"395
+[; ;main.c: 395:             and_dst = (int)(aux & 0x02);
+[e = _and_dst & -> _aux `i -> 2 `i ]
+"397
+[; ;main.c: 397:         }
 }
 [e :U 444 ]
-"395
-[; ;main.c: 395:     if(and_dst>and_origem)
+"399
+[; ;main.c: 399:     if(and_dst>and_origem)
 [e $ ! > _and_dst _and_origem 445  ]
-"396
-[; ;main.c: 396:     {
+"400
+[; ;main.c: 400:     {
 {
-"397
-[; ;main.c: 397:       int i=0;
+"401
+[; ;main.c: 401:       int i=0;
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-"398
-[; ;main.c: 398:       for(i=6;i>=0;i--)
+"402
+[; ;main.c: 402:       for(i=3;i>=0;i--)
 {
-[e = _i -> 6 `i ]
+[e = _i -> 3 `i ]
 [e $ >= _i -> 0 `i 446  ]
 [e $U 447  ]
 [e :U 446 ]
-"399
-[; ;main.c: 399:       {
+"403
+[; ;main.c: 403:       {
 {
-"400
-[; ;main.c: 400:           if(i==0){
+"404
+[; ;main.c: 404:           if(i==0){
 [e $ ! == _i -> 0 `i 449  ]
 {
-"401
-[; ;main.c: 401:               fila_up[1] = fila_up[0];
+"405
+[; ;main.c: 405:               fila_up[1] = fila_up[0];
 [e = *U + &U _fila_up * -> -> -> 1 `i `ui `ux -> -> # *U &U _fila_up `ui `ux *U + &U _fila_up * -> -> -> 0 `i `ui `ux -> -> # *U &U _fila_up `ui `ux ]
-"402
-[; ;main.c: 402:               fila_up[0] = and_dst+1;
+"406
+[; ;main.c: 406:               fila_up[0] = and_dst+1;
 [e = *U + &U _fila_up * -> -> -> 0 `i `ui `ux -> -> # *U &U _fila_up `ui `ux + _and_dst -> 1 `i ]
-"404
-[; ;main.c: 404:           }
+"408
+[; ;main.c: 408:           }
 }
 [e :U 449 ]
-"405
-[; ;main.c: 405:           if(i>0){
+"409
+[; ;main.c: 409:           if(i>0){
 [e $ ! > _i -> 0 `i 450  ]
 {
-"406
-[; ;main.c: 406:               fila_up[i+1] = fila_up[i];
+"410
+[; ;main.c: 410:               fila_up[i+1] = fila_up[i];
 [e = *U + &U _fila_up * -> -> + _i -> 1 `i `ui `ux -> -> # *U &U _fila_up `ui `ux *U + &U _fila_up * -> -> _i `ui `ux -> -> # *U &U _fila_up `ui `ux ]
-"407
-[; ;main.c: 407:           }
+"411
+[; ;main.c: 411:           }
 }
 [e :U 450 ]
-"408
-[; ;main.c: 408:       }
+"412
+[; ;main.c: 412:       }
 }
 [e -- _i -> 1 `i ]
 [e $ >= _i -> 0 `i 446  ]
 [e :U 447 ]
 }
-"410
-[; ;main.c: 410:       for(i=6;i>=0;i--)
+"414
+[; ;main.c: 414:       for(i=3;i>=0;i--)
 {
-[e = _i -> 6 `i ]
+[e = _i -> 3 `i ]
 [e $ >= _i -> 0 `i 451  ]
 [e $U 452  ]
 [e :U 451 ]
-"411
-[; ;main.c: 411:       {
+"415
+[; ;main.c: 415:       {
 {
-"412
-[; ;main.c: 412:           if(i==0){
+"416
+[; ;main.c: 416:           if(i==0){
 [e $ ! == _i -> 0 `i 454  ]
 {
-"413
-[; ;main.c: 413:               origem_up[1] = origem_up[0];
+"417
+[; ;main.c: 417:               origem_up[1] = origem_up[0];
 [e = *U + &U _origem_up * -> -> -> 1 `i `ui `ux -> -> # *U &U _origem_up `ui `ux *U + &U _origem_up * -> -> -> 0 `i `ui `ux -> -> # *U &U _origem_up `ui `ux ]
-"414
-[; ;main.c: 414:               origem_up[0] = and_origem+1;
+"418
+[; ;main.c: 418:               origem_up[0] = and_origem+1;
 [e = *U + &U _origem_up * -> -> -> 0 `i `ui `ux -> -> # *U &U _origem_up `ui `ux + _and_origem -> 1 `i ]
-"416
-[; ;main.c: 416:           }
+"420
+[; ;main.c: 420:           }
 }
 [e :U 454 ]
-"417
-[; ;main.c: 417:           if(i>0){
+"421
+[; ;main.c: 421:           if(i>0){
 [e $ ! > _i -> 0 `i 455  ]
 {
-"418
-[; ;main.c: 418:               origem_up[i+1] = origem_up[i];
+"422
+[; ;main.c: 422:               origem_up[i+1] = origem_up[i];
 [e = *U + &U _origem_up * -> -> + _i -> 1 `i `ui `ux -> -> # *U &U _origem_up `ui `ux *U + &U _origem_up * -> -> _i `ui `ux -> -> # *U &U _origem_up `ui `ux ]
-"419
-[; ;main.c: 419:           }
+"423
+[; ;main.c: 423:           }
 }
 [e :U 455 ]
-"420
-[; ;main.c: 420:       }
+"424
+[; ;main.c: 424:       }
 }
 [e -- _i -> 1 `i ]
 [e $ >= _i -> 0 `i 451  ]
 [e :U 452 ]
 }
-"421
-[; ;main.c: 421:     }
+"425
+[; ;main.c: 425:     }
 }
 [e :U 445 ]
-"423
-[; ;main.c: 423:     int i;
+"427
+[; ;main.c: 427:     int i;
 [v _i `i ~T0 @X0 1 a ]
-"424
-[; ;main.c: 424:     max_fila_up = fila_up[0];
+"428
+[; ;main.c: 428:     max_fila_up = fila_up[0];
 [e = _max_fila_up *U + &U _fila_up * -> -> -> 0 `i `ui `ux -> -> # *U &U _fila_up `ui `ux ]
-"425
-[; ;main.c: 425:     for(i=1;i<=7;i++)
+"429
+[; ;main.c: 429:     for(i=1;i<=4;i++)
 {
 [e = _i -> 1 `i ]
-[e $ <= _i -> 7 `i 456  ]
+[e $ <= _i -> 4 `i 456  ]
 [e $U 457  ]
 [e :U 456 ]
-"426
-[; ;main.c: 426:     {
-{
-"427
-[; ;main.c: 427:             if(fila_up[i]>max_fila_up)
-[e $ ! > *U + &U _fila_up * -> -> _i `ui `ux -> -> # *U &U _fila_up `ui `ux _max_fila_up 459  ]
-"428
-[; ;main.c: 428:             {
-{
-"429
-[; ;main.c: 429:                 max_fila_up = fila_up[i];
-[e = _max_fila_up *U + &U _fila_up * -> -> _i `ui `ux -> -> # *U &U _fila_up `ui `ux ]
 "430
-[; ;main.c: 430:             }
+[; ;main.c: 430:     {
+{
+"431
+[; ;main.c: 431:             if(fila_up[i]>max_fila_up)
+[e $ ! > *U + &U _fila_up * -> -> _i `ui `ux -> -> # *U &U _fila_up `ui `ux _max_fila_up 459  ]
+"432
+[; ;main.c: 432:             {
+{
+"433
+[; ;main.c: 433:                 max_fila_up = fila_up[i];
+[e = _max_fila_up *U + &U _fila_up * -> -> _i `ui `ux -> -> # *U &U _fila_up `ui `ux ]
+"434
+[; ;main.c: 434:             }
 }
 [e :U 459 ]
-"431
-[; ;main.c: 431:     }
-}
-[e ++ _i -> 1 `i ]
-[e $ <= _i -> 7 `i 456  ]
-[e :U 457 ]
-}
-"432
-[; ;main.c: 432:     if(max_fila_up==0)
-[e $ ! == _max_fila_up -> 0 `i 460  ]
-"433
-[; ;main.c: 433:     {
-{
-"434
-[; ;main.c: 434:         max_fila_up=1;
-[e = _max_fila_up -> 1 `i ]
 "435
 [; ;main.c: 435:     }
 }
-[e :U 460 ]
+[e ++ _i -> 1 `i ]
+[e $ <= _i -> 4 `i 456  ]
+[e :U 457 ]
+}
+"436
+[; ;main.c: 436:     if(max_fila_up==0)
+[e $ ! == _max_fila_up -> 0 `i 460  ]
 "437
-[; ;main.c: 437:     if(and_dst<and_origem)
-[e $ ! < _and_dst _and_origem 461  ]
-"438
-[; ;main.c: 438:     {
+[; ;main.c: 437:     {
 {
+"438
+[; ;main.c: 438:         max_fila_up=1;
+[e = _max_fila_up -> 1 `i ]
 "439
-[; ;main.c: 439:         int i=0;
+[; ;main.c: 439:     }
+}
+[e :U 460 ]
+"441
+[; ;main.c: 441:     if(and_dst<and_origem)
+[e $ ! < _and_dst _and_origem 461  ]
+"442
+[; ;main.c: 442:     {
+{
+"443
+[; ;main.c: 443:         int i=0;
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-"440
-[; ;main.c: 440:       for(i=6;i>=0;i--)
+"444
+[; ;main.c: 444:       for(i=3;i>=0;i--)
 {
-[e = _i -> 6 `i ]
+[e = _i -> 3 `i ]
 [e $ >= _i -> 0 `i 462  ]
 [e $U 463  ]
 [e :U 462 ]
-"441
-[; ;main.c: 441:       {
+"445
+[; ;main.c: 445:       {
 {
-"442
-[; ;main.c: 442:           if(i==0){
+"446
+[; ;main.c: 446:           if(i==0){
 [e $ ! == _i -> 0 `i 465  ]
 {
-"443
-[; ;main.c: 443:               fila_down[1] = fila_down[0];
+"447
+[; ;main.c: 447:               fila_down[1] = fila_down[0];
 [e = *U + &U _fila_down * -> -> -> 1 `i `ui `ux -> -> # *U &U _fila_down `ui `ux *U + &U _fila_down * -> -> -> 0 `i `ui `ux -> -> # *U &U _fila_down `ui `ux ]
-"444
-[; ;main.c: 444:               fila_down[0] = and_dst+1;
+"448
+[; ;main.c: 448:               fila_down[0] = and_dst+1;
 [e = *U + &U _fila_down * -> -> -> 0 `i `ui `ux -> -> # *U &U _fila_down `ui `ux + _and_dst -> 1 `i ]
-"446
-[; ;main.c: 446:           }
+"450
+[; ;main.c: 450:           }
 }
 [e :U 465 ]
-"447
-[; ;main.c: 447:           if(i>0){
+"451
+[; ;main.c: 451:           if(i>0){
 [e $ ! > _i -> 0 `i 466  ]
 {
-"448
-[; ;main.c: 448:               fila_down[i+1] = fila_down[i];
+"452
+[; ;main.c: 452:               fila_down[i+1] = fila_down[i];
 [e = *U + &U _fila_down * -> -> + _i -> 1 `i `ui `ux -> -> # *U &U _fila_down `ui `ux *U + &U _fila_down * -> -> _i `ui `ux -> -> # *U &U _fila_down `ui `ux ]
-"449
-[; ;main.c: 449:           }
+"453
+[; ;main.c: 453:           }
 }
 [e :U 466 ]
-"450
-[; ;main.c: 450:       }
+"454
+[; ;main.c: 454:       }
 }
 [e -- _i -> 1 `i ]
 [e $ >= _i -> 0 `i 462  ]
 [e :U 463 ]
 }
-"452
-[; ;main.c: 452:       for(i=6;i>=0;i--)
+"456
+[; ;main.c: 456:       for(i=3;i>=0;i--)
 {
-[e = _i -> 6 `i ]
+[e = _i -> 3 `i ]
 [e $ >= _i -> 0 `i 467  ]
 [e $U 468  ]
 [e :U 467 ]
-"453
-[; ;main.c: 453:       {
+"457
+[; ;main.c: 457:       {
 {
-"454
-[; ;main.c: 454:           if(i==0){
+"458
+[; ;main.c: 458:           if(i==0){
 [e $ ! == _i -> 0 `i 470  ]
 {
-"455
-[; ;main.c: 455:               origem_down[1] = origem_down[0];
+"459
+[; ;main.c: 459:               origem_down[1] = origem_down[0];
 [e = *U + &U _origem_down * -> -> -> 1 `i `ui `ux -> -> # *U &U _origem_down `ui `ux *U + &U _origem_down * -> -> -> 0 `i `ui `ux -> -> # *U &U _origem_down `ui `ux ]
-"456
-[; ;main.c: 456:               origem_down[0] = and_origem+1;
+"460
+[; ;main.c: 460:               origem_down[0] = and_origem+1;
 [e = *U + &U _origem_down * -> -> -> 0 `i `ui `ux -> -> # *U &U _origem_down `ui `ux + _and_origem -> 1 `i ]
-"457
-[; ;main.c: 457:           }
+"461
+[; ;main.c: 461:           }
 }
 [e :U 470 ]
-"458
-[; ;main.c: 458:           if(i>0){
+"462
+[; ;main.c: 462:           if(i>0){
 [e $ ! > _i -> 0 `i 471  ]
 {
-"459
-[; ;main.c: 459:               origem_down[i+1] = origem_down[i];
+"463
+[; ;main.c: 463:               origem_down[i+1] = origem_down[i];
 [e = *U + &U _origem_down * -> -> + _i -> 1 `i `ui `ux -> -> # *U &U _origem_down `ui `ux *U + &U _origem_down * -> -> _i `ui `ux -> -> # *U &U _origem_down `ui `ux ]
-"460
-[; ;main.c: 460:           }
+"464
+[; ;main.c: 464:           }
 }
 [e :U 471 ]
-"461
-[; ;main.c: 461:       }
+"465
+[; ;main.c: 465:       }
 }
 [e -- _i -> 1 `i ]
 [e $ >= _i -> 0 `i 467  ]
 [e :U 468 ]
 }
-"462
-[; ;main.c: 462:     }
+"466
+[; ;main.c: 466:     }
 }
 [e :U 461 ]
-"465
-[; ;main.c: 465:     min_fila_down = 4;
+"469
+[; ;main.c: 469:     min_fila_down = 4;
 [e = _min_fila_down -> 4 `i ]
-"466
-[; ;main.c: 466:     for(i=0;i<=7;i++)
+"470
+[; ;main.c: 470:     for(i=0;i<=4;i++)
 {
 [e = _i -> 0 `i ]
-[e $ <= _i -> 7 `i 472  ]
+[e $ <= _i -> 4 `i 472  ]
 [e $U 473  ]
 [e :U 472 ]
-"467
-[; ;main.c: 467:     {
-{
-"468
-[; ;main.c: 468:         if(fila_down[i]<min_fila_down&&fila_down[i]>0)
-[e $ ! && < *U + &U _fila_down * -> -> _i `ui `ux -> -> # *U &U _fila_down `ui `ux _min_fila_down > *U + &U _fila_down * -> -> _i `ui `ux -> -> # *U &U _fila_down `ui `ux -> 0 `i 475  ]
-"469
-[; ;main.c: 469:         {
-{
-"470
-[; ;main.c: 470:             min_fila_down = fila_down[i];
-[e = _min_fila_down *U + &U _fila_down * -> -> _i `ui `ux -> -> # *U &U _fila_down `ui `ux ]
 "471
-[; ;main.c: 471:         }
+[; ;main.c: 471:     {
+{
+"472
+[; ;main.c: 472:         if(fila_down[i]<min_fila_down&&fila_down[i]>0)
+[e $ ! && < *U + &U _fila_down * -> -> _i `ui `ux -> -> # *U &U _fila_down `ui `ux _min_fila_down > *U + &U _fila_down * -> -> _i `ui `ux -> -> # *U &U _fila_down `ui `ux -> 0 `i 475  ]
+"473
+[; ;main.c: 473:         {
+{
+"474
+[; ;main.c: 474:             min_fila_down = fila_down[i];
+[e = _min_fila_down *U + &U _fila_down * -> -> _i `ui `ux -> -> # *U &U _fila_down `ui `ux ]
+"475
+[; ;main.c: 475:         }
 }
 [e :U 475 ]
-"472
-[; ;main.c: 472:     }
+"476
+[; ;main.c: 476:     }
 }
 [e ++ _i -> 1 `i ]
-[e $ <= _i -> 7 `i 472  ]
+[e $ <= _i -> 4 `i 472  ]
 [e :U 473 ]
 }
-"474
-[; ;main.c: 474:     min_up();
+"478
+[; ;main.c: 478:     min_up();
 [e ( _min_up ..  ]
-"475
-[; ;main.c: 475:     max_down();
+"479
+[; ;main.c: 479:     max_down();
 [e ( _max_down ..  ]
-"476
-[; ;main.c: 476: }
+"480
+[; ;main.c: 480: }
 [e :UE 443 ]
 }
