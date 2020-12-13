@@ -50,10 +50,10 @@ int andar;
 int distancia;
 
 //Variaveis - gerenciamento
-int fila_up[10] = {0,0,0,0,0,0,0,0,0,0};
-int fila_down[10] = {0,0,0,0,0,0,0,0,0,0};
-int origem_down[10] = {0,0,0,0,0,0,0,0,0,0};
-int origem_up[10] = {0,0,0,0,0,0,0,0,0,0};
+int fila_up[8] = {0,0,0,0,0,0,0,0};
+int fila_down[8] = {0,0,0,0,0,0,0,0};
+int origem_down[8] = {0,0,0,0,0,0,0,0};
+int origem_up[8] = {0,0,0,0,0,0,0,0};
 int max_fila_up,max_origem_down,min_origem_up,min_fila_down;
 int out_value=0;
 int and_ating2;
@@ -86,28 +86,28 @@ void send_data()
         }
 	}
 
-void sensor1()
+void sensor1()                          //trata interrupção do primeiro sensor
     {
-        and_ating=1;
-        and_ating2=0;
+        and_ating=1;                    //atualiza variavel usada no gerenciamento (de 1 a 4)
+        and_ating2=0;                   //atualiza variavel usada na comunicação (de 0 a 3)
     }
 
-void sensor2()
+void sensor2()                          //trata interrupção do segundo sensor
     {
-        and_ating=2;
-        and_ating2=1;
+        and_ating=2;                    //atualiza variavel usada no gerenciamento (de 1 a 4)
+        and_ating2=1;                   //atualiza variavel usada na comunicação (de 0 a 3)
     }
 
-void sensor3()
+void sensor3()                          //trata interrupção do terceiro sensor
     {
-        and_ating=3;
-        and_ating2=2;
+        and_ating=3;                    //atualiza variavel usada no gerenciamento (de 1 a 4)
+        and_ating2=2;                   //atualiza variavel usada na comunicação (de 0 a 3)
     }
 
-void sensor4()
+void sensor4()                          //trata interrupção do quarto sensor
     {
-        and_ating=4;
-        and_ating2=3;
+        and_ating=4;                    //atualiza variavel usada no gerenciamento (de 1 a 4)
+        and_ating2=3;                   //atualiza variavel usada na comunicação (de 0 a 3)
     }
 
 void get_pulse(uint16_t capturedValue)
@@ -226,142 +226,60 @@ void controle()
 
 }
 
-void gerenciamento() {
+void gerenciamento() {                          //rotina de gerenciamento do atendimento às solicitações
     
-    update();
-//
-//
-//  //Ler porta serial
-//
-//                                        if(and_dst>and_origem) /*se a solicitação for de subida*/
-//                                        {
-//                                          int i=0;
-//                                          for(i=8;i>=0;i--) /*organiza a fila de subida*/
-//                                          {
-//                                              if(i==0){
-//                                                  fila_up[1] = fila_up[0];
-//                                                  fila_up[0] = and_dst;
-//
-//                                              }
-//                                              if(i>0){
-//                                                  fila_up[i+1] = fila_up[i];
-//                                              }
-//                                          }
-//
-//                                          for(i=8;i>=0;i--) /*organiza a fila de origem de subida*/
-//                                          {
-//                                              if(i==0){
-//                                                  origem_up[1] = origem_up[0];
-//                                                  origem_up[0] = and_origem;
-//
-//                                              }
-//                                              if(i>0){
-//                                                  origem_up[i+1] = origem_up[i];
-//                                              }
-//                                          }
-//                                        }
-//
-//                                        int i;
-//                                        max_fila_up = fila_up[0];
-//                                        for(i=1;i<=9;i++)   /*define o andar máximo da fila de subida*/
-//                                        {
-//                                                if(fila_up[i]>max_fila_up)
-//                                                {
-//                                                    max_fila_up = fila_up[i];
-//                                                }
-//                                        }
-//                                        if(max_fila_up==0)
-//                                        {
-//                                            max_fila_up=1;
-//                                        }
-//
-//                                        if(and_dst<and_origem)  /*se a solicitação for de descida*/
-//                                        {
-//                                            int i=0;
-//                                          for(i=8;i>=0;i--) /*organiza a fila de descida*/
-//                                          {
-//                                              if(i==0){
-//                                                  fila_down[1] = fila_down[0];
-//                                                  fila_down[0] = and_dst;
-//
-//                                              }
-//                                              if(i>0){
-//                                                  fila_down[i+1] = fila_down[i];
-//                                              }
-//                                          }
-//
-//                                          for(i=8;i>=0;i--) /*organiza a fila de origem para descida*/
-//                                          {
-//                                              if(i==0){
-//                                                  origem_down[1] = origem_down[0];
-//                                                  origem_down[0] = and_origem;
-//                                              }
-//                                              if(i>0){
-//                                                  origem_down[i+1] = origem_down[i];
-//                                              }
-//                                          }
-//                                        }
-//
-//
-//                                        min_fila_down = 4;
-//                                        for(i=0;i<=9;i++)   /*define o menor andar da fila de descida*/
-//                                        {
-//                                            if(fila_down[i]<min_fila_down&&fila_down[i]>0)
-//                                            {
-//                                                min_fila_down = fila_down[i];
-//                                            }
-//                                        }
-//
-//
-//
-           /*se houver solicitação de subida muda o sentido para '1': subida*/
-          if(fila_up[0]!=out_value||fila_up[1]!=out_value||fila_up[2]!=out_value||fila_up[3]!=out_value||fila_up[4]!=out_value||fila_up[5]!=out_value||fila_up[6]!=out_value||fila_up[7]!=out_value||fila_up[8]!=out_value||fila_up[9]!=out_value)
-          {
-            sentido2=1;
-            col_up();
-          }
+    update();   //chama rotina que atualiza filas
+//    min_up();                                               //atualiza valor minimo de subida
+//    max_down();                                             //atualiza valor maximo de descida
 
-          /*se houver solicitação de descida muda o sentido para '0': descida*/
-          else if(origem_down[0]!=out_value||origem_down[1]!=out_value||origem_down[2]!=out_value||origem_down[3]!=out_value||origem_down[4]!=out_value||origem_down[5]!=out_value||origem_down[6]!=out_value||origem_down[7]!=out_value||origem_down[8]!=out_value||origem_down[9]!=out_value)
-          {
-            sentido2=0;
-            col_down();
-          }
+    //se houver solicitação de subida muda o sentido para '1': subida
+   if(fila_up[0]!=out_value||fila_up[1]!=out_value||fila_up[2]!=out_value||fila_up[3]!=out_value||fila_up[4]!=out_value||fila_up[5]!=out_value||fila_up[6]!=out_value||fila_up[7]!=out_value)
+   {
+     sentido2=1; 
+     col_up();  //chama rotina de subida 
+   }
 
-          /*se não houver nova solicitação muda o sentido para '2': parado*/
-          else
-          {
-            sentido2=2;
-            distancia=abs(and_ating-1);
-             if(and_ating > 1)
-                {
-                 sentido = 0;
-                  LATAbits.LATA2 = 0;
-                }
+   //se houver solicitação de descida muda o sentido para '0': descida//
+   else if(origem_down[0]!=out_value||origem_down[1]!=out_value||origem_down[2]!=out_value||origem_down[3]!=out_value||origem_down[4]!=out_value||origem_down[5]!=out_value||origem_down[6]!=out_value||origem_down[7]!=out_value)
+   {
+     sentido2=0;
+     col_down();   //chama rotina de descida
+   }
 
-          }
+   //se não houver nova solicitação muda o sentido para '2': parado//
+   else
+   {
+     sentido2=2;
+     distancia=abs(and_ating-1);    //distancia = distancia entre o elevador e o andar mais baixo
+      if(and_ating > 1)             //se o elevador estiver acima do andar mais baixo desce o elevador
+         {
+          sentido = 0;
+           LATAbits.LATA2 = 0;      //sentido de descida
+         }
+
+   }
 
 }
 //
-void col_up() /*rotina de subida coletiva*/
+void col_up()                                       //rotina de subida coletiva
     {
-        while(and_ating!=min_origem_up)
+        while(and_ating!=min_origem_up)             //enquanto não atingir o andar mais baixo para começãr a atender as outras solicitações de subida
         {   
-            distancia=abs(and_ating-min_origem_up);
-            if(and_ating>min_origem_up)  /*se estiver acima do andar maximo de origem o elevador desce*/
+            distancia=abs(and_ating-min_origem_up); //atualiza a distância
+            if(and_ating>min_origem_up)             //se estiver acima do andar maximo de origem o elevador desce
             {
                 LATAbits.LATA2 = 0;
             }
-            if(and_ating<min_origem_up)  /*se estiver abaixo do andar maximo de origem o elevador sobe*/
+            if(and_ating<min_origem_up)             //se estiver abaixo do andar maximo de origem o elevador sobe
             {
                 //Dir_SetHigh();
                 LATAbits.LATA2 = 1;
             }  
         }
-        LATAbits.LATA2 = 1;
-        do
+        LATAbits.LATA2 = 1;                         //como vai só subir a partir disso, define o sentido como subida
+        do                                          //enquanto não atingir o maior andar solicitado
         {   
-            if(and_ating==min_origem_up) /*continua enquanto não atingir o maior andar solicitado*/
+            if(and_ating==min_origem_up)            //se atingir o andar mínimo da fila atualiza o andar mínimo e a distância
             {
                 min_up();
                 distancia=abs(and_ating-min_origem_up);
@@ -369,47 +287,37 @@ void col_up() /*rotina de subida coletiva*/
         }while (and_ating!=max_fila_up);
     }
 
-void col_down()  /*rotina de descida coletiva*/
+void col_down()                                         //rotina de descida coletiva
     {
-        while(and_ating!=max_origem_down)  /*continua enquanto não atingir o maior andar de origem para descer uma vez só*/
+        while(and_ating!=max_origem_down)               //enquanto não atingir o maior andar de origem para descer uma vez só
         {   
-            distancia = abs(and_ating-max_origem_down);
-            if(and_ating>max_origem_down)  /*se estiver acima do andar maximo de origem o elevador desce*/
+            distancia = abs(and_ating-max_origem_down); //atualiza a distância
+            if(and_ating>max_origem_down)               //se estiver acima do andar maximo de origem o elevador desce
             {
                 LATAbits.LATA2 = 0;
             }
-            if(and_ating<max_origem_down)  /*se estiver abaixo do andar maximo de origem o elevador sobe*/
+            if(and_ating<max_origem_down)               //se estiver abaixo do andar maximo de origem o elevador sobe
             {
                 LATAbits.LATA2 = 1;
             }
         }
-        LATAbits.LATA2 = 0;
+        LATAbits.LATA2 = 0;                             //como vai só descer a partir disso, define o sentido como descida
         do
         {   
-            if(and_ating==max_origem_down)  /*continua enquanto não atingir o menor andar solicitado*/
+            if(and_ating==max_origem_down)              //enquanto não atingir o menor andar solicitado
             {
                 max_down();
-                distancia=abs(and_ating-max_origem_down);           
+                distancia=abs(and_ating-max_origem_down);    //se atingir o andar máximo da fila atualiza o andar máximo e a distância       
             }
         }while(and_ating!=min_fila_down);
     }
 
-//void subir(int andar, int distancia)
-//{
-//    Dir_SetHigh();
-//}
-//
-//void descer(int andar, int distancia)
-//{
-//    Dir_SetLow();
-//}
-
-void min_up()
+void min_up()                                               //rotina que atualiza o mínimo andar com solicitação de subida
 {
     
     min_origem_up = 4;
     int i;
-    for(i=0;i<=9;i++)   /*define o menor andar de origem para subir*/
+    for(i=0;i<=7;i++)                                       //define o menor andar solicitando subida
     {
         if(origem_up[i]<min_origem_up&&origem_up[i]>0)
         {
@@ -421,7 +329,7 @@ void min_up()
         }
     }
     
-    for(i=0;i<=9;i++)   /*define o menor andar de origem para subir*/
+    for(i=0;i<=7;i++)                                       //retira o valor mínimo da fila de subida
     {
         if(origem_up[i]==min_origem_up)
         {
@@ -436,11 +344,11 @@ void min_up()
   
 }
 
-void max_down(){
+void max_down(){                                            //rotina que atualiza o máximo andar com solicitação para descida
     
     max_origem_down = origem_down[0];
     int i;
-    for(i=1;i<=9;i++)   /*define maior andar solicitando descida*/
+    for(i=1;i<=7;i++)                                       //define maior andar solicitando descida
     {
         if(origem_down[i]>max_origem_down)
         {
@@ -452,7 +360,7 @@ void max_down(){
         }
     }
     
-    for(i=0;i<=9;i++)   /*define o menor andar de origem para subir*/
+    for(i=0;i<=7;i++)                                       //retira o valor máximo da fila de subida
     {
         if(origem_down[i]==max_origem_down)
         {
@@ -464,32 +372,34 @@ void max_down(){
         }
     }
     
-    if(max_origem_down==0)
-    {
+    if(max_origem_down==0)                                  //como definimos os andares de '1' a '4' o resto da fila começa com '0'
+    {                                                       //se o valor mínimo der '0', define como '1', que definimos como o andar mais baixo    
         max_origem_down=1;
     }
     
     
 }
 
-void update()
+void update()                                               //rotina que atualiza as filas
 {
-    uint8_t aux;// and_dst,and_ating;
-    if(EUSART_is_rx_ready())
+    uint8_t aux;                           
+    if(EUSART_is_rx_ready())                                //lê novas solicitações             
         {
             aux= EUSART_Read();
-            and_origem = (int)((aux & 0x0C)>>2);    //Pega os bits 2,3 e os transforma em inteiros
-            and_dst = (int)(aux & 0x02);            //Pega os bits 0,1 e os transforma em inteiros 
+            and_origem = (int)((aux & 0x0C)>>2);            //Pega os bits 2,3 e os transforma em inteiros
+//            and_origem = and_origem + 1;
+            and_dst = (int)(aux & 0x02);                    //Pega os bits 0,1 e os transforma em inteiros 
+//            and_dst = and_dst + 1;
         }
     
-    if(and_dst>and_origem) /*se a solicitação for de subida*/
+    if(and_dst>and_origem)                                  //se a solicitação for de subida
     {
       int i=0;
-      for(i=8;i>=0;i--) /*organiza a fila de subida*/
+      for(i=6;i>=0;i--)                                     //insere a solicitação na fila de subida
       {
           if(i==0){
               fila_up[1] = fila_up[0];
-              fila_up[0] = and_dst;
+              fila_up[0] = and_dst+1;
 
           }
           if(i>0){
@@ -497,11 +407,11 @@ void update()
           }
       }
 
-      for(i=8;i>=0;i--) /*organiza a fila de origem de subida*/
+      for(i=6;i>=0;i--)                                     //insere a solicitação na fila de origem de subida
       {
           if(i==0){
               origem_up[1] = origem_up[0];
-              origem_up[0] = and_origem;
+              origem_up[0] = and_origem+1;
 
           }
           if(i>0){
@@ -512,7 +422,7 @@ void update()
 
     int i;
     max_fila_up = fila_up[0];
-    for(i=1;i<=9;i++)   /*define o andar máximo da fila de subida*/
+    for(i=1;i<=7;i++)                                       //define o andar máximo da fila de subida
     {
             if(fila_up[i]>max_fila_up)
             {
@@ -524,14 +434,14 @@ void update()
         max_fila_up=1;
     }
 
-    if(and_dst<and_origem)  /*se a solicitação for de descida*/
+    if(and_dst<and_origem)                                  //se a solicitação for de descida
     {
         int i=0;
-      for(i=8;i>=0;i--) /*organiza a fila de descida*/
+      for(i=6;i>=0;i--)                                     //insere a nova solicitação na fila de descida
       {
           if(i==0){
               fila_down[1] = fila_down[0];
-              fila_down[0] = and_dst;
+              fila_down[0] = and_dst+1;
 
           }
           if(i>0){
@@ -539,11 +449,11 @@ void update()
           }
       }
 
-      for(i=8;i>=0;i--) /*organiza a fila de origem para descida*/
+      for(i=6;i>=0;i--)                                     //insere a nova solicitação na fila de origem para descida
       {
           if(i==0){
               origem_down[1] = origem_down[0];
-              origem_down[0] = and_origem;
+              origem_down[0] = and_origem+1;
           }
           if(i>0){
               origem_down[i+1] = origem_down[i];
@@ -553,11 +463,14 @@ void update()
 
 
     min_fila_down = 4;
-    for(i=0;i<=9;i++)   /*define o menor andar da fila de descida*/
+    for(i=0;i<=7;i++)                                       //define o menor andar da fila de descida
     {
         if(fila_down[i]<min_fila_down&&fila_down[i]>0)
         {
             min_fila_down = fila_down[i];
         }
     }
+    
+    min_up();                                               //atualiza valor minimo de subida
+    max_down();                                             //atualiza valor maximo de descida
 }

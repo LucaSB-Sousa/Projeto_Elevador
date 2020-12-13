@@ -1,7 +1,7 @@
 // Arquivo para teste da comunicação serial
 wait 10 ms
 
-02
+06
 
 //wait 100 ms
 

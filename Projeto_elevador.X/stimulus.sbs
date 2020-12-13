@@ -29,9 +29,9 @@ cyc
 
 RCREG
 Message
-
+0
 2
-C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador.X\serial_com.txt
+C:\Users\Acer\Desktop\MATHEUS\Matheus - UnB\Embarcada\GitHub\Projeto_Elevador\Projeto_elevador.X\serial_com.txt
 Pkt
 Yes
 
@@ -42,30 +42,30 @@ Yes
 ## ASYNCH
 Pin
 RB0
-Set Low
+Toggle
 
-
+Sensor - andar atingido '1'
 -1
 --
 Pin
 RB3
 Toggle
 
-
+Sensor - andar atingido '2'
 -1
 --
 Pin
 RB4
-Set Low
+Toggle
 
-
+Sensor - andar atingido '3'
 -1
 --
 Pin
 RB5
-Set Low
+Toggle
 
-
+Sensor - andar atingido '4''
 -1
 --
 Pin
@@ -85,5 +85,5 @@ Set Voltage
 &
 ## ADVANCEDSCL
 
-1
+0
 &
