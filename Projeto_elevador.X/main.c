@@ -332,6 +332,13 @@ void gerenciamento() {
           else
           {
             sentido2=2;
+            distancia=abs(and_ating-1);
+             if(and_ating > 1)
+                {
+                 sentido = 0;
+                  LATAbits.LATA2 = 0;
+                }
+
           }
 
 }
