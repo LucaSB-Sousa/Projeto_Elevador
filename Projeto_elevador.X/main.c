@@ -180,21 +180,20 @@ void comunicacao ()
 
 }
 
-void controle()                                     //rotina responsável por controlar o motor
+void controle()                                 //rotina responsável por controlar o motor
 {
     I_m = conv_I*ADC_GetConversion(0);          // Realiza a leitura da corrente, converte para mA usando *conv_I, jï¿½ esta preparado para envio, veja as definiï¿½ï¿½es! (Resoluï¿½ï¿½o da mediï¿½ï¿½o 0.5 mA )
     temp_mt = conv_temp*ADC_GetConversion(1);   // Realiza a leitura da temperatura, converte para C usando *conv_temp, jï¿½ esta preparado para envio, veja as definiï¿½ï¿½es! (Resoluï¿½ï¿½o da mediï¿½ï¿½o 0.1 ï¿½C))
     int count = 0;                              // Contador responsï¿½vel pelos loops
-    int a = 52;                                 // Valor da aceleraï¿½ï¿½o boa para o motor (cï¿½lculado por torricelli)
-    int max_dutyValue = 1023;                   // Valor mï¿½ximo aceito pelo PWM (v = 20 mm/s))
-    int min_dutyValue = 256;                    // Valor do PWM para v = 5 mm/s
-    int destiny = distancia*60;                          // Variï¿½vel para receber o andar de destino [OBS: Validar com o Matheus essa variï¿½vel]
+    int a = 26;                                 // Valor da aceleraï¿½ï¿½o boa para o motor (cï¿½lculado por torricelli)
+    int max_dutyValue = 612;                    // Valor mï¿½ximo aceito pelo PWM (v = 20 mm/s))
+    int min_dutyValue = 153;                    // Valor do PWM para v = 5 mm/s
+    int destiny = distancia*60;                 // Variï¿½vel para receber o andar de destino [OBS: Validar com o Matheus essa variï¿½vel]
     int route = destiny - 40;                   // Controla o nï¿½mero de pulsos com v = 20 mm/s
     int dutyValue = 0;                          // Inicia dutyValue em zero
-    //int pulse = 0;                            // Inicia nï¿½mero de pulsos em zero
+    int tempo_espera = 2000;
 
     for(count = 0; count < 20; count++){        // Loop responsï¿½vel pela aceleraï¿½ï¿½o do motor
-        //pulse+=1;                               // Contador para nï¿½mero de pulsos
         dutyValue+=a;                           // Adiciona valor de aceleraï¿½ï¿½o no dutyValue
         if(dutyValue > max_dutyValue){          // Comparaï¿½ï¿½o se o valor de dutyValue nï¿½o ultrapassa o mï¿½ximo permitido
             PWM3_LoadDutyValue(max_dutyValue);  // Caso sim, esse valor ï¿½ substituï¿½do pelo valor mï¿½ximo
@@ -205,24 +204,23 @@ void controle()                                     //rotina responsável por con
     }
     count = 0;                                  // Reinicia o contador para o prï¿½ximo loop
     for(count = 0; count < route ; count++){    // Loop responsï¿½vel pela velocidade mï¿½xima constante
-        //pulse+=1;                               // Contador de pulsos
         PWM3_LoadDutyValue(max_dutyValue);      // Envia max_dutyValue para o PWM
     }
     
     count = 0;                                  // Reinicia o contador para o prï¿½ximo loop
     for(count = 0; count < 20; count++){        // Loop responsï¿½vel pela desaceleraï¿½ï¿½o do motor
-        //pulse+=1;                               // Contador de pulsos
         dutyValue-=a;                           // Subtrai valor da aceleraï¿½ï¿½o do dutyValue
-        if(dutyValue < min_dutyValue){          // Comparaï¿½ï¿½o se o valor de dutyValue nï¿½o ultrapassa o mï¿½nimo permitido na desaceleraï¿½ï¿½o
+        if(dutyValue < min_dutyValue){          // Comparação se o valor de dutyValue não ultrapassa o mínimo permitido na desaceleraï¿½ï¿½o
             PWM3_LoadDutyValue(min_dutyValue);  // Caso sim, esse valor ï¿½ substituï¿½do pelo valor mï¿½nimo para v = 5 mm/s
         }else{                                  // Else
         PWM3_LoadDutyValue(dutyValue);          // Envia dutyValue com o valor decrescido de aceleraï¿½ï¿½o do motor
         }
+    }    
+    PWM3_LoadDutyValue(0);                      // Para o motor
+    for(count = 0; count = tempo_espera; count++){
+        continue;
     }
     update();
-
-    PWM3_LoadDutyValue(0);                      // Para o motor
-
 }
 
 void gerenciamento() {                          //rotina de gerenciamento do atendimento às solicitações
