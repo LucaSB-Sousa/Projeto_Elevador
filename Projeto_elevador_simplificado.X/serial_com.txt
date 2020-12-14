@@ -1,0 +1,24 @@
+// Arquivo para teste da comunicação serial
+wait 10 ms
+
+06
+
+//wait 100 ms
+
+//CA
+
+//wait 100 ms
+
+//42
+
+//wait 100 ms
+
+//65
+
+//wait 100 ms
+
+//40
+
+//wait 100 ms
+
+//63

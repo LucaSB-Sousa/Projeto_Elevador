@@ -1,0 +1,89 @@
+## SCL Builder Setup File: Do not edit!!
+
+## VERSION: MPLAB X
+## FORMAT:  v2.00.01
+## DEVICE:  PIC16F1827
+
+## PINREGACTIONS
+cyc
+No Repeat
+--
+&
+## ADVPINREGACTIONS
+--
+&
+--
+COND1
+Any
+
+
+
+0
+cyc
+
+--
+&
+## CLOCK
+&
+## STIMULUSFILE
+
+RCREG
+Message
+0
+2
+C:\Users\Acer\Desktop\MATHEUS\Matheus - UnB\Embarcada\GitHub\Projeto_Elevador\Projeto_elevador.X\serial_com.txt
+Pkt
+Yes
+
+--
+&
+## RESPONSEFILE
+&
+## ASYNCH
+Pin
+RB0
+Toggle
+
+Sensor - andar atingido '1'
+-1
+--
+Pin
+RB3
+Toggle
+
+Sensor - andar atingido '2'
+-1
+--
+Pin
+RB4
+Toggle
+
+Sensor - andar atingido '3'
+-1
+--
+Pin
+RB5
+Toggle
+
+Sensor - andar atingido '4''
+-1
+--
+Pin
+AN0
+Set Voltage
+1 V
+
+-1
+--
+Pin
+AN1
+Set Voltage
+1 V
+
+-1
+--
+&
+## ADVANCEDSCL
+
+0
+&
