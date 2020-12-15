@@ -1,0 +1,1038 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PIC14E ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F1827 ]
+[d frameptr 6 ]
+"85 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\mcc_generated_files/adc.c
+[e E2476 . `uc
+Im 0
+Temp 1
+channel_Temp 29
+channel_DAC 30
+channel_FVR 31
+]
+"176 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\main.c
+[e E2599 . `uc
+Im 0
+Temp 1
+channel_Temp 29
+channel_DAC 30
+channel_FVR 31
+]
+"43 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\fltol.c
+[v ___fltol __fltol `(l  1 e 4 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"15 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
+"6 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"53 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\main.c
+[v _send_data send_data `(v  1 e 1 0 ]
+"73
+[v _delay_2s delay_2s `(v  1 e 1 0 ]
+"83
+[v _sensor1 sensor1 `(v  1 e 1 0 ]
+"88
+[v _sensor2 sensor2 `(v  1 e 1 0 ]
+"93
+[v _sensor3 sensor3 `(v  1 e 1 0 ]
+"98
+[v _sensor4 sensor4 `(v  1 e 1 0 ]
+"103
+[v _get_pulse get_pulse `(v  1 e 1 0 ]
+"115
+[v _main main `(v  1 e 1 0 ]
+"145
+[v _comunicacao comunicacao `(v  1 e 1 0 ]
+"174
+[v _controle controle `(v  1 e 1 0 ]
+"198
+[v _movimento movimento `(v  1 e 1 0 ]
+"67 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\mcc_generated_files/adc.c
+[v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
+"112
+[v _ADC_GetConversion ADC_GetConversion `(us  1 e 2 0 ]
+"60 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\mcc_generated_files/ccp4.c
+[v _CCP4_DefaultCallBack CCP4_DefaultCallBack `(v  1 s 1 CCP4_DefaultCallBack ]
+"65
+[v _CCP4_Initialize CCP4_Initialize `(v  1 e 1 0 ]
+"89
+[v _CCP4_CaptureISR CCP4_CaptureISR `(v  1 e 1 0 ]
+"104
+[v _CCP4_SetCallBack CCP4_SetCallBack `(v  1 e 1 0 ]
+"64 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\mcc_generated_files/epwm1.c
+[v _EPWM1_Initialize EPWM1_Initialize `(v  1 e 1 0 ]
+"90
+[v _EPWM1_LoadDutyValue EPWM1_LoadDutyValue `(v  1 e 1 0 ]
+"66 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\mcc_generated_files/eusart.c
+[v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
+"94
+[v _EUSART_is_tx_ready EUSART_is_tx_ready `(a  1 e 1 0 ]
+"99
+[v _EUSART_is_rx_ready EUSART_is_rx_ready `(a  1 e 1 0 ]
+"113
+[v _EUSART_Read EUSART_Read `(uc  1 e 1 0 ]
+"132
+[v _EUSART_Write EUSART_Write `(v  1 e 1 0 ]
+"144
+[v _EUSART_DefaultFramingErrorHandler EUSART_DefaultFramingErrorHandler `(v  1 e 1 0 ]
+"146
+[v _EUSART_DefaultOverrunErrorHandler EUSART_DefaultOverrunErrorHandler `(v  1 e 1 0 ]
+"154
+[v _EUSART_DefaultErrorHandler EUSART_DefaultErrorHandler `(v  1 e 1 0 ]
+"157
+[v _EUSART_SetFramingErrorHandler EUSART_SetFramingErrorHandler `(v  1 e 1 0 ]
+"161
+[v _EUSART_SetOverrunErrorHandler EUSART_SetOverrunErrorHandler `(v  1 e 1 0 ]
+"165
+[v _EUSART_SetErrorHandler EUSART_SetErrorHandler `(v  1 e 1 0 ]
+"58 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\mcc_generated_files/fvr.c
+[v _FVR_Initialize FVR_Initialize `(v  1 e 1 0 ]
+"52 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
+"50 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+"68
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+"78
+[v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
+"60 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+"135
+[v _PIN_MANAGER_IOC PIN_MANAGER_IOC `(v  1 e 1 0 ]
+"162
+[v _IOCBF0_ISR IOCBF0_ISR `(v  1 e 1 0 ]
+"177
+[v _IOCBF0_SetInterruptHandler IOCBF0_SetInterruptHandler `(v  1 e 1 0 ]
+"184
+[v _IOCBF0_DefaultInterruptHandler IOCBF0_DefaultInterruptHandler `(v  1 e 1 0 ]
+"192
+[v _IOCBF3_ISR IOCBF3_ISR `(v  1 e 1 0 ]
+"207
+[v _IOCBF3_SetInterruptHandler IOCBF3_SetInterruptHandler `(v  1 e 1 0 ]
+"214
+[v _IOCBF3_DefaultInterruptHandler IOCBF3_DefaultInterruptHandler `(v  1 e 1 0 ]
+"222
+[v _IOCBF4_ISR IOCBF4_ISR `(v  1 e 1 0 ]
+"237
+[v _IOCBF4_SetInterruptHandler IOCBF4_SetInterruptHandler `(v  1 e 1 0 ]
+"244
+[v _IOCBF4_DefaultInterruptHandler IOCBF4_DefaultInterruptHandler `(v  1 e 1 0 ]
+"252
+[v _IOCBF5_ISR IOCBF5_ISR `(v  1 e 1 0 ]
+"267
+[v _IOCBF5_SetInterruptHandler IOCBF5_SetInterruptHandler `(v  1 e 1 0 ]
+"274
+[v _IOCBF5_DefaultInterruptHandler IOCBF5_DefaultInterruptHandler `(v  1 e 1 0 ]
+"64 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\mcc_generated_files/pwm3.c
+[v _PWM3_Initialize PWM3_Initialize `(v  1 e 1 0 ]
+"82
+[v _PWM3_LoadDutyValue PWM3_LoadDutyValue `(v  1 e 1 0 ]
+"63 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\mcc_generated_files/tmr1.c
+[v _TMR1_Initialize TMR1_Initialize `(v  1 e 1 0 ]
+"113
+[v _TMR1_WriteTimer TMR1_WriteTimer `(v  1 e 1 0 ]
+"62 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\mcc_generated_files/tmr2.c
+[v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
+"64 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\mcc_generated_files/tmr4.c
+[v _TMR4_Initialize TMR4_Initialize `(v  1 e 1 0 ]
+"119
+[v _TMR4_ISR TMR4_ISR `(v  1 e 1 0 ]
+"132
+[v _TMR4_SetInterruptHandler TMR4_SetInterruptHandler `(v  1 e 1 0 ]
+"136
+[v _TMR4_DefaultInterruptHandler TMR4_DefaultInterruptHandler `(v  1 e 1 0 ]
+"64 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\mcc_generated_files/tmr6.c
+[v _TMR6_Initialize TMR6_Initialize `(v  1 e 1 0 ]
+"108
+[v _TMR6_WriteTimer TMR6_WriteTimer `(v  1 e 1 0 ]
+"119
+[v _TMR6_ISR TMR6_ISR `(v  1 e 1 0 ]
+"132
+[v _TMR6_SetInterruptHandler TMR6_SetInterruptHandler `(v  1 e 1 0 ]
+"136
+[v _TMR6_DefaultInterruptHandler TMR6_DefaultInterruptHandler `(v  1 e 1 0 ]
+[s S601 . 1 `uc 1 IOCIF 1 0 :1:0 
+`uc 1 INTF 1 0 :1:1 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 IOCIE 1 0 :1:3 
+`uc 1 INTE 1 0 :1:4 
+`uc 1 TMR0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+"374 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1827.h
+[s S610 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 T0IE 1 0 :1:5 
+]
+[u S615 . 1 `S601 1 . 1 0 `S610 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES615  1 e 1 @11 ]
+[s S68 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 SSP1IF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+`uc 1 TMR1GIF 1 0 :1:7 
+]
+"570
+[u S77 . 1 `S68 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES77  1 e 1 @17 ]
+[s S415 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 TMR4IF 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 TMR6IF 1 0 :1:3 
+`uc 1 CCP3IF 1 0 :1:4 
+`uc 1 CCP4IF 1 0 :1:5 
+]
+"681
+[u S422 . 1 `S415 1 . 1 0 ]
+[v _PIR3bits PIR3bits `VES422  1 e 1 @19 ]
+"759
+[v _TMR1L TMR1L `VEuc  1 e 1 @22 ]
+"779
+[v _TMR1H TMR1H `VEuc  1 e 1 @23 ]
+"799
+[v _T1CON T1CON `VEuc  1 e 1 @24 ]
+[s S264 . 1 `uc 1 TMR1ON 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 nT1SYNC 1 0 :1:2 
+`uc 1 T1OSCEN 1 0 :1:3 
+`uc 1 T1CKPS0 1 0 :1:4 
+`uc 1 T1CKPS1 1 0 :1:5 
+`uc 1 TMR1CS0 1 0 :1:6 
+`uc 1 TMR1CS1 1 0 :1:7 
+]
+"821
+[s S273 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 T1CKPS 1 0 :2:4 
+`uc 1 TMR1CS 1 0 :2:6 
+]
+[u S277 . 1 `S264 1 . 1 0 `S273 1 . 1 0 ]
+[v _T1CONbits T1CONbits `VES277  1 e 1 @24 ]
+"871
+[v _T1GCON T1GCON `VEuc  1 e 1 @25 ]
+[s S294 . 1 `uc 1 T1GSS0 1 0 :1:0 
+`uc 1 T1GSS1 1 0 :1:1 
+`uc 1 T1GVAL 1 0 :1:2 
+`uc 1 T1GGO 1 0 :1:3 
+`uc 1 T1GSPM 1 0 :1:4 
+`uc 1 T1GTM 1 0 :1:5 
+`uc 1 T1GPOL 1 0 :1:6 
+`uc 1 TMR1GE 1 0 :1:7 
+]
+"891
+[s S303 . 1 `uc 1 T1GSS 1 0 :2:0 
+]
+[u S305 . 1 `S294 1 . 1 0 `S303 1 . 1 0 ]
+[v _T1GCONbits T1GCONbits `VES305  1 e 1 @25 ]
+"941
+[v _TMR2 TMR2 `VEuc  1 e 1 @26 ]
+"961
+[v _PR2 PR2 `VEuc  1 e 1 @27 ]
+"981
+[v _T2CON T2CON `VEuc  1 e 1 @28 ]
+[s S366 . 1 `uc 1 T2CKPS0 1 0 :1:0 
+`uc 1 T2CKPS1 1 0 :1:1 
+`uc 1 TMR2ON 1 0 :1:2 
+`uc 1 T2OUTPS0 1 0 :1:3 
+`uc 1 T2OUTPS1 1 0 :1:4 
+`uc 1 T2OUTPS2 1 0 :1:5 
+`uc 1 T2OUTPS3 1 0 :1:6 
+]
+"1002
+[s S374 . 1 `uc 1 T2CKPS 1 0 :2:0 
+`uc 1 . 1 0 :1:2 
+`uc 1 T2OUTPS 1 0 :4:3 
+]
+[u S378 . 1 `S366 1 . 1 0 `S374 1 . 1 0 ]
+[v _T2CONbits T2CONbits `VES378  1 e 1 @28 ]
+"1152
+[v _TRISA TRISA `VEuc  1 e 1 @140 ]
+"1214
+[v _TRISB TRISB `VEuc  1 e 1 @141 ]
+[s S432 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 TMR4IE 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 TMR6IE 1 0 :1:3 
+`uc 1 CCP3IE 1 0 :1:4 
+`uc 1 CCP4IE 1 0 :1:5 
+]
+"1404
+[u S439 . 1 `S432 1 . 1 0 ]
+[v _PIE3bits PIE3bits `VES439  1 e 1 @147 ]
+[s S795 . 1 `uc 1 PS0 1 0 :1:0 
+`uc 1 PS1 1 0 :1:1 
+`uc 1 PS2 1 0 :1:2 
+`uc 1 PSA 1 0 :1:3 
+`uc 1 TMR0SE 1 0 :1:4 
+`uc 1 TMR0CS 1 0 :1:5 
+`uc 1 INTEDG 1 0 :1:6 
+`uc 1 nWPUEN 1 0 :1:7 
+]
+"1478
+[s S804 . 1 `uc 1 PS 1 0 :3:0 
+`uc 1 . 1 0 :1:3 
+`uc 1 T0SE 1 0 :1:4 
+`uc 1 T0CS 1 0 :1:5 
+]
+[u S809 . 1 `S795 1 . 1 0 `S804 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES809  1 e 1 @149 ]
+"1589
+[v _WDTCON WDTCON `VEuc  1 e 1 @151 ]
+"1648
+[v _OSCTUNE OSCTUNE `VEuc  1 e 1 @152 ]
+"1706
+[v _OSCCON OSCCON `VEuc  1 e 1 @153 ]
+"1847
+[v _ADRESL ADRESL `VEuc  1 e 1 @155 ]
+"1867
+[v _ADRESH ADRESH `VEuc  1 e 1 @156 ]
+"1887
+[v _ADCON0 ADCON0 `VEuc  1 e 1 @157 ]
+[s S540 . 1 `uc 1 ADON 1 0 :1:0 
+`uc 1 GO_nDONE 1 0 :1:1 
+`uc 1 CHS0 1 0 :1:2 
+`uc 1 CHS1 1 0 :1:3 
+`uc 1 CHS2 1 0 :1:4 
+`uc 1 CHS3 1 0 :1:5 
+`uc 1 CHS4 1 0 :1:6 
+]
+"1912
+[s S548 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 ADGO 1 0 :1:1 
+`uc 1 CHS 1 0 :5:2 
+]
+[s S552 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO 1 0 :1:1 
+]
+[u S555 . 1 `S540 1 . 1 0 `S548 1 . 1 0 `S552 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES555  1 e 1 @157 ]
+"1967
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @158 ]
+"2039
+[v _LATA LATA `VEuc  1 e 1 @268 ]
+[s S1166 . 1 `uc 1 LATA0 1 0 :1:0 
+`uc 1 LATA1 1 0 :1:1 
+`uc 1 LATA2 1 0 :1:2 
+`uc 1 LATA3 1 0 :1:3 
+`uc 1 LATA4 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 LATA6 1 0 :1:6 
+`uc 1 LATA7 1 0 :1:7 
+]
+"2056
+[u S1175 . 1 `S1166 1 . 1 0 ]
+[v _LATAbits LATAbits `VES1175  1 e 1 @268 ]
+"2096
+[v _LATB LATB `VEuc  1 e 1 @269 ]
+"2430
+[v _BORCON BORCON `VEuc  1 e 1 @278 ]
+"2457
+[v _FVRCON FVRCON `VEuc  1 e 1 @279 ]
+[s S681 . 1 `uc 1 ADFVR0 1 0 :1:0 
+`uc 1 ADFVR1 1 0 :1:1 
+`uc 1 CDAFVR0 1 0 :1:2 
+`uc 1 CDAFVR1 1 0 :1:3 
+`uc 1 TSRNG 1 0 :1:4 
+`uc 1 TSEN 1 0 :1:5 
+`uc 1 FVRRDY 1 0 :1:6 
+`uc 1 FVREN 1 0 :1:7 
+]
+"2478
+[s S690 . 1 `uc 1 ADFVR 1 0 :2:0 
+`uc 1 CDAFVR 1 0 :2:2 
+]
+[u S693 . 1 `S681 1 . 1 0 `S690 1 . 1 0 ]
+[v _FVRCONbits FVRCONbits `VES693  1 e 1 @279 ]
+"2779
+[v _APFCON0 APFCON0 `VEuc  1 e 1 @285 ]
+"2841
+[v _APFCON1 APFCON1 `VEuc  1 e 1 @286 ]
+"2861
+[v _ANSELA ANSELA `VEuc  1 e 1 @396 ]
+"2913
+[v _ANSELB ANSELB `VEuc  1 e 1 @397 ]
+"3172
+[v _RCREG RCREG `VEuc  1 e 1 @409 ]
+"3192
+[v _TXREG TXREG `VEuc  1 e 1 @410 ]
+"3228
+[v _SPBRGL SPBRGL `VEuc  1 e 1 @411 ]
+"3278
+[v _SPBRGH SPBRGH `VEuc  1 e 1 @412 ]
+"3311
+[v _RCSTA RCSTA `VEuc  1 e 1 @413 ]
+[s S110 . 1 `uc 1 RX9D 1 0 :1:0 
+`uc 1 OERR 1 0 :1:1 
+`uc 1 FERR 1 0 :1:2 
+`uc 1 ADDEN 1 0 :1:3 
+`uc 1 CREN 1 0 :1:4 
+`uc 1 SREN 1 0 :1:5 
+`uc 1 RX9 1 0 :1:6 
+`uc 1 SPEN 1 0 :1:7 
+]
+"3328
+[u S119 . 1 `S110 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES119  1 e 1 @413 ]
+"3373
+[v _TXSTA TXSTA `VEuc  1 e 1 @414 ]
+[s S89 . 1 `uc 1 TX9D 1 0 :1:0 
+`uc 1 TRMT 1 0 :1:1 
+`uc 1 BRGH 1 0 :1:2 
+`uc 1 SENDB 1 0 :1:3 
+`uc 1 SYNC 1 0 :1:4 
+`uc 1 TXEN 1 0 :1:5 
+`uc 1 TX9 1 0 :1:6 
+`uc 1 CSRC 1 0 :1:7 
+]
+"3390
+[u S98 . 1 `S89 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES98  1 e 1 @414 ]
+"3435
+[v _BAUDCON BAUDCON `VEuc  1 e 1 @415 ]
+"3487
+[v _WPUA WPUA `VEuc  1 e 1 @524 ]
+"3516
+[v _WPUB WPUB `VEuc  1 e 1 @525 ]
+"4593
+[v _CCPR1L CCPR1L `VEuc  1 e 1 @657 ]
+"4613
+[v _CCPR1H CCPR1H `VEuc  1 e 1 @658 ]
+"4633
+[v _CCP1CON CCP1CON `VEuc  1 e 1 @659 ]
+"4715
+[v _PWM1CON PWM1CON `VEuc  1 e 1 @660 ]
+"4790
+[v _ECCP1AS ECCP1AS `VEuc  1 e 1 @661 ]
+"4947
+[v _PSTR1CON PSTR1CON `VEuc  1 e 1 @662 ]
+[s S1054 . 1 `uc 1 C1TSEL0 1 0 :1:0 
+`uc 1 C1TSEL1 1 0 :1:1 
+`uc 1 C2TSEL0 1 0 :1:2 
+`uc 1 C2TSEL1 1 0 :1:3 
+`uc 1 C3TSEL0 1 0 :1:4 
+`uc 1 C3TSEL1 1 0 :1:5 
+`uc 1 C4TSEL0 1 0 :1:6 
+`uc 1 C4TSEL1 1 0 :1:7 
+]
+"5505
+[s S1063 . 1 `uc 1 C1TSEL 1 0 :2:0 
+`uc 1 C2TSEL 1 0 :2:2 
+`uc 1 C3TSEL 1 0 :2:4 
+`uc 1 C4TSEL 1 0 :2:6 
+]
+[u S1068 . 1 `S1054 1 . 1 0 `S1063 1 . 1 0 ]
+[v _CCPTMRS0bits CCPTMRS0bits `VES1068  1 e 1 @670 ]
+"5577
+[v _CCPR3L CCPR3L `VEuc  1 e 1 @785 ]
+"5597
+[v _CCPR3H CCPR3H `VEuc  1 e 1 @786 ]
+"5617
+[v _CCP3CON CCP3CON `VEuc  1 e 1 @787 ]
+"5688
+[v _CCPR4L CCPR4L `VEuc  1 e 1 @792 ]
+"5708
+[v _CCPR4H CCPR4H `VEuc  1 e 1 @793 ]
+"5728
+[v _CCP4CON CCP4CON `VEuc  1 e 1 @794 ]
+[s S881 . 1 `uc 1 IOCBP0 1 0 :1:0 
+`uc 1 IOCBP1 1 0 :1:1 
+`uc 1 IOCBP2 1 0 :1:2 
+`uc 1 IOCBP3 1 0 :1:3 
+`uc 1 IOCBP4 1 0 :1:4 
+`uc 1 IOCBP5 1 0 :1:5 
+`uc 1 IOCBP6 1 0 :1:6 
+`uc 1 IOCBP7 1 0 :1:7 
+]
+"5812
+[s S890 . 1 `uc 1 IOCBP 1 0 :8:0 
+]
+[u S892 . 1 `S881 1 . 1 0 `S890 1 . 1 0 ]
+[v _IOCBPbits IOCBPbits `VES892  1 e 1 @916 ]
+[s S855 . 1 `uc 1 IOCBN0 1 0 :1:0 
+`uc 1 IOCBN1 1 0 :1:1 
+`uc 1 IOCBN2 1 0 :1:2 
+`uc 1 IOCBN3 1 0 :1:3 
+`uc 1 IOCBN4 1 0 :1:4 
+`uc 1 IOCBN5 1 0 :1:5 
+`uc 1 IOCBN6 1 0 :1:6 
+`uc 1 IOCBN7 1 0 :1:7 
+]
+"5882
+[s S864 . 1 `uc 1 IOCBN 1 0 :8:0 
+]
+[u S866 . 1 `S855 1 . 1 0 `S864 1 . 1 0 ]
+[v _IOCBNbits IOCBNbits `VES866  1 e 1 @917 ]
+[s S829 . 1 `uc 1 IOCBF0 1 0 :1:0 
+`uc 1 IOCBF1 1 0 :1:1 
+`uc 1 IOCBF2 1 0 :1:2 
+`uc 1 IOCBF3 1 0 :1:3 
+`uc 1 IOCBF4 1 0 :1:4 
+`uc 1 IOCBF5 1 0 :1:5 
+`uc 1 IOCBF6 1 0 :1:6 
+`uc 1 IOCBF7 1 0 :1:7 
+]
+"5952
+[s S838 . 1 `uc 1 IOCBF 1 0 :8:0 
+]
+[u S840 . 1 `S829 1 . 1 0 `S838 1 . 1 0 ]
+[v _IOCBFbits IOCBFbits `VES840  1 e 1 @918 ]
+"6312
+[v _TMR4 TMR4 `VEuc  1 e 1 @1045 ]
+"6332
+[v _PR4 PR4 `VEuc  1 e 1 @1046 ]
+"6352
+[v _T4CON T4CON `VEuc  1 e 1 @1047 ]
+[s S460 . 1 `uc 1 T4CKPS0 1 0 :1:0 
+`uc 1 T4CKPS1 1 0 :1:1 
+`uc 1 TMR4ON 1 0 :1:2 
+`uc 1 T4OUTPS0 1 0 :1:3 
+`uc 1 T4OUTPS1 1 0 :1:4 
+`uc 1 T4OUTPS2 1 0 :1:5 
+`uc 1 T4OUTPS3 1 0 :1:6 
+]
+"6373
+[s S468 . 1 `uc 1 T4CKPS 1 0 :2:0 
+`uc 1 . 1 0 :1:2 
+`uc 1 T4OUTPS 1 0 :4:3 
+]
+[u S472 . 1 `S460 1 . 1 0 `S468 1 . 1 0 ]
+[v _T4CONbits T4CONbits `VES472  1 e 1 @1047 ]
+"6423
+[v _TMR6 TMR6 `VEuc  1 e 1 @1052 ]
+"6443
+[v _PR6 PR6 `VEuc  1 e 1 @1053 ]
+"6463
+[v _T6CON T6CON `VEuc  1 e 1 @1054 ]
+[s S1317 . 1 `uc 1 T6CKPS0 1 0 :1:0 
+`uc 1 T6CKPS1 1 0 :1:1 
+`uc 1 TMR6ON 1 0 :1:2 
+`uc 1 T6OUTPS0 1 0 :1:3 
+`uc 1 T6OUTPS1 1 0 :1:4 
+`uc 1 T6OUTPS2 1 0 :1:5 
+`uc 1 T6OUTPS3 1 0 :1:6 
+]
+"6484
+[s S1325 . 1 `uc 1 T6CKPS 1 0 :2:0 
+`uc 1 . 1 0 :1:2 
+`uc 1 T6OUTPS 1 0 :4:3 
+]
+[u S1329 . 1 `S1317 1 . 1 0 `S1325 1 . 1 0 ]
+[v _T6CONbits T6CONbits `VES1329  1 e 1 @1054 ]
+"33 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\main.c
+[v _and_dst and_dst `i  1 e 2 0 ]
+"34
+[v _pulses pulses `i  1 e 2 0 ]
+"35
+[v _sentido sentido `i  1 e 2 0 ]
+"36
+[v _I_m I_m `f  1 e 4 0 ]
+"37
+[v _temp_mt temp_mt `f  1 e 4 0 ]
+"38
+[v _aux_tempo aux_tempo `i  1 e 2 0 ]
+"39
+[v _aux_tempo_d2s aux_tempo_d2s `i  1 e 2 0 ]
+"40
+[v _estado estado `i  1 e 2 0 ]
+"41
+[v _acabou_delay acabou_delay `i  1 e 2 0 ]
+"46
+[v _and_ating and_ating `uc  1 e 1 0 ]
+"47
+[v _ccp_value ccp_value `us  1 e 2 0 ]
+"48
+[v _byte byte `[5]uc  1 e 5 0 ]
+"54 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\mcc_generated_files/ccp4.c
+[v _CCP4_CallBack CCP4_CallBack `*.37(v  1 s 2 CCP4_CallBack ]
+[s S22 . 1 `uc 1 perr 1 0 :1:0 
+`uc 1 ferr 1 0 :1:1 
+`uc 1 oerr 1 0 :1:2 
+`uc 1 reserved 1 0 :5:3 
+]
+"52 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\mcc_generated_files/eusart.c
+[u S27 . 1 `S22 1 . 1 0 `uc 1 status 1 0 ]
+[v _eusartRxLastError eusartRxLastError `VES27  1 e 1 0 ]
+"58
+[v _EUSART_FramingErrorHandler EUSART_FramingErrorHandler `*.37(v  1 e 2 0 ]
+"59
+[v _EUSART_OverrunErrorHandler EUSART_OverrunErrorHandler `*.37(v  1 e 2 0 ]
+"60
+[v _EUSART_ErrorHandler EUSART_ErrorHandler `*.37(v  1 e 2 0 ]
+"54 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\mcc_generated_files/pin_manager.c
+[v _IOCBF0_InterruptHandler IOCBF0_InterruptHandler `*.37(v  1 e 2 0 ]
+"55
+[v _IOCBF3_InterruptHandler IOCBF3_InterruptHandler `*.37(v  1 e 2 0 ]
+"56
+[v _IOCBF4_InterruptHandler IOCBF4_InterruptHandler `*.37(v  1 e 2 0 ]
+"57
+[v _IOCBF5_InterruptHandler IOCBF5_InterruptHandler `*.37(v  1 e 2 0 ]
+"57 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\mcc_generated_files/tmr1.c
+[v _timer1ReloadVal timer1ReloadVal `VEus  1 e 2 0 ]
+"58 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\mcc_generated_files/tmr4.c
+[v _TMR4_InterruptHandler TMR4_InterruptHandler `*.37(v  1 e 2 0 ]
+"58 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\mcc_generated_files/tmr6.c
+[v _TMR6_InterruptHandler TMR6_InterruptHandler `*.37(v  1 e 2 0 ]
+"115 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"143
+} 0
+"174
+[v _controle controle `(v  1 e 1 0 ]
+{
+"196
+} 0
+"198
+[v _movimento movimento `(v  1 e 1 0 ]
+{
+"207
+[v movimento@count count `i  1 a 2 21 ]
+"206
+[v movimento@dutyValue dutyValue `i  1 a 2 19 ]
+"202
+[v movimento@max_dutyValue max_dutyValue `i  1 a 2 17 ]
+"203
+[v movimento@min_dutyValue min_dutyValue `i  1 a 2 15 ]
+"201
+[v movimento@a a `i  1 a 2 13 ]
+"205
+[v movimento@route route `i  1 a 2 11 ]
+"204
+[v movimento@destiny destiny `i  1 a 2 9 ]
+"208
+[v movimento@ilum ilum `i  1 a 2 7 ]
+"253
+} 0
+"15 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v ___wmul@product product `ui  1 a 2 4 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 0 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
+"53
+} 0
+"108 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\mcc_generated_files/tmr6.c
+[v _TMR6_WriteTimer TMR6_WriteTimer `(v  1 e 1 0 ]
+{
+[v TMR6_WriteTimer@timerVal timerVal `uc  1 a 1 wreg ]
+[v TMR6_WriteTimer@timerVal timerVal `uc  1 a 1 wreg ]
+"111
+[v TMR6_WriteTimer@timerVal timerVal `uc  1 a 1 0 ]
+"112
+} 0
+"82 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\mcc_generated_files/pwm3.c
+[v _PWM3_LoadDutyValue PWM3_LoadDutyValue `(v  1 e 1 0 ]
+{
+[v PWM3_LoadDutyValue@dutyValue dutyValue `us  1 p 2 0 ]
+"89
+} 0
+"90 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\mcc_generated_files/epwm1.c
+[v _EPWM1_LoadDutyValue EPWM1_LoadDutyValue `(v  1 e 1 0 ]
+{
+[v EPWM1_LoadDutyValue@dutyValue dutyValue `us  1 p 2 0 ]
+"97
+} 0
+"112 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\mcc_generated_files/adc.c
+[v _ADC_GetConversion ADC_GetConversion `(us  1 e 2 0 ]
+{
+[v ADC_GetConversion@channel channel `E2476  1 a 1 wreg ]
+[v ADC_GetConversion@channel channel `E2476  1 a 1 wreg ]
+"115
+[v ADC_GetConversion@channel channel `E2476  1 a 1 3 ]
+"133
+} 0
+"145 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\main.c
+[v _comunicacao comunicacao `(v  1 e 1 0 ]
+{
+"151
+[v comunicacao@position position `f  1 a 4 4 ]
+"150
+[v comunicacao@speed speed `f  1 a 4 0 ]
+"149
+[v comunicacao@aux aux `uc  1 a 1 8 ]
+"172
+} 0
+"10 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
+{
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+"13
+[v ___xxtofl@arg arg `ul  1 a 4 14 ]
+"12
+[v ___xxtofl@exp exp `uc  1 a 1 13 ]
+"10
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+[v ___xxtofl@val val `l  1 p 4 4 ]
+"15
+[v ___xxtofl@sign sign `uc  1 a 1 12 ]
+"44
+} 0
+"43 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\fltol.c
+[v ___fltol __fltol `(l  1 e 4 0 ]
+{
+"45
+[v ___fltol@exp1 exp1 `uc  1 a 1 10 ]
+[v ___fltol@sign1 sign1 `uc  1 a 1 9 ]
+"43
+[v ___fltol@f1 f1 `d  1 p 4 0 ]
+"70
+} 0
+"8 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+{
+[s S1667 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+"13
+[s S1672 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
+[u S1675 . 4 `l 1 i 4 0 `d 1 f 4 0 `S1667 1 fAsBytes 4 0 `S1672 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S1675  1 a 4 38 ]
+"12
+[v ___flmul@grs grs `ul  1 a 4 32 ]
+[s S1744 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+"14
+[u S1747 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S1744 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S1747  1 a 2 42 ]
+"10
+[v ___flmul@bexp bexp `uc  1 a 1 37 ]
+"11
+[v ___flmul@aexp aexp `uc  1 a 1 36 ]
+"9
+[v ___flmul@sign sign `uc  1 a 1 31 ]
+"8
+[v ___flmul@b b `d  1 p 4 18 ]
+[v ___flmul@a a `d  1 p 4 22 ]
+"205
+} 0
+"4 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+{
+[v __Umul8_16@multiplier multiplier `uc  1 a 1 wreg ]
+"6
+[v __Umul8_16@word_mpld word_mpld `ui  1 a 2 6 ]
+"5
+[v __Umul8_16@product product `ui  1 a 2 4 ]
+"4
+[v __Umul8_16@multiplier multiplier `uc  1 a 1 wreg ]
+[v __Umul8_16@multiplicand multiplicand `uc  1 p 1 0 ]
+[v __Umul8_16@multiplier multiplier `uc  1 a 1 8 ]
+"60
+} 0
+"8 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+{
+"21
+[v ___fldiv@grs grs `ul  1 a 4 64 ]
+"22
+[v ___fldiv@rem rem `ul  1 a 4 57 ]
+"20
+[v ___fldiv@new_exp new_exp `i  1 a 2 62 ]
+"19
+[v ___fldiv@aexp aexp `uc  1 a 1 69 ]
+"18
+[v ___fldiv@bexp bexp `uc  1 a 1 68 ]
+"16
+[v ___fldiv@sign sign `uc  1 a 1 61 ]
+"8
+[v ___fldiv@a a `d  1 p 4 44 ]
+[v ___fldiv@b b `d  1 p 4 48 ]
+"185
+} 0
+"99 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\mcc_generated_files/eusart.c
+[v _EUSART_is_rx_ready EUSART_is_rx_ready `(a  1 e 1 0 ]
+{
+"102
+} 0
+"113
+[v _EUSART_Read EUSART_Read `(uc  1 e 1 0 ]
+{
+"130
+} 0
+"50 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+{
+"66
+} 0
+"78
+[v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
+{
+"82
+} 0
+"64 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\mcc_generated_files/tmr6.c
+[v _TMR6_Initialize TMR6_Initialize `(v  1 e 1 0 ]
+{
+"85
+} 0
+"132
+[v _TMR6_SetInterruptHandler TMR6_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v TMR6_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
+"134
+} 0
+"64 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\mcc_generated_files/tmr4.c
+[v _TMR4_Initialize TMR4_Initialize `(v  1 e 1 0 ]
+{
+"85
+} 0
+"132
+[v _TMR4_SetInterruptHandler TMR4_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v TMR4_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
+"134
+} 0
+"62 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\mcc_generated_files/tmr2.c
+[v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
+{
+"77
+} 0
+"63 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\mcc_generated_files/tmr1.c
+[v _TMR1_Initialize TMR1_Initialize `(v  1 e 1 0 ]
+{
+"84
+} 0
+"64 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\mcc_generated_files/pwm3.c
+[v _PWM3_Initialize PWM3_Initialize `(v  1 e 1 0 ]
+{
+"80
+} 0
+"60 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+{
+"133
+} 0
+"267
+[v _IOCBF5_SetInterruptHandler IOCBF5_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v IOCBF5_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
+"269
+} 0
+"237
+[v _IOCBF4_SetInterruptHandler IOCBF4_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v IOCBF4_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
+"239
+} 0
+"207
+[v _IOCBF3_SetInterruptHandler IOCBF3_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v IOCBF3_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
+"209
+} 0
+"177
+[v _IOCBF0_SetInterruptHandler IOCBF0_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v IOCBF0_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
+"179
+} 0
+"68 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\mcc_generated_files/mcc.c
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+{
+"76
+} 0
+"58 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\mcc_generated_files/fvr.c
+[v _FVR_Initialize FVR_Initialize `(v  1 e 1 0 ]
+{
+"62
+} 0
+"66 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\mcc_generated_files/eusart.c
+[v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
+{
+"92
+} 0
+"161
+[v _EUSART_SetOverrunErrorHandler EUSART_SetOverrunErrorHandler `(v  1 e 1 0 ]
+{
+[v EUSART_SetOverrunErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
+"163
+} 0
+"157
+[v _EUSART_SetFramingErrorHandler EUSART_SetFramingErrorHandler `(v  1 e 1 0 ]
+{
+[v EUSART_SetFramingErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
+"159
+} 0
+"165
+[v _EUSART_SetErrorHandler EUSART_SetErrorHandler `(v  1 e 1 0 ]
+{
+[v EUSART_SetErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
+"167
+} 0
+"64 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\mcc_generated_files/epwm1.c
+[v _EPWM1_Initialize EPWM1_Initialize `(v  1 e 1 0 ]
+{
+"88
+} 0
+"65 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\mcc_generated_files/ccp4.c
+[v _CCP4_Initialize CCP4_Initialize `(v  1 e 1 0 ]
+{
+"87
+} 0
+"104
+[v _CCP4_SetCallBack CCP4_SetCallBack `(v  1 e 1 0 ]
+{
+[v CCP4_SetCallBack@customCallBack customCallBack `*.37(v  1 p 2 0 ]
+"106
+} 0
+"67 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\mcc_generated_files/adc.c
+[v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
+{
+"83
+} 0
+"52 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
+{
+"82
+} 0
+"119 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\mcc_generated_files/tmr6.c
+[v _TMR6_ISR TMR6_ISR `(v  1 e 1 0 ]
+{
+"129
+} 0
+"136
+[v _TMR6_DefaultInterruptHandler TMR6_DefaultInterruptHandler `(v  1 e 1 0 ]
+{
+"139
+} 0
+"73 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\main.c
+[v _delay_2s delay_2s `(v  1 e 1 0 ]
+{
+"81
+} 0
+"119 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\mcc_generated_files/tmr4.c
+[v _TMR4_ISR TMR4_ISR `(v  1 e 1 0 ]
+{
+"129
+} 0
+"136
+[v _TMR4_DefaultInterruptHandler TMR4_DefaultInterruptHandler `(v  1 e 1 0 ]
+{
+"139
+} 0
+"53 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\main.c
+[v _send_data send_data `(v  1 e 1 0 ]
+{
+"58
+[v send_data@i i `i  1 a 2 2 ]
+"70
+} 0
+"94 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\mcc_generated_files/eusart.c
+[v _EUSART_is_tx_ready EUSART_is_tx_ready `(a  1 e 1 0 ]
+{
+"97
+} 0
+"132
+[v _EUSART_Write EUSART_Write `(v  1 e 1 0 ]
+{
+[v EUSART_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART_Write@txData txData `uc  1 a 1 0 ]
+"139
+} 0
+"135 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_IOC PIN_MANAGER_IOC `(v  1 e 1 0 ]
+{
+"157
+} 0
+"252
+[v _IOCBF5_ISR IOCBF5_ISR `(v  1 e 1 0 ]
+{
+"262
+} 0
+"274
+[v _IOCBF5_DefaultInterruptHandler IOCBF5_DefaultInterruptHandler `(v  1 e 1 0 ]
+{
+"277
+} 0
+"98 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\main.c
+[v _sensor4 sensor4 `(v  1 e 1 0 ]
+{
+"101
+} 0
+"222 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\mcc_generated_files/pin_manager.c
+[v _IOCBF4_ISR IOCBF4_ISR `(v  1 e 1 0 ]
+{
+"232
+} 0
+"244
+[v _IOCBF4_DefaultInterruptHandler IOCBF4_DefaultInterruptHandler `(v  1 e 1 0 ]
+{
+"247
+} 0
+"93 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\main.c
+[v _sensor3 sensor3 `(v  1 e 1 0 ]
+{
+"96
+} 0
+"192 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\mcc_generated_files/pin_manager.c
+[v _IOCBF3_ISR IOCBF3_ISR `(v  1 e 1 0 ]
+{
+"202
+} 0
+"214
+[v _IOCBF3_DefaultInterruptHandler IOCBF3_DefaultInterruptHandler `(v  1 e 1 0 ]
+{
+"217
+} 0
+"88 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\main.c
+[v _sensor2 sensor2 `(v  1 e 1 0 ]
+{
+"91
+} 0
+"162 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\mcc_generated_files/pin_manager.c
+[v _IOCBF0_ISR IOCBF0_ISR `(v  1 e 1 0 ]
+{
+"172
+} 0
+"184
+[v _IOCBF0_DefaultInterruptHandler IOCBF0_DefaultInterruptHandler `(v  1 e 1 0 ]
+{
+"187
+} 0
+"83 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\main.c
+[v _sensor1 sensor1 `(v  1 e 1 0 ]
+{
+"86
+} 0
+"89 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\mcc_generated_files/ccp4.c
+[v _CCP4_CaptureISR CCP4_CaptureISR `(v  1 e 1 0 ]
+{
+[s S749 . 2 `uc 1 ccpr4l 1 0 `uc 1 ccpr4h 1 1 ]
+"91
+[s S752 . 2 `us 1 ccpr4_16Bit 2 0 ]
+[u S754 CCPR4Reg_tag 2 `S749 1 . 2 0 `S752 1 . 2 0 ]
+[v CCP4_CaptureISR@module module `S754  1 a 2 5 ]
+"102
+} 0
+"60
+[v _CCP4_DefaultCallBack CCP4_DefaultCallBack `(v  1 s 1 CCP4_DefaultCallBack ]
+{
+"63
+} 0
+"103 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\main.c
+[v _get_pulse get_pulse `(v  1 e 1 0 ]
+{
+[v get_pulse@capturedValue capturedValue `us  1 p 2 2 ]
+"112
+} 0
+"113 C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\mcc_generated_files/tmr1.c
+[v _TMR1_WriteTimer TMR1_WriteTimer `(v  1 e 1 0 ]
+{
+[v TMR1_WriteTimer@timerVal timerVal `us  1 p 2 0 ]
+"133
+} 0

@@ -1,2 +1,2 @@
 dist/default/debug\__eeprom.p1: \
-  C:\Program\ Files\ (x86)\Microchip\xc8\v2.10\pic\sources\c99\pic\__eeprom.c
+  C:\Program\ Files\Microchip\xc8\v2.30\pic\sources\c99\pic\__eeprom.c

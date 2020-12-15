@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Projeto_elevador.X
+PROJECTNAME=Projeto_elevador_simplificado.X
 
 # Active Configuration
 DEFAULTCONF=default
