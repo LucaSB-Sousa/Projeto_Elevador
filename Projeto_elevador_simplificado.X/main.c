@@ -1,44 +1,49 @@
 /******************************************************************************
  ******************************************************************************
- ***    UNIVERSIDADE DE BRASï¿½LIA - UNB                                      ***
- ***    DISCIPLINA: FGA0096 - ELETRï¿½NICA EMBARCADA        TURMA: A          ***
- ***    PROFESSOR: Guillermo Alvarez Bestard, Dr. Eng. Mecatrï¿½nica          ***
- ***    ALUNO: Lucas dos Santos Barros de Sousa   MATRï¿½CULA:180022555       ***
- ***    ALUNO: Matheus Oliveira Dias              MATRï¿½CULA:18/0025104      ***
- ***    ALUNO: Victor Hugo Ciurlini               MATRï¿½CULA:11/0021223      ***
- ***               TRABALHO FINAL ELETRï¿½NICA EMBARCADA                      ***
+ ***    UNIVERSIDADE DE BRASÍLIA - UNB                                      ***
+ ***    DISCIPLINA: FGA0096 - ELETRTÔNICA EMBARCADA        TURMA: A         ***
+ ***    PROFESSOR: Guillermo Alvarez Bestard, Dr. Eng. Mecatrônicanica      ***
+ ***    ALUNO: Lucas dos Santos Barros de Sousa   MATRÍCULA:180022555       ***
+ ***    ALUNO: Matheus Oliveira Dias              MATRÍCULA:18/0025104      ***
+ ***    ALUNO: Victor Hugo Ciurlini               MATRÍCULA:11/0021223      ***
+ ***               TRABALHO FINAL ELETRÔNICA EMBARCADA                      ***
  ******************************************************************************
  ******************************************************************************/
 
-/* DESCRIï¿½ï¿½O DE FUNCIONAMENTO*/
 
 
-//DECLARAï¿½ï¿½O DE BIBLIOTECAS:
+
+//DECLARAÇÃO DE BIBLIOTECAS:
 #include "mcc_generated_files/mcc.h"
 
-//DEFINIï¿½ï¿½ES
-#define conv_I  0.1                         //O coeficiente de conversï¿½o da corrente ï¿½ de 0.5, visto que o valor mï¿½x de cprrente ï¿½ de 1000 mA, no entanto como teremos que transmitir o valor de corrente/5 para evitar mais operacoes pelo uC jï¿½ multiplicamos o valor por 1/5=0.2, logo 0.5*0.2=0.1          
-#define conv_temp  0.3                      //O coeficiente de conversï¿½o da temperatura ï¿½ de 0.1, visto que o valor mï¿½x de temperatura assumido ï¿½ de 100ï¿½C, no entanto como teremos que transmitir o valor de temperatura*3 para evitar mais operacoes pelo uC jï¿½ multiplicamos aqui logo 0.1*3=0.3
-#define conv_second  0.0000005
-#define distance_1_pulse_mult2  1.5        // 15 mm/20 pulsos = 0.75 mm, no entanto usaremos: 0.75*2 = 1.5 para evitar mais uma operaï¿½ï¿½o a fim de cumprir o preparo de envio
-#define distance_1_pulse_mult5  3.75        // 15 mm/20 pulsos = 0.75 mm,no entanto usaremos: 0.75*5 = 3.75 para evitar mais uma operaï¿½ï¿½o a fim de cumprir o preparo de envio
+//DEFINIÇÕES
+#define conv_I  0.449                         // coeficiente de convessão para corrente.
+#define conv_temp  0.11                       //O coeficiente de converssão da temperatura 0.11 graus C p/ mV 
+#define conv_second  0.000004                //Tempo de 1 incremento do Timer 4
+#define distance_1_pulse  0.837              // 180 mm/215 pulsos = 0.837 mm
 
-//DECLARAï¿½ï¿½O DOS PROTï¿½TIPOS DAS FUNï¿½ï¿½ES: 
+//DECLARAÇÃO DOS PROTOTIPOS DAS FUN~ÇÕES: 
 void comunicacao ();
 void controle();
 void movimento();
+void update();
 
 
-//DECLARAï¿½ï¿½O DAS VARIï¿½VEIS:
-int and_dst = 0;                    //Variï¿½vel para armazenas o andar de destino
+//DECLARAÇÃO DAS VARIÁVEIS:
+int and_dst = 0;                    
 int pulses = 0;
 int sentido = 0;
 float I_m = 0;
 float temp_mt = 0;
 int aux_tempo = 0;
-int aux_tempo_d2s = 0;
 int estado = 0;
-int acabou_delay =0;
+int destiny;
+int and_atual = 0;
+int luminosidade = 0;
+int luminos;
+int distancia;
+float speed = 0.0;
+float position = 0.0;
 
 //------------------------------------------------------------------------------
 
@@ -46,10 +51,13 @@ uint8_t state_motor = 0;
 uint8_t and_ating = 0;
 uint16_t ccp_value = 0;
 uint8_t byte[5];
+uint8_t IM_B = 0;
+uint8_t TM_B = 0;
+//uint8_t aux = 0;
 
-//FUNï¿½ï¿½ES DE INTERRUPï¿½ï¿½O
+//FUNCÕES DE INTERRUPÇÃO
 
-//INTERRUPï¿½ï¿½O PARA ENVIO DOS DADOS A CADA 100mS (5 BYTES)
+//INTERRUPÇÃO PARA ENVIO DOS DADOS A CADA 100mS (5 BYTES)
 void send_data()
 	{
         aux_tempo++;
@@ -64,191 +72,196 @@ void send_data()
                         i++;
                     }        
             }
-        
+           
             aux_tempo =0;
-        }
-	}
-
-//INTERRUPï¿½ï¿½O PARA ENVIO DOS DADOS A CADA 100mS (5 BYTES)
-void delay_2s()
-	{
-        aux_tempo_d2s++;
-        if(aux_tempo_d2s == 280)
-        {
-            acabou_delay=1;
-            aux_tempo_d2s =0;
         }
 	}
 
 void sensor1()                          //trata interrupção do primeiro sensor
     {
-        and_ating=0;                    //atualiza variavel usada no gerenciamento (de 1 a 4)
+        and_ating=0;                    //atualiza variável andar atual e byte do andar atual para comunicação(de 0 a 3)
+        and_atual = 0;
+        pulses = 0;
     }
 
 void sensor2()                          //trata interrupção do segundo sensor
     {
-        and_ating=1;                    //atualiza variavel usada no gerenciamento (de 1 a 4)
+        and_ating=1;                   //atualiza variável andar atual e byte do andar atual para comunicação(de 0 a 3)
+        and_atual = 1;
     }
 
 void sensor3()                          //trata interrupção do terceiro sensor
     {
-        and_ating=2;                    //atualiza variavel usada no gerenciamento (de 1 a 4)
+        and_ating=2;                    //atualiza variável andar atual e byte do andar atual para comunicação (de 0 a 3)
+        and_atual = 2;
     }
 
 void sensor4()                          //trata interrupção do quarto sensor
     {
-        and_ating=3;                    //atualiza variavel usada no gerenciamento (de 1 a 4)
+        and_ating=3;                    //atualiza variável andar atual e byte do andar atual para comunicação (de 0 a 3)
+        and_atual = 3;                  
     }
-
+//Função para captura de tempo entre pulsos (1 pulso borda de subida), além da utilização para cálculo de posição e controle dos leds)
 void get_pulse(uint16_t capturedValue)
     {
         TMR1_WriteTimer(0);
         ccp_value = capturedValue;
-        if(sentido == 1){
-            pulses++;
-        }else if(sentido == 0 && pulses >= 0){
-            pulses--;
-        }
+     //   Incrementa pulsos se estiver subindo
+        if(Dir_GetValue()==1)
+            {
+                pulses++;
+            }
+          //   Decrementa pulsos se estiver descendo
+        else if(Dir_GetValue() == 0 && pulses >= 0)
+            {
+                pulses--;
+            }
+        //Controle dos leds em função da distância
+        if (luminos == 1)
+            {
+                luminosidade-=(1023/destiny);
+                if(luminosidade< 0)
+                {luminosidade = 15;}
+                EPWM1_LoadDutyValue(luminosidade);
+            
+            }
+         
     }
 
-// APLICAï¿½ï¿½O PROPRIAMENTE DITA
+// APLICAÇÃO PROPRIAMENTE DITA
 void main(void)
 {
     
-  //FUNï¿½ï¿½ES DE INICIALIZAï¿½ï¿½O
+  //FUNÇÕES DE INICIALIZAÇÃO
     SYSTEM_Initialize();
     INTERRUPT_GlobalInterruptEnable();
     INTERRUPT_PeripheralInterruptEnable();
     
-   //PASSAGEM DE PARï¿½METROS PARA FUNï¿½ï¿½ES DE INTERRUPï¿½ï¿½O 
+   //PASSAGEM DE PARAMETROS PARA FUNÇÕES DE INTERRUPÇÃO 
     TMR4_SetInterruptHandler(send_data);
-    TMR6_SetInterruptHandler(delay_2s);
     IOCBF0_SetInterruptHandler(sensor1);
     IOCBF3_SetInterruptHandler(sensor2);
     IOCBF4_SetInterruptHandler(sensor3);
     IOCBF5_SetInterruptHandler(sensor4);
     CCP4_SetCallBack(get_pulse);
-    PIE3bits.TMR6IE=0; //desativa timer 6 visto que só é usado no delay
-    // Disable the Global Interrupts
-    //INTERRUPT_GlobalInterruptDisable();
-    // Disable the Peripheral Interrupts
-    //INTERRUPT_PeripheralInterruptDisable();
 
+    luminos=1;
+    luminosidade = 1023;
+    //VERIFICAÇÃO DE POSIÇÃO, SE ESTIVER EM UM ANDAR DIFERENTE DE 1 RETORNA A POSIÇÃO INICIAL
+    while(S1_GetValue()!=0)
+        {
+            Dir_SetLow();
+            PWM3_LoadDutyValue(512);
+        }
+    luminos=0;
+    EPWM1_LoadDutyValue(0);
+    PWM3_LoadDutyValue(0);
+    
     // LOOP PRINCIPAL
     while (1)
     {
-       comunicacao ();    // Chama a funï¿½ï¿½o responsï¿½vel por tratar a comunicaï¿½ï¿½o
-       controle();   // Chama a funï¿½ï¿½o responsï¿½vel pelo controle do motor
+        //LEITURA E TRATAMENTO
+        I_m = ADC_GetConversion(0);          // Realiza a leitura da corrente, converte para mA usando *conv_I, jï¿½ esta preparado para envio, veja as definiï¿½ï¿½es! (Resoluï¿½ï¿½o da mediï¿½ï¿½o 0.5 mA )
+        IM_B = (uint8_t)((conv_I*I_m)/4);
+        temp_mt = ADC_GetConversion(1);   // Realiza a leitura da temperatura, converte para C usando *conv_temp, jï¿½ esta preparado para envio, veja as definiï¿½ï¿½es! (Resoluï¿½ï¿½o da mediï¿½ï¿½o 0.1 ï¿½C))
+        TM_B = (uint8_t)(conv_temp*temp_mt*2);
+        
+        //FUNÇÕES DE FLUXO
+        comunicacao ();    // Chama a funï¿½ï¿½o responsï¿½vel por tratar a comunicaï¿½ï¿½o
+        controle();   // Chama a funï¿½ï¿½o responsï¿½vel pelo controle do motor
     }
 }
 
+//REALIZA O RECEBIMENTO E TRATAMENTO DE FLUXO DE DADOS
 void comunicacao ()
 {
- //   uint8_t byte_0,byte_1,byte_2,byte_3,byte_4;
- //   uint8_t byte[5];
-    uint8_t aux;// and_dst,and_ating;       
-    float speed = distance_1_pulse_mult5/(((float)ccp_value)*conv_second);
-    float position = distance_1_pulse_mult2*pulses;
-    if(EUSART_is_rx_ready())                                //lê novas solicitações             
+    uint8_t recebe = 0;
+    if(EUSART_is_rx_ready())                                            
         {
-            aux= EUSART_Read();
-            and_dst = (int)(aux & 0x02);                    //Pega os bits 0,1 e os transforma em inteiros 
+            recebe= EUSART_Read();
+            and_dst = (int)((recebe) & 0x03);
         }
-
-// OBS PARA LUCAS: TALVEZ Nï¿½O SEJA NECESSï¿½RIO O DESLOCAMENTO >>1 ANALISAR ROTEIRO!!!
-//VERIFICAR SE O VETOR FUNCIONA! SE Nï¿½O FUNCIONAR MUDE A Lï¿½GICA DO ENVIO E DESCOMENTE ABAIXO
-//    byte_0 = ((state_motor<<4)& 0x20)|(and_ating & 0x02);
-//    byte_1 = 0x80 |((((uint8_t)position)>>1)& 0x7F);  
-//    byte_2 = 0x80 |((((uint8_t)speed)>>1)& 0x7F);
-//    byte_3 = 0x80 |((((uint8_t)I_m)>>1)& 0x7F);
-//    byte_4 = 0x80 |((((uint8_t)temp_mt)>>1)& 0x7F);
-    
-    byte[0] = ((state_motor<<4)& 0x20)|(and_ating & 0x02);
-    byte[1] = 0x80 |((((uint8_t)position)>>1)& 0x7F);  
-    byte[2] = 0x80 |((((uint8_t)speed)>>1)& 0x7F);
-    byte[3] = 0x80 |((((uint8_t)I_m)>>1)& 0x7F);
-    byte[4] = 0x80 |((((uint8_t)temp_mt)>>1)& 0x7F);
-
+    update();        
 }
 
-void controle()                                 //rotina responsável por controlar o motor
+//REALIZA O CONTROLE DO FUNCIONAMENTO DAS SOLICITAÇÕES
+void controle()                                 
 {
-    I_m = conv_I*ADC_GetConversion(0);          // Realiza a leitura da corrente, converte para mA usando *conv_I, jï¿½ esta preparado para envio, veja as definiï¿½ï¿½es! (Resoluï¿½ï¿½o da mediï¿½ï¿½o 0.5 mA )
-    temp_mt = conv_temp*ADC_GetConversion(1);   // Realiza a leitura da temperatura, converte para C usando *conv_temp, jï¿½ esta preparado para envio, veja as definiï¿½ï¿½es! (Resoluï¿½ï¿½o da mediï¿½ï¿½o 0.1 ï¿½C))
-    int count = 0;                              // Contador responsï¿½vel pelos loops
-    int tempo_espera = 400000000;//4000;
-
-    
-    Dir_SetHigh();
-    estado = 1;
-    movimento();
-   // LedG_SetHigh();
-  //  LedR_SetLow();
-
-
-    Dir_SetLow();
-    estado = 2;
-    movimento();
-    and_dst=0;
-  //  LedG_SetHigh();
-  //  LedR_SetLow();
-    
+    // Subida
+    if(and_dst>and_atual)
+        {
+        // Se estiver descendo aguarda 500ms e muda de sentido
+        if(Dir_GetValue()==0)
+            {    
+                PWM3_LoadDutyValue(0);
+                __delay_ms(500);
+            }
+            Dir_SetHigh();
+            estado = 1;
+            movimento();
+          } 
+    // Descida
+    else if(and_dst<and_atual)
+        {
+            // Se estiver subindo aguarda 500ms e muda de sentido
+            if(Dir_GetValue()==1)
+                {
+                    PWM3_LoadDutyValue(0);
+                    __delay_ms(500);
+                }
+                Dir_SetLow();
+                estado = 2;
+                movimento();
+        }
+    //Se estiver no andar de destino - andar de destino = 0
+    if(and_dst==and_atual)
+        {
+            estado = 0;
+            and_dst=0;
+        }
 }
 
+//FUNÇÃO DE CONTROLE DA MOVIMENTAÇÃO DO MOTOR
 void movimento()
 {
-    
-    int a = 26;                                 // Valor da aceleraï¿½ï¿½o boa para o motor (cï¿½lculado por torricelli)
-    int max_dutyValue = 612;                    // Valor mï¿½ximo aceito pelo PWM (v = 20 mm/s))
-    int min_dutyValue = 153;                    // Valor do PWM para v = 5 mm/s
-    int destiny = and_dst*60;                 // Variï¿½vel para receber o andar de destino [OBS: Validar com o Matheus essa variï¿½vel]
-    int route = destiny - 40;                   // Controla o nï¿½mero de pulsos com v = 20 mm/s
-    int dutyValue = 0;                          // Inicia dutyValue em zero
-    int count=0;
-    int ilum = 1023;
-    
-   // LedR_SetHigh();
-  //  LedG_SetLow();
-    
-    for(count = 0; count < 20; count++){        // Loop responsï¿½vel pela aceleraï¿½ï¿½o do motor
-        dutyValue+=a;                           // Adiciona valor de aceleraï¿½ï¿½o no dutyValue
-
-        EPWM1_LoadDutyValue(ilum=-2);
-        if(dutyValue > max_dutyValue){          // Comparaï¿½ï¿½o se o valor de dutyValue nï¿½o ultrapassa o mï¿½ximo permitido
-            PWM3_LoadDutyValue(max_dutyValue);  // Caso sim, esse valor ï¿½ substituï¿½do pelo valor mï¿½ximo
-        }else{                                  // Else
-            PWM3_LoadDutyValue(dutyValue);      // Envia dutyValue com o valor acrescido de aceleraï¿½ï¿½o do motor
+    distancia = abs(and_atual-and_dst);         //Diferença de andar solicitado e atual
+    int mean_dutyValue = 450;
+    destiny = distancia*68;                     //Posição em pulsos do andar de destino                
+    luminos=1;
+    luminosidade = 1023;
+   
+    // Loop de controle do motor (ativa PWM enquanto não atingir andar de destino) 
+    while(and_atual!=and_dst)
+        {        
+            PWM3_LoadDutyValue(mean_dutyValue);
+            update();                           //Atualiza dados de saída
         }
-        
-    }
-    count = 0;                                  // Reinicia o contador para o prï¿½ximo loop
-    for(count = 0; count < route ; count++){    // Loop responsï¿½vel pela velocidade mï¿½xima constante
-        PWM3_LoadDutyValue(max_dutyValue);      // Envia max_dutyValue para o PWM
-    }
-    
-    count = 0;                                  // Reinicia o contador para o prï¿½ximo loop
-    for(count = 0; count < 20; count++){        // Loop responsï¿½vel pela desaceleraï¿½ï¿½o do motor
-        dutyValue-=a;                           // Subtrai valor da aceleraï¿½ï¿½o do dutyValue
-        EPWM1_LoadDutyValue(ilum=-2);
-        if(dutyValue < min_dutyValue){          // Comparação se o valor de dutyValue não ultrapassa o mínimo permitido na desaceleraï¿½ï¿½o
-            PWM3_LoadDutyValue(min_dutyValue);  // Caso sim, esse valor ï¿½ substituï¿½do pelo valor mï¿½nimo para v = 5 mm/s
-        }else{                                  // Else
-        PWM3_LoadDutyValue(dutyValue);          // Envia dutyValue com o valor decrescido de aceleraï¿½ï¿½o do motor
-        }
-    }
-    
+    //Controle dos leds
+    EPWM1_LoadDutyValue(0);
+    luminos = 0;
+    //Para elevador e aguarda 2 segundos
+    PWM3_LoadDutyValue(0);
     estado = 0;
-    //Aguarda 2 segundos após parada
-    PIE3bits.TMR6IE=1;    // Ativa interrupção do timer utilizado para contagem da espera
-    acabou_delay=0;
-    TMR6_WriteTimer(0);
-    while (1)
-        {
-        if(acabou_delay == 1)
-            {
-                acabou_delay=0;
-                break;
-            }
-        }
-    PIE3bits.TMR6IE=0;   // Desativa interrupção do timer utilizado para contagem da espera
+    __delay_ms(2000);
+}
+
+//FUNÇÃO DE PREPARO E TRATAMENTO DOS DADOS
+void update(){
+    I_m = ADC_GetConversion(0);          // Realiza a leitura da corrente, converte para mA usando *conv_I, jï¿½ esta preparado para envio, veja as definiï¿½ï¿½es! (Resoluï¿½ï¿½o da mediï¿½ï¿½o 0.5 mA )
+    IM_B = (uint8_t)((conv_I*I_m)/4);
+    temp_mt = (float)ADC_GetConversion(1);   // Realiza a leitura da temperatura, converte para C usando *conv_temp, jï¿½ esta preparado para envio, veja as definiï¿½ï¿½es! (Resoluï¿½ï¿½o da mediï¿½ï¿½o 0.1 ï¿½C))
+    TM_B = (uint8_t)(conv_temp*temp_mt*2);
+    speed = (distance_1_pulse/(((float)ccp_value)*conv_second))*4;
+    if(estado==0)
+    {
+        speed = 0;
+    }
+    position = distance_1_pulse*pulses;
+    
+    //PREPARO DOS DADOS PARA TRANSMISSÃO
+    byte[0] = ((state_motor<<4)& 0x30)|(and_ating & 0x03); 
+    byte[1] = 0x80 |((((uint8_t)position)>>1)& 0x7F); 
+    byte[2] = 0x80 |((((uint8_t)speed))& 0x7F); 
+    byte[3] = 0x80 |(((IM_B))& 0x7F); 
+    byte[4] = 0x80 |(((TM_B))& 0x7F); 
 }

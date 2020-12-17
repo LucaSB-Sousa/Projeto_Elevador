@@ -127,27 +127,21 @@
 #define RA4_SetAnalogMode()         do { ANSELAbits.ANSA4 = 1; } while(0)
 #define RA4_SetDigitalMode()        do { ANSELAbits.ANSA4 = 0; } while(0)
 
-// get/set LedG aliases
-#define LedG_TRIS                 TRISAbits.TRISA6
-#define LedG_LAT                  LATAbits.LATA6
-#define LedG_PORT                 PORTAbits.RA6
-#define LedG_SetHigh()            do { LATAbits.LATA6 = 1; } while(0)
-#define LedG_SetLow()             do { LATAbits.LATA6 = 0; } while(0)
-#define LedG_Toggle()             do { LATAbits.LATA6 = ~LATAbits.LATA6; } while(0)
-#define LedG_GetValue()           PORTAbits.RA6
-#define LedG_SetDigitalInput()    do { TRISAbits.TRISA6 = 1; } while(0)
-#define LedG_SetDigitalOutput()   do { TRISAbits.TRISA6 = 0; } while(0)
+// get/set RA6 procedures
+#define RA6_SetHigh()            do { LATAbits.LATA6 = 1; } while(0)
+#define RA6_SetLow()             do { LATAbits.LATA6 = 0; } while(0)
+#define RA6_Toggle()             do { LATAbits.LATA6 = ~LATAbits.LATA6; } while(0)
+#define RA6_GetValue()              PORTAbits.RA6
+#define RA6_SetDigitalInput()    do { TRISAbits.TRISA6 = 1; } while(0)
+#define RA6_SetDigitalOutput()   do { TRISAbits.TRISA6 = 0; } while(0)
 
-// get/set LedR aliases
-#define LedR_TRIS                 TRISAbits.TRISA7
-#define LedR_LAT                  LATAbits.LATA7
-#define LedR_PORT                 PORTAbits.RA7
-#define LedR_SetHigh()            do { LATAbits.LATA7 = 1; } while(0)
-#define LedR_SetLow()             do { LATAbits.LATA7 = 0; } while(0)
-#define LedR_Toggle()             do { LATAbits.LATA7 = ~LATAbits.LATA7; } while(0)
-#define LedR_GetValue()           PORTAbits.RA7
-#define LedR_SetDigitalInput()    do { TRISAbits.TRISA7 = 1; } while(0)
-#define LedR_SetDigitalOutput()   do { TRISAbits.TRISA7 = 0; } while(0)
+// get/set RA7 procedures
+#define RA7_SetHigh()            do { LATAbits.LATA7 = 1; } while(0)
+#define RA7_SetLow()             do { LATAbits.LATA7 = 0; } while(0)
+#define RA7_Toggle()             do { LATAbits.LATA7 = ~LATAbits.LATA7; } while(0)
+#define RA7_GetValue()              PORTAbits.RA7
+#define RA7_SetDigitalInput()    do { TRISAbits.TRISA7 = 1; } while(0)
+#define RA7_SetDigitalOutput()   do { TRISAbits.TRISA7 = 0; } while(0)
 
 // get/set S1 aliases
 #define S1_TRIS                 TRISBbits.TRISB0
