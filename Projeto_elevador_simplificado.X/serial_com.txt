@@ -3,3 +3,22 @@ wait 10 ms
 
 02
 
+//wait 20 ms
+
+//CA
+
+//wait 100 ms
+
+//42
+
+//wait 100 ms
+
+//65
+
+//wait 100 ms
+
+//40
+
+//wait 100 ms
+
+//63

@@ -13,7 +13,7 @@ No Repeat
 --
 &
 --
-COND2
+COND1
 Any
 
 
@@ -29,11 +29,11 @@ cyc
 
 RCREG
 Message
-
+0
 2
-C:\Users\Lucas\Desktop\PROJETO FINAL ELETRÔNICA EMBARCADA\Projeto_Elevador\Projeto_elevador_simplificado.X\serial_com.txt
+C:\Users\Acer\Desktop\MATHEUS\Matheus - UnB\Embarcada\GitHub\Projeto_Elevador\Projeto_elevador.X\serial_com.txt
 Pkt
-No
+Yes
 
 --
 &
@@ -44,46 +44,46 @@ Pin
 RB0
 Toggle
 
-Sensor andar 1
+Sensor - andar atingido '1'
 -1
 --
 Pin
 RB3
 Toggle
 
-Sensor andar 2
+Sensor - andar atingido '2'
 -1
 --
 Pin
 RB4
 Toggle
 
-Sensor andar 3
+Sensor - andar atingido '3'
 -1
 --
 Pin
 RB5
 Toggle
 
-Sensor andar 4
+Sensor - andar atingido '4''
 -1
 --
 Pin
 AN0
 Set Voltage
-890 mV
-Corrente motor Im
+1 V
+
 -1
 --
 Pin
 AN1
 Set Voltage
-500 mV
-Temperatura motor
+1 V
+
 -1
 --
 &
 ## ADVANCEDSCL
 
-1
+0
 &

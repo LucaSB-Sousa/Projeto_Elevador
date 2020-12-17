@@ -8,9 +8,23 @@ Version 4.0 HI-TECH Software Intermediate Code
 "235 ./mcc_generated_files/tmr1.h
 [; ;./mcc_generated_files/tmr1.h: 235: void TMR1_WriteTimer(uint16_t timerVal);
 [v _TMR1_WriteTimer `(v ~T0 @X0 0 ef1`us ]
+"435 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1827.h
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1827.h: 435:     struct {
+[s S34 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S34 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
+"434
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1827.h: 434: typedef union {
+[u S33 `S34 1 ]
+[n S33 . . ]
+"446
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1827.h: 446: extern volatile PORTAbits_t PORTAbits __attribute__((address(0x00C)));
+[v _PORTAbits `VS33 ~T0 @X0 0 e@12 ]
+"122 ./mcc_generated_files/epwm1.h
+[; ;./mcc_generated_files/epwm1.h: 122: void EPWM1_LoadDutyValue(uint16_t dutyValue);
+[v _EPWM1_LoadDutyValue `(v ~T0 @X0 0 ef1`us ]
 [p mainexit ]
-"80 ./mcc_generated_files/mcc.h
-[; ;./mcc_generated_files/mcc.h: 80: void SYSTEM_Initialize(void);
+"79 ./mcc_generated_files/mcc.h
+[; ;./mcc_generated_files/mcc.h: 79: void SYSTEM_Initialize(void);
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
 "357 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1827.h
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1827.h: 357:     struct {
@@ -27,70 +41,35 @@ Version 4.0 HI-TECH Software Intermediate Code
 "374
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1827.h: 374: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
 [v _INTCONbits `VS30 ~T0 @X0 0 e@11 ]
-[v F2544 `(v ~T0 @X0 0 tf ]
+[v F2528 `(v ~T0 @X0 0 tf ]
 "326 ./mcc_generated_files/tmr4.h
 [; ;./mcc_generated_files/tmr4.h: 326:  void TMR4_SetInterruptHandler(void (* InterruptHandler)(void));
-[v _TMR4_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F2544 ]
-[v F2673 `(v ~T0 @X0 0 tf ]
-[v F2528 `(v ~T0 @X0 0 tf ]
-"326 ./mcc_generated_files/tmr6.h
-[; ;./mcc_generated_files/tmr6.h: 326:  void TMR6_SetInterruptHandler(void (* InterruptHandler)(void));
-[v _TMR6_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F2528 ]
-[v F2675 `(v ~T0 @X0 0 tf ]
+[v _TMR4_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F2528 ]
+[v F2664 `(v ~T0 @X0 0 tf ]
 [v F2443 `(v ~T0 @X0 0 tf ]
-"299 ./mcc_generated_files/pin_manager.h
-[; ;./mcc_generated_files/pin_manager.h: 299: void IOCBF0_SetInterruptHandler(void (* InterruptHandler)(void));
+"293 ./mcc_generated_files/pin_manager.h
+[; ;./mcc_generated_files/pin_manager.h: 293: void IOCBF0_SetInterruptHandler(void (* InterruptHandler)(void));
 [v _IOCBF0_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F2443 ]
-[v F2677 `(v ~T0 @X0 0 tf ]
+[v F2666 `(v ~T0 @X0 0 tf ]
 [v F2451 `(v ~T0 @X0 0 tf ]
-"383
-[; ;./mcc_generated_files/pin_manager.h: 383: void IOCBF3_SetInterruptHandler(void (* InterruptHandler)(void));
+"377
+[; ;./mcc_generated_files/pin_manager.h: 377: void IOCBF3_SetInterruptHandler(void (* InterruptHandler)(void));
 [v _IOCBF3_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F2451 ]
-[v F2679 `(v ~T0 @X0 0 tf ]
+[v F2668 `(v ~T0 @X0 0 tf ]
 [v F2459 `(v ~T0 @X0 0 tf ]
-"467
-[; ;./mcc_generated_files/pin_manager.h: 467: void IOCBF4_SetInterruptHandler(void (* InterruptHandler)(void));
+"461
+[; ;./mcc_generated_files/pin_manager.h: 461: void IOCBF4_SetInterruptHandler(void (* InterruptHandler)(void));
 [v _IOCBF4_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F2459 ]
-[v F2681 `(v ~T0 @X0 0 tf ]
+[v F2670 `(v ~T0 @X0 0 tf ]
 [v F2467 `(v ~T0 @X0 0 tf ]
-"551
-[; ;./mcc_generated_files/pin_manager.h: 551: void IOCBF5_SetInterruptHandler(void (* InterruptHandler)(void));
+"545
+[; ;./mcc_generated_files/pin_manager.h: 545: void IOCBF5_SetInterruptHandler(void (* InterruptHandler)(void));
 [v _IOCBF5_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F2467 ]
-[v F2683 `(v ~T0 @X0 0 tf ]
-[v F2581 `(v ~T0 @X0 0 tf1`us ]
+[v F2672 `(v ~T0 @X0 0 tf ]
+[v F2565 `(v ~T0 @X0 0 tf1`us ]
 "180 ./mcc_generated_files/ccp4.h
 [; ;./mcc_generated_files/ccp4.h: 180:  void CCP4_SetCallBack(void (*customCallBack)(uint16_t));
-[v _CCP4_SetCallBack `(v ~T0 @X0 0 ef1`*F2581 ]
-"1395 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1827.h
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1827.h: 1395:     struct {
-[s S79 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S79 . . TMR4IE . TMR6IE CCP3IE CCP4IE ]
-"1394
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1827.h: 1394: typedef union {
-[u S78 `S79 1 ]
-[n S78 . . ]
-"1404
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1827.h: 1404: extern volatile PIE3bits_t PIE3bits __attribute__((address(0x093)));
-[v _PIE3bits `VS78 ~T0 @X0 0 e@147 ]
-"27 main.c
-[; ;main.c: 27: void comunicacao ();
-[v _comunicacao `(v ~T0 @X0 0 e? ]
-"28
-[; ;main.c: 28: void controle();
-[v _controle `(v ~T0 @X0 0 e? ]
-"206 ./mcc_generated_files/eusart.h
-[; ;./mcc_generated_files/eusart.h: 206: _Bool EUSART_is_rx_ready(void);
-[v _EUSART_is_rx_ready `(a ~T0 @X0 0 ef ]
-"321
-[; ;./mcc_generated_files/eusart.h: 321: uint8_t EUSART_Read(void);
-[v _EUSART_Read `(uc ~T0 @X0 0 ef ]
-"176 main.c
-[; ;main.c: 176:     I_m = 0.1*ADC_GetConversion(0);
-[c E2599 0 1 29 30 31 .. ]
-[n E2599 . Im Temp channel_Temp channel_DAC channel_FVR  ]
-"289 ./mcc_generated_files/adc.h
-[; ;./mcc_generated_files/adc.h: 289: adc_result_t ADC_GetConversion(adc_channel_t channel);
-[v _ADC_GetConversion `(us ~T0 @X0 0 ef1`E2599 ]
+[v _CCP4_SetCallBack `(v ~T0 @X0 0 ef1`*F2565 ]
 "2045 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1827.h
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1827.h: 2045:     struct {
 [s S110 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -102,18 +81,48 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2056
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1827.h: 2056: extern volatile LATAbits_t LATAbits __attribute__((address(0x10C)));
 [v _LATAbits `VS109 ~T0 @X0 0 e@268 ]
-"29 main.c
-[; ;main.c: 29: void movimento();
-[v _movimento `(v ~T0 @X0 0 e? ]
-"122 ./mcc_generated_files/epwm1.h
-[; ;./mcc_generated_files/epwm1.h: 122: void EPWM1_LoadDutyValue(uint16_t dutyValue);
-[v _EPWM1_LoadDutyValue `(v ~T0 @X0 0 ef1`us ]
 "124 ./mcc_generated_files/pwm3.h
 [; ;./mcc_generated_files/pwm3.h: 124: void PWM3_LoadDutyValue(uint16_t dutyValue);
 [v _PWM3_LoadDutyValue `(v ~T0 @X0 0 ef1`us ]
-"238 ./mcc_generated_files/tmr6.h
-[; ;./mcc_generated_files/tmr6.h: 238: void TMR6_WriteTimer(uint8_t timerVal);
-[v _TMR6_WriteTimer `(v ~T0 @X0 0 ef1`uc ]
+"497 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1827.h
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1827.h: 497:     struct {
+[s S36 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S36 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
+"496
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1827.h: 496: typedef union {
+[u S35 `S36 1 ]
+[n S35 . . ]
+"508
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1827.h: 508: extern volatile PORTBbits_t PORTBbits __attribute__((address(0x00D)));
+[v _PORTBbits `VS35 ~T0 @X0 0 e@13 ]
+"158 main.c
+[; ;main.c: 158:         I_m = ADC_GetConversion(0);
+[c E2583 0 1 29 30 31 .. ]
+[n E2583 . Im Temp channel_Temp channel_DAC channel_FVR  ]
+"289 ./mcc_generated_files/adc.h
+[; ;./mcc_generated_files/adc.h: 289: adc_result_t ADC_GetConversion(adc_channel_t channel);
+[v _ADC_GetConversion `(us ~T0 @X0 0 ef1`E2583 ]
+"26 main.c
+[; ;main.c: 26: void comunicacao ();
+[v _comunicacao `(v ~T0 @X0 0 e? ]
+"27
+[; ;main.c: 27: void controle();
+[v _controle `(v ~T0 @X0 0 e? ]
+"206 ./mcc_generated_files/eusart.h
+[; ;./mcc_generated_files/eusart.h: 206: _Bool EUSART_is_rx_ready(void);
+[v _EUSART_is_rx_ready `(a ~T0 @X0 0 ef ]
+"321
+[; ;./mcc_generated_files/eusart.h: 321: uint8_t EUSART_Read(void);
+[v _EUSART_Read `(uc ~T0 @X0 0 ef ]
+"29 main.c
+[; ;main.c: 29: void update();
+[v _update `(v ~T0 @X0 0 e? ]
+"28
+[; ;main.c: 28: void movimento();
+[v _movimento `(v ~T0 @X0 0 e? ]
+"51 C:\Program Files\Microchip\xc8\v2.30\pic\include\c99\stdlib.h
+[; ;C:\Program Files\Microchip\xc8\v2.30\pic\include\c99\stdlib.h: 51: int abs (int);
+[v _abs `(i ~T0 @X0 0 ef1`i ]
 "54 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1827.h
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1827.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -625,167 +634,178 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> 0 `i
 ]
 "39
-[; ;main.c: 39: int aux_tempo_d2s = 0;
-[v _aux_tempo_d2s `i ~T0 @X0 1 e ]
-[i _aux_tempo_d2s
--> 0 `i
-]
-"40
-[; ;main.c: 40: int estado = 0;
+[; ;main.c: 39: int estado = 0;
 [v _estado `i ~T0 @X0 1 e ]
 [i _estado
 -> 0 `i
 ]
+"40
+[; ;main.c: 40: int destiny;
+[v _destiny `i ~T0 @X0 1 e ]
 "41
-[; ;main.c: 41: int acabou_delay =0;
-[v _acabou_delay `i ~T0 @X0 1 e ]
-[i _acabou_delay
+[; ;main.c: 41: int and_atual = 0;
+[v _and_atual `i ~T0 @X0 1 e ]
+[i _and_atual
 -> 0 `i
 ]
+"42
+[; ;main.c: 42: int luminosidade = 0;
+[v _luminosidade `i ~T0 @X0 1 e ]
+[i _luminosidade
+-> 0 `i
+]
+"43
+[; ;main.c: 43: int luminos;
+[v _luminos `i ~T0 @X0 1 e ]
+"44
+[; ;main.c: 44: int distancia;
+[v _distancia `i ~T0 @X0 1 e ]
 "45
-[; ;main.c: 45: uint8_t state_motor = 0;
+[; ;main.c: 45: float speed = 0.0;
+[v _speed `f ~T0 @X0 1 e ]
+[i _speed
+-> .0.0 `f
+]
+"46
+[; ;main.c: 46: float position = 0.0;
+[v _position `f ~T0 @X0 1 e ]
+[i _position
+-> .0.0 `f
+]
+"50
+[; ;main.c: 50: uint8_t state_motor = 0;
 [v _state_motor `uc ~T0 @X0 1 e ]
 [i _state_motor
 -> -> 0 `i `uc
 ]
-"46
-[; ;main.c: 46: uint8_t and_ating = 0;
+"51
+[; ;main.c: 51: uint8_t and_ating = 0;
 [v _and_ating `uc ~T0 @X0 1 e ]
 [i _and_ating
 -> -> 0 `i `uc
 ]
-"47
-[; ;main.c: 47: uint16_t ccp_value = 0;
+"52
+[; ;main.c: 52: uint16_t ccp_value = 0;
 [v _ccp_value `us ~T0 @X0 1 e ]
 [i _ccp_value
 -> -> 0 `i `us
 ]
-"48
-[; ;main.c: 48: uint8_t byte[5];
-[v _byte `uc ~T0 @X0 -> 5 `i e ]
 "53
-[; ;main.c: 53: void send_data()
-[v _send_data `(v ~T0 @X0 1 ef ]
+[; ;main.c: 53: uint8_t byte[5];
+[v _byte `uc ~T0 @X0 -> 5 `i e ]
 "54
-[; ;main.c: 54:  {
+[; ;main.c: 54: uint8_t IM_B = 0;
+[v _IM_B `uc ~T0 @X0 1 e ]
+[i _IM_B
+-> -> 0 `i `uc
+]
+"55
+[; ;main.c: 55: uint8_t TM_B = 0;
+[v _TM_B `uc ~T0 @X0 1 e ]
+[i _TM_B
+-> -> 0 `i `uc
+]
+"61
+[; ;main.c: 61: void send_data()
+[v _send_data `(v ~T0 @X0 1 ef ]
+"62
+[; ;main.c: 62:  {
 {
 [e :U _send_data ]
 [f ]
-"55
-[; ;main.c: 55:         aux_tempo++;
+"63
+[; ;main.c: 63:         aux_tempo++;
 [e ++ _aux_tempo -> 1 `i ]
-"56
-[; ;main.c: 56:         if(aux_tempo == 14)
+"64
+[; ;main.c: 64:         if(aux_tempo == 14)
 [e $ ! == _aux_tempo -> 14 `i 361  ]
-"57
-[; ;main.c: 57:         {
+"65
+[; ;main.c: 65:         {
 {
-"58
-[; ;main.c: 58:             int i=0;
+"66
+[; ;main.c: 66:             int i=0;
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-"59
-[; ;main.c: 59:             while(i<5)
+"67
+[; ;main.c: 67:             while(i<5)
 [e $U 362  ]
 [e :U 363 ]
-"60
-[; ;main.c: 60:             {
+"68
+[; ;main.c: 68:             {
 {
-"61
-[; ;main.c: 61:                 if(EUSART_is_tx_ready())
+"69
+[; ;main.c: 69:                 if(EUSART_is_tx_ready())
 [e $ ! != -> ( _EUSART_is_tx_ready ..  `i -> 0 `i 365  ]
-"62
-[; ;main.c: 62:                     {
+"70
+[; ;main.c: 70:                     {
 {
-"63
-[; ;main.c: 63:                         EUSART_Write(byte[i]);
+"71
+[; ;main.c: 71:                         EUSART_Write(byte[i]);
 [e ( _EUSART_Write (1 *U + &U _byte * -> -> _i `ui `ux -> -> # *U &U _byte `ui `ux ]
-"64
-[; ;main.c: 64:                         i++;
+"72
+[; ;main.c: 72:                         i++;
 [e ++ _i -> 1 `i ]
-"65
-[; ;main.c: 65:                     }
+"73
+[; ;main.c: 73:                     }
 }
 [e :U 365 ]
-"66
-[; ;main.c: 66:             }
+"74
+[; ;main.c: 74:             }
 }
 [e :U 362 ]
-"59
-[; ;main.c: 59:             while(i<5)
+"67
+[; ;main.c: 67:             while(i<5)
 [e $ < _i -> 5 `i 363  ]
 [e :U 364 ]
-"68
-[; ;main.c: 68:             aux_tempo =0;
+"76
+[; ;main.c: 76:             aux_tempo =0;
 [e = _aux_tempo -> 0 `i ]
-"69
-[; ;main.c: 69:         }
+"77
+[; ;main.c: 77:         }
 }
 [e :U 361 ]
-"70
-[; ;main.c: 70:  }
+"78
+[; ;main.c: 78:  }
 [e :UE 360 ]
 }
-"73
-[; ;main.c: 73: void delay_2s()
-[v _delay_2s `(v ~T0 @X0 1 ef ]
-"74
-[; ;main.c: 74:  {
-{
-[e :U _delay_2s ]
-[f ]
-"75
-[; ;main.c: 75:         aux_tempo_d2s++;
-[e ++ _aux_tempo_d2s -> 1 `i ]
-"76
-[; ;main.c: 76:         if(aux_tempo_d2s == 280)
-[e $ ! == _aux_tempo_d2s -> 280 `i 367  ]
-"77
-[; ;main.c: 77:         {
-{
-"78
-[; ;main.c: 78:             acabou_delay=1;
-[e = _acabou_delay -> 1 `i ]
-"79
-[; ;main.c: 79:             aux_tempo_d2s =0;
-[e = _aux_tempo_d2s -> 0 `i ]
 "80
-[; ;main.c: 80:         }
-}
-[e :U 367 ]
-"81
-[; ;main.c: 81:  }
-[e :UE 366 ]
-}
-"83
-[; ;main.c: 83: void sensor1()
+[; ;main.c: 80: void sensor1()
 [v _sensor1 `(v ~T0 @X0 1 ef ]
-"84
-[; ;main.c: 84:     {
+"81
+[; ;main.c: 81:     {
 {
 [e :U _sensor1 ]
 [f ]
-"85
-[; ;main.c: 85:         and_ating=0;
+"82
+[; ;main.c: 82:         and_ating=0;
 [e = _and_ating -> -> 0 `i `uc ]
-"86
-[; ;main.c: 86:     }
-[e :UE 368 ]
+"83
+[; ;main.c: 83:         and_atual = 0;
+[e = _and_atual -> 0 `i ]
+"84
+[; ;main.c: 84:         pulses = 0;
+[e = _pulses -> 0 `i ]
+"85
+[; ;main.c: 85:     }
+[e :UE 366 ]
 }
-"88
-[; ;main.c: 88: void sensor2()
+"87
+[; ;main.c: 87: void sensor2()
 [v _sensor2 `(v ~T0 @X0 1 ef ]
-"89
-[; ;main.c: 89:     {
+"88
+[; ;main.c: 88:     {
 {
 [e :U _sensor2 ]
 [f ]
-"90
-[; ;main.c: 90:         and_ating=1;
+"89
+[; ;main.c: 89:         and_ating=1;
 [e = _and_ating -> -> 1 `i `uc ]
+"90
+[; ;main.c: 90:         and_atual = 1;
+[e = _and_atual -> 1 `i ]
 "91
 [; ;main.c: 91:     }
-[e :UE 369 ]
+[e :UE 367 ]
 }
 "93
 [; ;main.c: 93: void sensor3()
@@ -799,432 +819,451 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 95:         and_ating=2;
 [e = _and_ating -> -> 2 `i `uc ]
 "96
-[; ;main.c: 96:     }
-[e :UE 370 ]
+[; ;main.c: 96:         and_atual = 2;
+[e = _and_atual -> 2 `i ]
+"97
+[; ;main.c: 97:     }
+[e :UE 368 ]
 }
-"98
-[; ;main.c: 98: void sensor4()
-[v _sensor4 `(v ~T0 @X0 1 ef ]
 "99
-[; ;main.c: 99:     {
+[; ;main.c: 99: void sensor4()
+[v _sensor4 `(v ~T0 @X0 1 ef ]
+"100
+[; ;main.c: 100:     {
 {
 [e :U _sensor4 ]
 [f ]
-"100
-[; ;main.c: 100:         and_ating=3;
-[e = _and_ating -> -> 3 `i `uc ]
 "101
-[; ;main.c: 101:     }
-[e :UE 371 ]
-}
+[; ;main.c: 101:         and_ating=3;
+[e = _and_ating -> -> 3 `i `uc ]
+"102
+[; ;main.c: 102:         and_atual = 3;
+[e = _and_atual -> 3 `i ]
 "103
-[; ;main.c: 103: void get_pulse(uint16_t capturedValue)
+[; ;main.c: 103:     }
+[e :UE 369 ]
+}
+"105
+[; ;main.c: 105: void get_pulse(uint16_t capturedValue)
 [v _get_pulse `(v ~T0 @X0 1 ef1`us ]
-"104
-[; ;main.c: 104:     {
+"106
+[; ;main.c: 106:     {
 {
 [e :U _get_pulse ]
-"103
-[; ;main.c: 103: void get_pulse(uint16_t capturedValue)
-[v _capturedValue `us ~T0 @X0 1 r1 ]
-"104
-[; ;main.c: 104:     {
-[f ]
 "105
-[; ;main.c: 105:         TMR1_WriteTimer(0);
-[e ( _TMR1_WriteTimer (1 -> -> 0 `i `us ]
+[; ;main.c: 105: void get_pulse(uint16_t capturedValue)
+[v _capturedValue `us ~T0 @X0 1 r1 ]
 "106
-[; ;main.c: 106:         ccp_value = capturedValue;
-[e = _ccp_value _capturedValue ]
+[; ;main.c: 106:     {
+[f ]
 "107
-[; ;main.c: 107:         if(sentido == 1){
-[e $ ! == _sentido -> 1 `i 373  ]
-{
+[; ;main.c: 107:         TMR1_WriteTimer(0);
+[e ( _TMR1_WriteTimer (1 -> -> 0 `i `us ]
 "108
-[; ;main.c: 108:             pulses++;
-[e ++ _pulses -> 1 `i ]
+[; ;main.c: 108:         ccp_value = capturedValue;
+[e = _ccp_value _capturedValue ]
 "109
-[; ;main.c: 109:         }else if(sentido == 0 && pulses >= 0){
-}
-[e $U 374  ]
-[e :U 373 ]
-[e $ ! && == _sentido -> 0 `i >= _pulses -> 0 `i 375  ]
-{
+[; ;main.c: 109:         if(PORTAbits.RA2==1)
+[e $ ! == -> . . _PORTAbits 0 2 `i -> 1 `i 371  ]
 "110
-[; ;main.c: 110:             pulses--;
-[e -- _pulses -> 1 `i ]
+[; ;main.c: 110:             {
+{
 "111
-[; ;main.c: 111:         }
+[; ;main.c: 111:                 pulses++;
+[e ++ _pulses -> 1 `i ]
+"112
+[; ;main.c: 112:             }
+}
+[e $U 372  ]
+"113
+[; ;main.c: 113:         else if(PORTAbits.RA2 == 0 && pulses >= 0)
+[e :U 371 ]
+[e $ ! && == -> . . _PORTAbits 0 2 `i -> 0 `i >= _pulses -> 0 `i 373  ]
+"114
+[; ;main.c: 114:             {
+{
+"115
+[; ;main.c: 115:                 pulses--;
+[e -- _pulses -> 1 `i ]
+"116
+[; ;main.c: 116:             }
+}
+[e :U 373 ]
+[e :U 372 ]
+"117
+[; ;main.c: 117:         if (luminos == 1)
+[e $ ! == _luminos -> 1 `i 374  ]
+"118
+[; ;main.c: 118:             {
+{
+"119
+[; ;main.c: 119:                 luminosidade-=(1023/destiny);
+[e =- _luminosidade / -> 1023 `i _destiny ]
+"120
+[; ;main.c: 120:                 if(luminosidade< 0)
+[e $ ! < _luminosidade -> 0 `i 375  ]
+"121
+[; ;main.c: 121:                 {luminosidade = 15;}
+{
+[e = _luminosidade -> 15 `i ]
 }
 [e :U 375 ]
+"122
+[; ;main.c: 122:                 EPWM1_LoadDutyValue(luminosidade);
+[e ( _EPWM1_LoadDutyValue (1 -> _luminosidade `us ]
+"124
+[; ;main.c: 124:             }
+}
 [e :U 374 ]
-"112
-[; ;main.c: 112:     }
-[e :UE 372 ]
+"126
+[; ;main.c: 126:     }
+[e :UE 370 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"115
-[; ;main.c: 115: void main(void)
+"129
+[; ;main.c: 129: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"116
-[; ;main.c: 116: {
+"130
+[; ;main.c: 130: {
 {
 [e :U _main ]
 [f ]
-"119
-[; ;main.c: 119:     SYSTEM_Initialize();
+"133
+[; ;main.c: 133:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"120
-[; ;main.c: 120:     (INTCONbits.GIE = 1);
+"134
+[; ;main.c: 134:     (INTCONbits.GIE = 1);
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"121
-[; ;main.c: 121:     (INTCONbits.PEIE = 1);
+"135
+[; ;main.c: 135:     (INTCONbits.PEIE = 1);
 [e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-"124
-[; ;main.c: 124:     TMR4_SetInterruptHandler(send_data);
-[e ( _TMR4_SetInterruptHandler (1 -> &U _send_data `*F2673 ]
-"125
-[; ;main.c: 125:     TMR6_SetInterruptHandler(delay_2s);
-[e ( _TMR6_SetInterruptHandler (1 -> &U _delay_2s `*F2675 ]
-"126
-[; ;main.c: 126:     IOCBF0_SetInterruptHandler(sensor1);
-[e ( _IOCBF0_SetInterruptHandler (1 -> &U _sensor1 `*F2677 ]
-"127
-[; ;main.c: 127:     IOCBF3_SetInterruptHandler(sensor2);
-[e ( _IOCBF3_SetInterruptHandler (1 -> &U _sensor2 `*F2679 ]
-"128
-[; ;main.c: 128:     IOCBF4_SetInterruptHandler(sensor3);
-[e ( _IOCBF4_SetInterruptHandler (1 -> &U _sensor3 `*F2681 ]
-"129
-[; ;main.c: 129:     IOCBF5_SetInterruptHandler(sensor4);
-[e ( _IOCBF5_SetInterruptHandler (1 -> &U _sensor4 `*F2683 ]
-"130
-[; ;main.c: 130:     CCP4_SetCallBack(get_pulse);
-[e ( _CCP4_SetCallBack (1 &U _get_pulse ]
-"131
-[; ;main.c: 131:     PIE3bits.TMR6IE=0;
-[e = . . _PIE3bits 0 3 -> -> 0 `i `uc ]
 "138
-[; ;main.c: 138:     while (1)
-[e :U 378 ]
+[; ;main.c: 138:     TMR4_SetInterruptHandler(send_data);
+[e ( _TMR4_SetInterruptHandler (1 -> &U _send_data `*F2664 ]
 "139
-[; ;main.c: 139:     {
-{
+[; ;main.c: 139:     IOCBF0_SetInterruptHandler(sensor1);
+[e ( _IOCBF0_SetInterruptHandler (1 -> &U _sensor1 `*F2666 ]
 "140
-[; ;main.c: 140:        comunicacao ();
-[e ( _comunicacao ..  ]
+[; ;main.c: 140:     IOCBF3_SetInterruptHandler(sensor2);
+[e ( _IOCBF3_SetInterruptHandler (1 -> &U _sensor2 `*F2668 ]
 "141
-[; ;main.c: 141:        controle();
-[e ( _controle ..  ]
+[; ;main.c: 141:     IOCBF4_SetInterruptHandler(sensor3);
+[e ( _IOCBF4_SetInterruptHandler (1 -> &U _sensor3 `*F2670 ]
 "142
-[; ;main.c: 142:     }
-}
-[e :U 377 ]
-[e $U 378  ]
-[e :U 379 ]
+[; ;main.c: 142:     IOCBF5_SetInterruptHandler(sensor4);
+[e ( _IOCBF5_SetInterruptHandler (1 -> &U _sensor4 `*F2672 ]
 "143
-[; ;main.c: 143: }
-[e :UE 376 ]
-}
+[; ;main.c: 143:     CCP4_SetCallBack(get_pulse);
+[e ( _CCP4_SetCallBack (1 &U _get_pulse ]
 "145
-[; ;main.c: 145: void comunicacao ()
-[v _comunicacao `(v ~T0 @X0 1 ef ]
+[; ;main.c: 145:     luminos=1;
+[e = _luminos -> 1 `i ]
 "146
-[; ;main.c: 146: {
+[; ;main.c: 146:     luminosidade = 1023;
+[e = _luminosidade -> 1023 `i ]
+"147
+[; ;main.c: 147:     while(PORTBbits.RB0!=0){
+[e $U 377  ]
+[e :U 378 ]
 {
-[e :U _comunicacao ]
-[f ]
-"149
-[; ;main.c: 149:     uint8_t aux;
-[v _aux `uc ~T0 @X0 1 a ]
-"150
-[; ;main.c: 150:     float speed = 3.75/(((float)ccp_value)*0.0000005);
-[v _speed `f ~T0 @X0 1 a ]
-[e = _speed -> / .3.75 * -> -> _ccp_value `f `d .0.0000005 `f ]
-"151
-[; ;main.c: 151:     float position = 1.5*pulses;
-[v _position `f ~T0 @X0 1 a ]
-[e = _position -> * .1.5 -> _pulses `d `f ]
-"152
-[; ;main.c: 152:     if(EUSART_is_rx_ready())
-[e $ ! != -> ( _EUSART_is_rx_ready ..  `i -> 0 `i 381  ]
-"153
-[; ;main.c: 153:         {
-{
-"154
-[; ;main.c: 154:             aux= EUSART_Read();
-[e = _aux ( _EUSART_Read ..  ]
-"155
-[; ;main.c: 155:             and_dst = (int)(aux & 0x02);
-[e = _and_dst & -> _aux `i -> 2 `i ]
-"156
-[; ;main.c: 156:         }
-}
-[e :U 381 ]
-"166
-[; ;main.c: 166:     byte[0] = ((state_motor<<4)& 0x20)|(and_ating & 0x02);
-[e = *U + &U _byte * -> -> -> 0 `i `ui `ux -> -> # *U &U _byte `ui `ux -> | & << -> _state_motor `i -> 4 `i -> 32 `i & -> _and_ating `i -> 2 `i `uc ]
-"167
-[; ;main.c: 167:     byte[1] = 0x80 |((((uint8_t)position)>>1)& 0x7F);
-[e = *U + &U _byte * -> -> -> 1 `i `ui `ux -> -> # *U &U _byte `ui `ux -> | -> 128 `i & >> -> -> _position `uc `i -> 1 `i -> 127 `i `uc ]
-"168
-[; ;main.c: 168:     byte[2] = 0x80 |((((uint8_t)speed)>>1)& 0x7F);
-[e = *U + &U _byte * -> -> -> 2 `i `ui `ux -> -> # *U &U _byte `ui `ux -> | -> 128 `i & >> -> -> _speed `uc `i -> 1 `i -> 127 `i `uc ]
-"169
-[; ;main.c: 169:     byte[3] = 0x80 |((((uint8_t)I_m)>>1)& 0x7F);
-[e = *U + &U _byte * -> -> -> 3 `i `ui `ux -> -> # *U &U _byte `ui `ux -> | -> 128 `i & >> -> -> _I_m `uc `i -> 1 `i -> 127 `i `uc ]
-"170
-[; ;main.c: 170:     byte[4] = 0x80 |((((uint8_t)temp_mt)>>1)& 0x7F);
-[e = *U + &U _byte * -> -> -> 4 `i `ui `ux -> -> # *U &U _byte `ui `ux -> | -> 128 `i & >> -> -> _temp_mt `uc `i -> 1 `i -> 127 `i `uc ]
-"172
-[; ;main.c: 172: }
-[e :UE 380 ]
-}
-"174
-[; ;main.c: 174: void controle()
-[v _controle `(v ~T0 @X0 1 ef ]
-"175
-[; ;main.c: 175: {
-{
-[e :U _controle ]
-[f ]
-"176
-[; ;main.c: 176:     I_m = 0.1*ADC_GetConversion(0);
-[e = _I_m -> * .0.1 -> -> ( _ADC_GetConversion (1 -> -> 0 `i `E2599 `ui `d `f ]
-"177
-[; ;main.c: 177:     temp_mt = 0.3*ADC_GetConversion(1);
-[e = _temp_mt -> * .0.3 -> -> ( _ADC_GetConversion (1 -> -> 1 `i `E2599 `ui `d `f ]
-"178
-[; ;main.c: 178:     int count = 0;
-[v _count `i ~T0 @X0 1 a ]
-[e = _count -> 0 `i ]
-"179
-[; ;main.c: 179:     int tempo_espera = 400000000;
-[v _tempo_espera `i ~T0 @X0 1 a ]
-[e = _tempo_espera -> -> 400000000 `l `i ]
-"182
-[; ;main.c: 182:     do { LATAbits.LATA2 = 1; } while(0);
-[e :U 385 ]
-{
-[e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
-}
-[e :U 384 ]
-"183
-[; ;main.c: 183:     estado = 1;
-[e = _estado -> 1 `i ]
-"184
-[; ;main.c: 184:     movimento();
-[e ( _movimento ..  ]
-"189
-[; ;main.c: 189:     do { LATAbits.LATA2 = 0; } while(0);
-[e :U 388 ]
+"148
+[; ;main.c: 148:         do { LATAbits.LATA2 = 0; } while(0);
+[e :U 382 ]
 {
 [e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
 }
-[e :U 387 ]
-"190
-[; ;main.c: 190:     estado = 2;
-[e = _estado -> 2 `i ]
-"191
-[; ;main.c: 191:     movimento();
-[e ( _movimento ..  ]
-"192
-[; ;main.c: 192:     and_dst=0;
-[e = _and_dst -> 0 `i ]
-"196
-[; ;main.c: 196: }
-[e :UE 382 ]
+[e :U 381 ]
+"149
+[; ;main.c: 149:         PWM3_LoadDutyValue(512);
+[e ( _PWM3_LoadDutyValue (1 -> -> 512 `i `us ]
+"150
+[; ;main.c: 150:     }
 }
-"198
-[; ;main.c: 198: void movimento()
-[v _movimento `(v ~T0 @X0 1 ef ]
+[e :U 377 ]
+"147
+[; ;main.c: 147:     while(PORTBbits.RB0!=0){
+[e $ != -> . . _PORTBbits 0 0 `i -> 0 `i 378  ]
+[e :U 379 ]
+"151
+[; ;main.c: 151:     luminos=0;
+[e = _luminos -> 0 `i ]
+"152
+[; ;main.c: 152:     EPWM1_LoadDutyValue(0);
+[e ( _EPWM1_LoadDutyValue (1 -> -> 0 `i `us ]
+"153
+[; ;main.c: 153:     PWM3_LoadDutyValue(0);
+[e ( _PWM3_LoadDutyValue (1 -> -> 0 `i `us ]
+"156
+[; ;main.c: 156:     while (1)
+[e :U 384 ]
+"157
+[; ;main.c: 157:     {
+{
+"158
+[; ;main.c: 158:         I_m = ADC_GetConversion(0);
+[e = _I_m -> ( _ADC_GetConversion (1 -> -> 0 `i `E2583 `f ]
+"159
+[; ;main.c: 159:         IM_B = (uint8_t)((0.449*I_m)/4);
+[e = _IM_B -> / * .0.449 -> _I_m `d -> -> 4 `i `d `uc ]
+"160
+[; ;main.c: 160:         temp_mt = ADC_GetConversion(1);
+[e = _temp_mt -> ( _ADC_GetConversion (1 -> -> 1 `i `E2583 `f ]
+"161
+[; ;main.c: 161:         TM_B = (uint8_t)(0.11*temp_mt*2);
+[e = _TM_B -> * * .0.11 -> _temp_mt `d -> -> 2 `i `d `uc ]
+"162
+[; ;main.c: 162:         comunicacao ();
+[e ( _comunicacao ..  ]
+"163
+[; ;main.c: 163:         controle();
+[e ( _controle ..  ]
+"164
+[; ;main.c: 164:     }
+}
+[e :U 383 ]
+[e $U 384  ]
+[e :U 385 ]
+"165
+[; ;main.c: 165: }
+[e :UE 376 ]
+}
+"167
+[; ;main.c: 167: void comunicacao ()
+[v _comunicacao `(v ~T0 @X0 1 ef ]
+"168
+[; ;main.c: 168: {
+{
+[e :U _comunicacao ]
+[f ]
+"169
+[; ;main.c: 169:     uint8_t recebe = 0;
+[v _recebe `uc ~T0 @X0 1 a ]
+[e = _recebe -> -> 0 `i `uc ]
+"170
+[; ;main.c: 170:     if(EUSART_is_rx_ready())
+[e $ ! != -> ( _EUSART_is_rx_ready ..  `i -> 0 `i 387  ]
+"171
+[; ;main.c: 171:         {
+{
+"172
+[; ;main.c: 172:             recebe= EUSART_Read();
+[e = _recebe ( _EUSART_Read ..  ]
+"173
+[; ;main.c: 173:             and_dst = (int)((recebe) & 0x03);
+[e = _and_dst & -> _recebe `i -> 3 `i ]
+"174
+[; ;main.c: 174:         }
+}
+[e :U 387 ]
+"175
+[; ;main.c: 175:     update();
+[e ( _update ..  ]
+"176
+[; ;main.c: 176: }
+[e :UE 386 ]
+}
+"178
+[; ;main.c: 178: void controle()
+[v _controle `(v ~T0 @X0 1 ef ]
+"179
+[; ;main.c: 179: {
+{
+[e :U _controle ]
+[f ]
+"180
+[; ;main.c: 180:     if(and_dst>and_atual){
+[e $ ! > _and_dst _and_atual 389  ]
+{
+"181
+[; ;main.c: 181:         if(PORTAbits.RA2==0){
+[e $ ! == -> . . _PORTAbits 0 2 `i -> 0 `i 390  ]
+{
+"182
+[; ;main.c: 182:             PWM3_LoadDutyValue(0);
+[e ( _PWM3_LoadDutyValue (1 -> -> 0 `i `us ]
+"184
+[; ;main.c: 184:         }
+}
+[e :U 390 ]
+"185
+[; ;main.c: 185:         do { LATAbits.LATA2 = 1; } while(0);
+[e :U 393 ]
+{
+[e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
+}
+[e :U 392 ]
+"186
+[; ;main.c: 186:         estado = 1;
+[e = _estado -> 1 `i ]
+"187
+[; ;main.c: 187:         movimento();
+[e ( _movimento ..  ]
+"189
+[; ;main.c: 189:     } else if(and_dst<and_atual){
+}
+[e $U 394  ]
+[e :U 389 ]
+[e $ ! < _and_dst _and_atual 395  ]
+{
+"190
+[; ;main.c: 190:         if(PORTAbits.RA2==1){
+[e $ ! == -> . . _PORTAbits 0 2 `i -> 1 `i 396  ]
+{
+"191
+[; ;main.c: 191:             PWM3_LoadDutyValue(0);
+[e ( _PWM3_LoadDutyValue (1 -> -> 0 `i `us ]
+"193
+[; ;main.c: 193:         }
+}
+[e :U 396 ]
+"194
+[; ;main.c: 194:         do { LATAbits.LATA2 = 0; } while(0);
+[e :U 399 ]
+{
+[e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
+}
+[e :U 398 ]
+"195
+[; ;main.c: 195:         estado = 2;
+[e = _estado -> 2 `i ]
+"196
+[; ;main.c: 196:         movimento();
+[e ( _movimento ..  ]
+"197
+[; ;main.c: 197:     }
+}
+[e :U 395 ]
+[e :U 394 ]
 "199
-[; ;main.c: 199: {
+[; ;main.c: 199:     if(and_dst==and_atual){
+[e $ ! == _and_dst _and_atual 400  ]
+{
+"200
+[; ;main.c: 200:         estado = 0;
+[e = _estado -> 0 `i ]
+"201
+[; ;main.c: 201:         and_dst=0;
+[e = _and_dst -> 0 `i ]
+"202
+[; ;main.c: 202:     }
+}
+[e :U 400 ]
+"203
+[; ;main.c: 203: }
+[e :UE 388 ]
+}
+"205
+[; ;main.c: 205: void movimento()
+[v _movimento `(v ~T0 @X0 1 ef ]
+"206
+[; ;main.c: 206: {
 {
 [e :U _movimento ]
 [f ]
-"201
-[; ;main.c: 201:     int a = 26;
-[v _a `i ~T0 @X0 1 a ]
-[e = _a -> 26 `i ]
-"202
-[; ;main.c: 202:     int max_dutyValue = 612;
-[v _max_dutyValue `i ~T0 @X0 1 a ]
-[e = _max_dutyValue -> 612 `i ]
-"203
-[; ;main.c: 203:     int min_dutyValue = 153;
-[v _min_dutyValue `i ~T0 @X0 1 a ]
-[e = _min_dutyValue -> 153 `i ]
-"204
-[; ;main.c: 204:     int destiny = and_dst*60;
-[v _destiny `i ~T0 @X0 1 a ]
-[e = _destiny * _and_dst -> 60 `i ]
-"205
-[; ;main.c: 205:     int route = destiny - 40;
-[v _route `i ~T0 @X0 1 a ]
-[e = _route - _destiny -> 40 `i ]
-"206
-[; ;main.c: 206:     int dutyValue = 0;
-[v _dutyValue `i ~T0 @X0 1 a ]
-[e = _dutyValue -> 0 `i ]
 "207
-[; ;main.c: 207:     int count=0;
-[v _count `i ~T0 @X0 1 a ]
-[e = _count -> 0 `i ]
+[; ;main.c: 207:     distancia = abs(and_atual-and_dst);
+[e = _distancia ( _abs (1 - _and_atual _and_dst ]
 "208
-[; ;main.c: 208:     int ilum = 1023;
-[v _ilum `i ~T0 @X0 1 a ]
-[e = _ilum -> 1023 `i ]
+[; ;main.c: 208:     int mean_dutyValue = 450;
+[v _mean_dutyValue `i ~T0 @X0 1 a ]
+[e = _mean_dutyValue -> 450 `i ]
+"209
+[; ;main.c: 209:     destiny = distancia*68;
+[e = _destiny * _distancia -> 68 `i ]
+"210
+[; ;main.c: 210:     luminos=1;
+[e = _luminos -> 1 `i ]
+"211
+[; ;main.c: 211:     luminosidade = 1023;
+[e = _luminosidade -> 1023 `i ]
+"212
+[; ;main.c: 212:     while(and_atual!=and_dst)
+[e $U 402  ]
+[e :U 403 ]
 "213
-[; ;main.c: 213:     for(count = 0; count < 20; count++){
-{
-[e = _count -> 0 `i ]
-[e $ < _count -> 20 `i 390  ]
-[e $U 391  ]
-[e :U 390 ]
+[; ;main.c: 213:         {
 {
 "214
-[; ;main.c: 214:         dutyValue+=a;
-[e =+ _dutyValue _a ]
+[; ;main.c: 214:             PWM3_LoadDutyValue(mean_dutyValue);
+[e ( _PWM3_LoadDutyValue (1 -> _mean_dutyValue `us ]
+"215
+[; ;main.c: 215:             update();
+[e ( _update ..  ]
 "216
-[; ;main.c: 216:         EPWM1_LoadDutyValue(ilum=-2);
-[e ( _EPWM1_LoadDutyValue (1 -> = _ilum -U -> 2 `i `us ]
+[; ;main.c: 216:         }
+}
+[e :U 402 ]
+"212
+[; ;main.c: 212:     while(and_atual!=and_dst)
+[e $ != _and_atual _and_dst 403  ]
+[e :U 404 ]
 "217
-[; ;main.c: 217:         if(dutyValue > max_dutyValue){
-[e $ ! > _dutyValue _max_dutyValue 393  ]
-{
+[; ;main.c: 217:     EPWM1_LoadDutyValue(0);
+[e ( _EPWM1_LoadDutyValue (1 -> -> 0 `i `us ]
 "218
-[; ;main.c: 218:             PWM3_LoadDutyValue(max_dutyValue);
-[e ( _PWM3_LoadDutyValue (1 -> _max_dutyValue `us ]
+[; ;main.c: 218:     luminos = 0;
+[e = _luminos -> 0 `i ]
 "219
-[; ;main.c: 219:         }else{
-}
-[e $U 394  ]
-[e :U 393 ]
-{
+[; ;main.c: 219:     PWM3_LoadDutyValue(0);
+[e ( _PWM3_LoadDutyValue (1 -> -> 0 `i `us ]
 "220
-[; ;main.c: 220:             PWM3_LoadDutyValue(dutyValue);
-[e ( _PWM3_LoadDutyValue (1 -> _dutyValue `us ]
-"221
-[; ;main.c: 221:         }
-}
-[e :U 394 ]
-"223
-[; ;main.c: 223:     }
-}
-[e ++ _count -> 1 `i ]
-[e $ < _count -> 20 `i 390  ]
-[e :U 391 ]
+[; ;main.c: 220:     estado = 0;
+[e = _estado -> 0 `i ]
+"222
+[; ;main.c: 222: }
+[e :UE 401 ]
 }
 "224
-[; ;main.c: 224:     count = 0;
-[e = _count -> 0 `i ]
+[; ;main.c: 224: void update(){
+[v _update `(v ~T0 @X0 1 ef ]
+{
+[e :U _update ]
+[f ]
 "225
-[; ;main.c: 225:     for(count = 0; count < route ; count++){
-{
-[e = _count -> 0 `i ]
-[e $U 398  ]
-[e :U 395 ]
-{
+[; ;main.c: 225:     I_m = ADC_GetConversion(0);
+[e = _I_m -> ( _ADC_GetConversion (1 -> -> 0 `i `E2583 `f ]
 "226
-[; ;main.c: 226:         PWM3_LoadDutyValue(max_dutyValue);
-[e ( _PWM3_LoadDutyValue (1 -> _max_dutyValue `us ]
+[; ;main.c: 226:     IM_B = (uint8_t)((0.449*I_m)/4);
+[e = _IM_B -> / * .0.449 -> _I_m `d -> -> 4 `i `d `uc ]
 "227
-[; ;main.c: 227:     }
-}
-[e ++ _count -> 1 `i ]
-[e :U 398 ]
-[e $ < _count _route 395  ]
-[e :U 396 ]
-}
+[; ;main.c: 227:     temp_mt = (float)ADC_GetConversion(1);
+[e = _temp_mt -> ( _ADC_GetConversion (1 -> -> 1 `i `E2583 `f ]
+"228
+[; ;main.c: 228:     TM_B = (uint8_t)(0.11*temp_mt*2);
+[e = _TM_B -> * * .0.11 -> _temp_mt `d -> -> 2 `i `d `uc ]
 "229
-[; ;main.c: 229:     count = 0;
-[e = _count -> 0 `i ]
+[; ;main.c: 229:     speed = (0.837/(((float)ccp_value)*0.000004))*4;
+[e = _speed -> * / .0.837 * -> -> _ccp_value `f `d .0.000004 -> -> 4 `i `d `f ]
 "230
-[; ;main.c: 230:     for(count = 0; count < 20; count++){
-{
-[e = _count -> 0 `i ]
-[e $ < _count -> 20 `i 399  ]
-[e $U 400  ]
-[e :U 399 ]
+[; ;main.c: 230:     if(estado==0){
+[e $ ! == _estado -> 0 `i 406  ]
 {
 "231
-[; ;main.c: 231:         dutyValue-=a;
-[e =- _dutyValue _a ]
+[; ;main.c: 231:         speed = 0;
+[e = _speed -> -> 0 `i `f ]
 "232
-[; ;main.c: 232:         EPWM1_LoadDutyValue(ilum=-2);
-[e ( _EPWM1_LoadDutyValue (1 -> = _ilum -U -> 2 `i `us ]
-"233
-[; ;main.c: 233:         if(dutyValue < min_dutyValue){
-[e $ ! < _dutyValue _min_dutyValue 402  ]
-{
-"234
-[; ;main.c: 234:             PWM3_LoadDutyValue(min_dutyValue);
-[e ( _PWM3_LoadDutyValue (1 -> _min_dutyValue `us ]
-"235
-[; ;main.c: 235:         }else{
+[; ;main.c: 232:     }
 }
-[e $U 403  ]
-[e :U 402 ]
-{
-"236
-[; ;main.c: 236:         PWM3_LoadDutyValue(dutyValue);
-[e ( _PWM3_LoadDutyValue (1 -> _dutyValue `us ]
-"237
-[; ;main.c: 237:         }
-}
-[e :U 403 ]
-"238
-[; ;main.c: 238:     }
-}
-[e ++ _count -> 1 `i ]
-[e $ < _count -> 20 `i 399  ]
-[e :U 400 ]
-}
-"240
-[; ;main.c: 240:     estado = 0;
-[e = _estado -> 0 `i ]
-"241
-[; ;main.c: 241:     PIE3bits.TMR6IE=1;
-[e = . . _PIE3bits 0 3 -> -> 1 `i `uc ]
-"242
-[; ;main.c: 242:     acabou_delay=0;
-[e = _acabou_delay -> 0 `i ]
-"243
-[; ;main.c: 243:     TMR6_WriteTimer(0);
-[e ( _TMR6_WriteTimer (1 -> -> 0 `i `uc ]
-"244
-[; ;main.c: 244:     while (1)
-[e :U 405 ]
-"245
-[; ;main.c: 245:         {
-{
-"246
-[; ;main.c: 246:         if(acabou_delay == 1)
-[e $ ! == _acabou_delay -> 1 `i 407  ]
-"247
-[; ;main.c: 247:             {
-{
-"248
-[; ;main.c: 248:                 acabou_delay=0;
-[e = _acabou_delay -> 0 `i ]
-"249
-[; ;main.c: 249:                 break;
-[e $U 406  ]
-"250
-[; ;main.c: 250:             }
-}
-[e :U 407 ]
-"251
-[; ;main.c: 251:         }
-}
-[e :U 404 ]
-[e $U 405  ]
 [e :U 406 ]
-"252
-[; ;main.c: 252:     PIE3bits.TMR6IE=0;
-[e = . . _PIE3bits 0 3 -> -> 0 `i `uc ]
-"253
-[; ;main.c: 253: }
-[e :UE 389 ]
+"233
+[; ;main.c: 233:     position = 0.837*pulses;
+[e = _position -> * .0.837 -> _pulses `d `f ]
+"234
+[; ;main.c: 234:     byte[0] = ((state_motor<<4)& 0x30)|(and_ating & 0x03);
+[e = *U + &U _byte * -> -> -> 0 `i `ui `ux -> -> # *U &U _byte `ui `ux -> | & << -> _state_motor `i -> 4 `i -> 48 `i & -> _and_ating `i -> 3 `i `uc ]
+"235
+[; ;main.c: 235:     byte[1] = 0x80 |((((uint8_t)position)>>1)& 0x7F);
+[e = *U + &U _byte * -> -> -> 1 `i `ui `ux -> -> # *U &U _byte `ui `ux -> | -> 128 `i & >> -> -> _position `uc `i -> 1 `i -> 127 `i `uc ]
+"236
+[; ;main.c: 236:     byte[2] = 0x80 |((((uint8_t)speed))& 0x7F);
+[e = *U + &U _byte * -> -> -> 2 `i `ui `ux -> -> # *U &U _byte `ui `ux -> | -> 128 `i & -> -> _speed `uc `i -> 127 `i `uc ]
+"237
+[; ;main.c: 237:     byte[3] = 0x80 |(((IM_B))& 0x7F);
+[e = *U + &U _byte * -> -> -> 3 `i `ui `ux -> -> # *U &U _byte `ui `ux -> | -> 128 `i & -> _IM_B `i -> 127 `i `uc ]
+"238
+[; ;main.c: 238:     byte[4] = 0x80 |(((TM_B))& 0x7F);
+[e = *U + &U _byte * -> -> -> 4 `i `ui `ux -> -> # *U &U _byte `ui `ux -> | -> 128 `i & -> _TM_B `i -> 127 `i `uc ]
+"239
+[; ;main.c: 239: }
+[e :UE 405 ]
 }

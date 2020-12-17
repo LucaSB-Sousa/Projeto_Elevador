@@ -4241,41 +4241,41 @@ extern __bank0 __bit __timeout;
 # 1 "./mcc_generated_files/device_config.h" 1
 # 51 "./mcc_generated_files/mcc.h" 2
 # 1 "./mcc_generated_files/pin_manager.h" 1
-# 251 "./mcc_generated_files/pin_manager.h"
+# 245 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 263 "./mcc_generated_files/pin_manager.h"
+# 257 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
-# 276 "./mcc_generated_files/pin_manager.h"
+# 270 "./mcc_generated_files/pin_manager.h"
 void IOCBF0_ISR(void);
-# 299 "./mcc_generated_files/pin_manager.h"
+# 293 "./mcc_generated_files/pin_manager.h"
 void IOCBF0_SetInterruptHandler(void (* InterruptHandler)(void));
-# 323 "./mcc_generated_files/pin_manager.h"
+# 317 "./mcc_generated_files/pin_manager.h"
 extern void (*IOCBF0_InterruptHandler)(void);
-# 347 "./mcc_generated_files/pin_manager.h"
+# 341 "./mcc_generated_files/pin_manager.h"
 void IOCBF0_DefaultInterruptHandler(void);
-# 360 "./mcc_generated_files/pin_manager.h"
+# 354 "./mcc_generated_files/pin_manager.h"
 void IOCBF3_ISR(void);
-# 383 "./mcc_generated_files/pin_manager.h"
+# 377 "./mcc_generated_files/pin_manager.h"
 void IOCBF3_SetInterruptHandler(void (* InterruptHandler)(void));
-# 407 "./mcc_generated_files/pin_manager.h"
+# 401 "./mcc_generated_files/pin_manager.h"
 extern void (*IOCBF3_InterruptHandler)(void);
-# 431 "./mcc_generated_files/pin_manager.h"
+# 425 "./mcc_generated_files/pin_manager.h"
 void IOCBF3_DefaultInterruptHandler(void);
-# 444 "./mcc_generated_files/pin_manager.h"
+# 438 "./mcc_generated_files/pin_manager.h"
 void IOCBF4_ISR(void);
-# 467 "./mcc_generated_files/pin_manager.h"
+# 461 "./mcc_generated_files/pin_manager.h"
 void IOCBF4_SetInterruptHandler(void (* InterruptHandler)(void));
-# 491 "./mcc_generated_files/pin_manager.h"
+# 485 "./mcc_generated_files/pin_manager.h"
 extern void (*IOCBF4_InterruptHandler)(void);
-# 515 "./mcc_generated_files/pin_manager.h"
+# 509 "./mcc_generated_files/pin_manager.h"
 void IOCBF4_DefaultInterruptHandler(void);
-# 528 "./mcc_generated_files/pin_manager.h"
+# 522 "./mcc_generated_files/pin_manager.h"
 void IOCBF5_ISR(void);
-# 551 "./mcc_generated_files/pin_manager.h"
+# 545 "./mcc_generated_files/pin_manager.h"
 void IOCBF5_SetInterruptHandler(void (* InterruptHandler)(void));
-# 575 "./mcc_generated_files/pin_manager.h"
+# 569 "./mcc_generated_files/pin_manager.h"
 extern void (*IOCBF5_InterruptHandler)(void);
-# 599 "./mcc_generated_files/pin_manager.h"
+# 593 "./mcc_generated_files/pin_manager.h"
 void IOCBF5_DefaultInterruptHandler(void);
 # 52 "./mcc_generated_files/mcc.h" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.30\\pic\\include\\c99\\stdint.h" 1 3
@@ -4400,28 +4400,6 @@ extern void cputs(const char *);
 # 55 "./mcc_generated_files/mcc.h" 2
 # 1 "./mcc_generated_files/interrupt_manager.h" 1
 # 56 "./mcc_generated_files/mcc.h" 2
-# 1 "./mcc_generated_files/tmr6.h" 1
-# 103 "./mcc_generated_files/tmr6.h"
-void TMR6_Initialize(void);
-# 132 "./mcc_generated_files/tmr6.h"
-void TMR6_StartTimer(void);
-# 164 "./mcc_generated_files/tmr6.h"
-void TMR6_StopTimer(void);
-# 199 "./mcc_generated_files/tmr6.h"
-uint8_t TMR6_ReadTimer(void);
-# 238 "./mcc_generated_files/tmr6.h"
-void TMR6_WriteTimer(uint8_t timerVal);
-# 290 "./mcc_generated_files/tmr6.h"
-void TMR6_LoadPeriodRegister(uint8_t periodVal);
-# 308 "./mcc_generated_files/tmr6.h"
-void TMR6_ISR(void);
-# 326 "./mcc_generated_files/tmr6.h"
- void TMR6_SetInterruptHandler(void (* InterruptHandler)(void));
-# 344 "./mcc_generated_files/tmr6.h"
-extern void (*TMR6_InterruptHandler)(void);
-# 362 "./mcc_generated_files/tmr6.h"
-void TMR6_DefaultInterruptHandler(void);
-# 57 "./mcc_generated_files/mcc.h" 2
 # 1 "./mcc_generated_files/tmr4.h" 1
 # 103 "./mcc_generated_files/tmr4.h"
 void TMR4_Initialize(void);
@@ -4443,7 +4421,7 @@ void TMR4_ISR(void);
 extern void (*TMR4_InterruptHandler)(void);
 # 362 "./mcc_generated_files/tmr4.h"
 void TMR4_DefaultInterruptHandler(void);
-# 58 "./mcc_generated_files/mcc.h" 2
+# 57 "./mcc_generated_files/mcc.h" 2
 # 1 "./mcc_generated_files/tmr1.h" 1
 # 100 "./mcc_generated_files/tmr1.h"
 void TMR1_Initialize(void);
@@ -4463,7 +4441,7 @@ void TMR1_StartSinglePulseAcquisition(void);
 uint8_t TMR1_CheckGateValueStatus(void);
 # 387 "./mcc_generated_files/tmr1.h"
 _Bool TMR1_HasOverflowOccured(void);
-# 59 "./mcc_generated_files/mcc.h" 2
+# 58 "./mcc_generated_files/mcc.h" 2
 # 1 "./mcc_generated_files/tmr2.h" 1
 # 103 "./mcc_generated_files/tmr2.h"
 void TMR2_Initialize(void);
@@ -4479,7 +4457,7 @@ void TMR2_WriteTimer(uint8_t timerVal);
 void TMR2_LoadPeriodRegister(uint8_t periodVal);
 # 325 "./mcc_generated_files/tmr2.h"
 _Bool TMR2_HasOverflowOccured(void);
-# 60 "./mcc_generated_files/mcc.h" 2
+# 59 "./mcc_generated_files/mcc.h" 2
 # 1 "./mcc_generated_files/ccp4.h" 1
 # 80 "./mcc_generated_files/ccp4.h"
 typedef union CCPR4Reg_tag
@@ -4500,12 +4478,18 @@ void CCP4_Initialize(void);
 void CCP4_CaptureISR(void);
 # 180 "./mcc_generated_files/ccp4.h"
  void CCP4_SetCallBack(void (*customCallBack)(uint16_t));
-# 61 "./mcc_generated_files/mcc.h" 2
+# 60 "./mcc_generated_files/mcc.h" 2
 # 1 "./mcc_generated_files/fvr.h" 1
 # 93 "./mcc_generated_files/fvr.h"
  void FVR_Initialize(void);
 # 127 "./mcc_generated_files/fvr.h"
 _Bool FVR_IsOutputReady(void);
+# 61 "./mcc_generated_files/mcc.h" 2
+# 1 "./mcc_generated_files/epwm1.h" 1
+# 96 "./mcc_generated_files/epwm1.h"
+void EPWM1_Initialize(void);
+# 122 "./mcc_generated_files/epwm1.h"
+void EPWM1_LoadDutyValue(uint16_t dutyValue);
 # 62 "./mcc_generated_files/mcc.h" 2
 # 1 "./mcc_generated_files/pwm3.h" 1
 # 97 "./mcc_generated_files/pwm3.h"
@@ -4513,12 +4497,6 @@ void PWM3_Initialize(void);
 # 124 "./mcc_generated_files/pwm3.h"
 void PWM3_LoadDutyValue(uint16_t dutyValue);
 # 63 "./mcc_generated_files/mcc.h" 2
-# 1 "./mcc_generated_files/epwm1.h" 1
-# 96 "./mcc_generated_files/epwm1.h"
-void EPWM1_Initialize(void);
-# 122 "./mcc_generated_files/epwm1.h"
-void EPWM1_LoadDutyValue(uint16_t dutyValue);
-# 64 "./mcc_generated_files/mcc.h" 2
 # 1 "./mcc_generated_files/adc.h" 1
 # 72 "./mcc_generated_files/adc.h"
 typedef uint16_t adc_result_t;
@@ -4554,7 +4532,7 @@ adc_result_t ADC_GetConversionResult(void);
 adc_result_t ADC_GetConversion(adc_channel_t channel);
 # 317 "./mcc_generated_files/adc.h"
 void ADC_TemperatureAcquisitionDelay(void);
-# 65 "./mcc_generated_files/mcc.h" 2
+# 64 "./mcc_generated_files/mcc.h" 2
 # 1 "./mcc_generated_files/eusart.h" 1
 # 75 "./mcc_generated_files/eusart.h"
 typedef union {
@@ -4586,18 +4564,26 @@ void EUSART_SetFramingErrorHandler(void (* interruptHandler)(void));
 void EUSART_SetOverrunErrorHandler(void (* interruptHandler)(void));
 # 397 "./mcc_generated_files/eusart.h"
 void EUSART_SetErrorHandler(void (* interruptHandler)(void));
-# 66 "./mcc_generated_files/mcc.h" 2
-# 80 "./mcc_generated_files/mcc.h"
+# 65 "./mcc_generated_files/mcc.h" 2
+# 79 "./mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 93 "./mcc_generated_files/mcc.h"
+# 92 "./mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 105 "./mcc_generated_files/mcc.h"
+# 104 "./mcc_generated_files/mcc.h"
 void WDT_Initialize(void);
 # 18 "main.c" 2
-# 27 "main.c"
+
+
+
+
+
+
+
+
 void comunicacao ();
 void controle();
 void movimento();
+void update();
 
 
 
@@ -4607,9 +4593,14 @@ int sentido = 0;
 float I_m = 0;
 float temp_mt = 0;
 int aux_tempo = 0;
-int aux_tempo_d2s = 0;
 int estado = 0;
-int acabou_delay =0;
+int destiny;
+int and_atual = 0;
+int luminosidade = 0;
+int luminos;
+int distancia;
+float speed = 0.0;
+float position = 0.0;
 
 
 
@@ -4617,6 +4608,9 @@ uint8_t state_motor = 0;
 uint8_t and_ating = 0;
 uint16_t ccp_value = 0;
 uint8_t byte[5];
+uint8_t IM_B = 0;
+uint8_t TM_B = 0;
+
 
 
 
@@ -4640,46 +4634,55 @@ void send_data()
         }
  }
 
-
-void delay_2s()
- {
-        aux_tempo_d2s++;
-        if(aux_tempo_d2s == 280)
-        {
-            acabou_delay=1;
-            aux_tempo_d2s =0;
-        }
- }
-
 void sensor1()
     {
         and_ating=0;
+        and_atual = 0;
+        pulses = 0;
     }
 
 void sensor2()
     {
         and_ating=1;
+        and_atual = 1;
     }
 
 void sensor3()
     {
         and_ating=2;
+        and_atual = 2;
     }
 
 void sensor4()
     {
         and_ating=3;
+        and_atual = 3;
     }
 
 void get_pulse(uint16_t capturedValue)
     {
         TMR1_WriteTimer(0);
         ccp_value = capturedValue;
-        if(sentido == 1){
-            pulses++;
-        }else if(sentido == 0 && pulses >= 0){
-            pulses--;
-        }
+
+        if(PORTAbits.RA2==1)
+            {
+                pulses++;
+            }
+
+        else if(PORTAbits.RA2 == 0 && pulses >= 0)
+            {
+                pulses--;
+            }
+
+        if (luminos == 1)
+            {
+                luminosidade-=(1023/destiny);
+                if(luminosidade< 0)
+                {luminosidade = 15;}
+                EPWM1_LoadDutyValue(luminosidade);
+
+            }
+
     }
 
 
@@ -4693,124 +4696,129 @@ void main(void)
 
 
     TMR4_SetInterruptHandler(send_data);
-    TMR6_SetInterruptHandler(delay_2s);
     IOCBF0_SetInterruptHandler(sensor1);
     IOCBF3_SetInterruptHandler(sensor2);
     IOCBF4_SetInterruptHandler(sensor3);
     IOCBF5_SetInterruptHandler(sensor4);
     CCP4_SetCallBack(get_pulse);
-    PIE3bits.TMR6IE=0;
 
+    luminos=1;
+    luminosidade = 1023;
 
-
-
+    while(PORTBbits.RB0!=0)
+        {
+            do { LATAbits.LATA2 = 0; } while(0);
+            PWM3_LoadDutyValue(512);
+        }
+    luminos=0;
+    EPWM1_LoadDutyValue(0);
+    PWM3_LoadDutyValue(0);
 
 
     while (1)
     {
-       comunicacao ();
-       controle();
+
+        I_m = ADC_GetConversion(0);
+        IM_B = (uint8_t)((0.449*I_m)/4);
+        temp_mt = ADC_GetConversion(1);
+        TM_B = (uint8_t)(0.11*temp_mt*2);
+
+
+        comunicacao ();
+        controle();
     }
 }
+
 
 void comunicacao ()
 {
-
-
-    uint8_t aux;
-    float speed = 3.75/(((float)ccp_value)*0.0000005);
-    float position = 1.5*pulses;
+    uint8_t recebe = 0;
     if(EUSART_is_rx_ready())
         {
-            aux= EUSART_Read();
-            and_dst = (int)(aux & 0x02);
+            recebe= EUSART_Read();
+            and_dst = (int)((recebe) & 0x03);
         }
-# 166 "main.c"
-    byte[0] = ((state_motor<<4)& 0x20)|(and_ating & 0x02);
-    byte[1] = 0x80 |((((uint8_t)position)>>1)& 0x7F);
-    byte[2] = 0x80 |((((uint8_t)speed)>>1)& 0x7F);
-    byte[3] = 0x80 |((((uint8_t)I_m)>>1)& 0x7F);
-    byte[4] = 0x80 |((((uint8_t)temp_mt)>>1)& 0x7F);
-
+    update();
 }
+
 
 void controle()
 {
-    I_m = 0.1*ADC_GetConversion(0);
-    temp_mt = 0.3*ADC_GetConversion(1);
-    int count = 0;
-    int tempo_espera = 400000000;
 
+    if(and_dst>and_atual)
+        {
 
-    do { LATAbits.LATA2 = 1; } while(0);
-    estado = 1;
-    movimento();
+        if(PORTAbits.RA2==0)
+            {
+                PWM3_LoadDutyValue(0);
+                _delay((unsigned long)((500)*(8000000/4000.0)));
+            }
+            do { LATAbits.LATA2 = 1; } while(0);
+            estado = 1;
+            movimento();
+          }
 
+    else if(and_dst<and_atual)
+        {
 
+            if(PORTAbits.RA2==1)
+                {
+                    PWM3_LoadDutyValue(0);
+                    _delay((unsigned long)((500)*(8000000/4000.0)));
+                }
+                do { LATAbits.LATA2 = 0; } while(0);
+                estado = 2;
+                movimento();
+        }
 
-
-    do { LATAbits.LATA2 = 0; } while(0);
-    estado = 2;
-    movimento();
-    and_dst=0;
-
-
-
+    if(and_dst==and_atual)
+        {
+            estado = 0;
+            and_dst=0;
+        }
 }
+
 
 void movimento()
 {
-
-    int a = 26;
-    int max_dutyValue = 612;
-    int min_dutyValue = 153;
-    int destiny = and_dst*60;
-    int route = destiny - 40;
-    int dutyValue = 0;
-    int count=0;
-    int ilum = 1023;
+    distancia = abs(and_atual-and_dst);
+    int mean_dutyValue = 450;
+    destiny = distancia*68;
+    luminos=1;
+    luminosidade = 1023;
 
 
-
-
-    for(count = 0; count < 20; count++){
-        dutyValue+=a;
-
-        EPWM1_LoadDutyValue(ilum=-2);
-        if(dutyValue > max_dutyValue){
-            PWM3_LoadDutyValue(max_dutyValue);
-        }else{
-            PWM3_LoadDutyValue(dutyValue);
-        }
-
-    }
-    count = 0;
-    for(count = 0; count < route ; count++){
-        PWM3_LoadDutyValue(max_dutyValue);
-    }
-
-    count = 0;
-    for(count = 0; count < 20; count++){
-        dutyValue-=a;
-        EPWM1_LoadDutyValue(ilum=-2);
-        if(dutyValue < min_dutyValue){
-            PWM3_LoadDutyValue(min_dutyValue);
-        }else{
-        PWM3_LoadDutyValue(dutyValue);
-        }
-    }
-
-    estado = 0;
-    PIE3bits.TMR6IE=1;
-    acabou_delay=0;
-    TMR6_WriteTimer(0);
-    while (1)
+    while(and_atual!=and_dst)
         {
-        if(acabou_delay == 1)
-            {
-                acabou_delay=0;
-                break;
-            }
+            PWM3_LoadDutyValue(mean_dutyValue);
+            update();
         }
-    PIE3bits.TMR6IE=0;
+
+    EPWM1_LoadDutyValue(0);
+    luminos = 0;
+
+    PWM3_LoadDutyValue(0);
+    estado = 0;
+    _delay((unsigned long)((2000)*(8000000/4000.0)));
+}
+
+
+void update(){
+    I_m = ADC_GetConversion(0);
+    IM_B = (uint8_t)((0.449*I_m)/4);
+    temp_mt = (float)ADC_GetConversion(1);
+    TM_B = (uint8_t)(0.11*temp_mt*2);
+    speed = (0.837/(((float)ccp_value)*0.000004))*4;
+    if(estado==0)
+    {
+        speed = 0;
+    }
+    position = 0.837*pulses;
+
+
+    byte[0] = ((state_motor<<4)& 0x30)|(and_ating & 0x03);
+    byte[1] = 0x80 |((((uint8_t)position)>>1)& 0x7F);
+    byte[2] = 0x80 |((((uint8_t)speed))& 0x7F);
+    byte[3] = 0x80 |(((IM_B))& 0x7F);
+    byte[4] = 0x80 |(((TM_B))& 0x7F);
 }
