@@ -1,11 +1,11 @@
-Microchip MPLAB XC8 Compiler V2.30
+Microchip MPLAB XC8 Compiler V2.31
 
 Linker command line:
 
--W-3 --edf=C:\Program Files\Microchip\xc8\v2.30\pic\dat\en_msgs.txt -cn \
+-W-3 --edf=C:\Program Files\Microchip\xc8\v2.31\pic\dat\en_msgs.txt -cn \
   -h+dist/default/production\Projeto_elevador_simplificado.X.production.sym \
   --cmf=dist/default/production\Projeto_elevador_simplificado.X.production.cmf \
-  -z -Q16F1827 -oC:\Users\victo\AppData\Local\Temp\sb58x2 \
+  -z -Q16F1827 -oC:\Users\Aluno\AppData\Local\Temp\sajg.2 \
   --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/Projeto_elevador_simplificado.X.production.map \
   -E1 -ver=XC8 Compiler --acfsm=1493 -ASTACK=020AFh-0216Fh -pstack=STACK \
@@ -29,8 +29,7 @@ Linker command line:
   -AIDLOC=08000h-08003h -DIDLOC=2 -AEEDATA=00h-0FFh/0F000h \
   -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
   -DENTRY=2 -preset_vec=00h,intentry=04h,init,end_init -ppowerup=CODE \
-  -pcinit=CODE -pfunctab=ENTRY -k \
-  C:\Users\victo\AppData\Local\Temp\sb58xe.o \
+  -pcinit=CODE -pfunctab=ENTRY -k C:\Users\Aluno\AppData\Local\Temp\sajg.o \
   dist/default/production\Projeto_elevador_simplificado.X.production.o 
 
 Object code version is 3.11
@@ -40,7 +39,7 @@ Machine type is 16F1827
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\victo\AppData\Local\Temp\sb58xe.o
+C:\Users\Aluno\AppData\Local\Temp\sajg.o
                 end_init                             34       34        2        8       0
                 reset_vec                             0        0        2        0       0
                 config                             8007     8007        2        0       4
@@ -1085,7 +1084,7 @@ _get_pulse                                     text60       007B2
 _luminos                                       nvBANK2      00120
 _luminosidade                                  nvBANK1      000E1
 _main                                          maintext     00651
-_main$2048                                     cstackBANK1  000DD
+_main$2049                                     cstackBANK1  000DD
 _movimento                                     text2        00E5F
 _position                                      bssBANK1     000B3
 _pulses                                        bssBANK1     000C5
@@ -1098,7 +1097,7 @@ _speed                                         bssBANK1     000B7
 _temp_mt                                       bssBANK1     000BB
 _timer1ReloadVal                               nvBANK1      000ED
 _update                                        text8        0029F
-_update$2049                                   cstackBANK1  000CF
+_update$2050                                   cstackBANK1  000CF
 abs@a                                          cstackBANK0  00020
 btemp                                          (abs)        0007E
 clear_ram0                                     clrtext      00A41
@@ -1126,7 +1125,7 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 132 in file "main.c"
+		line 133 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1170,7 +1169,7 @@ Total ram usage:        8 bytes
 
  *************** function _controle *****************
  Defined at:
-		line 188 in file "main.c"
+		line 182 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1201,7 +1200,7 @@ Total ram usage:        2 bytes
 
  *************** function _movimento *****************
  Defined at:
-		line 225 in file "main.c"
+		line 209 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1235,7 +1234,7 @@ Total ram usage:        4 bytes
 
  *************** function _abs *****************
  Defined at:
-		line 1 in file "C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\abs.c"
+		line 1 in file "C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\abs.c"
  Parameters:    Size  Location     Type
   a               2    0[BANK0 ] int 
  Auto vars:     Size  Location     Type
@@ -1265,7 +1264,7 @@ Total ram usage:        4 bytes
 
  *************** function ___wmul *****************
  Defined at:
-		line 15 in file "C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\Umul16.c"
+		line 15 in file "C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\Umul16.c"
  Parameters:    Size  Location     Type
   multiplier      2    0[BANK0 ] unsigned int 
   multiplicand    2    2[BANK0 ] unsigned int 
@@ -1359,7 +1358,7 @@ Total ram usage:        4 bytes
 
  *************** function _comunicacao *****************
  Defined at:
-		line 176 in file "main.c"
+		line 171 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1391,7 +1390,7 @@ Total ram usage:        3 bytes
 
  *************** function _update *****************
  Defined at:
-		line 249 in file "main.c"
+		line 228 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1426,7 +1425,7 @@ Total ram usage:        8 bytes
 
  *************** function ___xxtofl *****************
  Defined at:
-		line 10 in file "C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\xxtofl.c"
+		line 10 in file "C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\xxtofl.c"
  Parameters:    Size  Location     Type
   sign            1    wreg     unsigned char 
   val             4    4[BANK0 ] long 
@@ -1460,7 +1459,7 @@ Total ram usage:       14 bytes
 
  *************** function ___fltol *****************
  Defined at:
-		line 43 in file "C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\fltol.c"
+		line 43 in file "C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\fltol.c"
  Parameters:    Size  Location     Type
   f1              4   70[BANK0 ] unsigned char 
  Auto vars:     Size  Location     Type
@@ -1492,7 +1491,7 @@ Total ram usage:       11 bytes
 
  *************** function ___flmul *****************
  Defined at:
-		line 8 in file "C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\sprcmul.c"
+		line 8 in file "C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\sprcmul.c"
  Parameters:    Size  Location     Type
   b               4   18[BANK0 ] long 
   a               4   22[BANK0 ] long 
@@ -1529,7 +1528,7 @@ Total ram usage:       26 bytes
 
  *************** function __Umul8_16 *****************
  Defined at:
-		line 4 in file "C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\Umul8_16.c"
+		line 4 in file "C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\Umul8_16.c"
  Parameters:    Size  Location     Type
   multiplier      1    wreg     unsigned char 
   multiplicand    1    0[BANK0 ] unsigned char 
@@ -1562,7 +1561,7 @@ Total ram usage:        9 bytes
 
  *************** function ___fldiv *****************
  Defined at:
-		line 8 in file "C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\sprcdiv.c"
+		line 8 in file "C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\sprcdiv.c"
  Parameters:    Size  Location     Type
   a               4   44[BANK0 ] unsigned int 
   b               4   48[BANK0 ] unsigned int 
@@ -3090,7 +3089,7 @@ Total ram usage:        4 bytes
 
  *************** function ___awdiv *****************
  Defined at:
-		line 5 in file "C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\awdiv.c"
+		line 5 in file "C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\awdiv.c"
  Parameters:    Size  Location     Type
   divisor         2    0[COMMON] int 
   dividend        2    2[COMMON] int 
@@ -3154,25 +3153,10 @@ Total ram usage:        2 bytes
 MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
-C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\sprcmul.c
-		___flmul       		CODE           	0048	0000	599
-
-C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\sprcmul.c estimated size: 599
-
-C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\sprcdiv.c
-		___fldiv       		CODE           	049D	0000	436
-
-C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\sprcdiv.c estimated size: 436
-
 mcc_generated_files/fvr.c
 		_FVR_Initialize		CODE           	0A34	0000	4
 
 mcc_generated_files/fvr.c estimated size: 4
-
-C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\abs.c
-		_abs           		CODE           	0C09	0000	28
-
-C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\abs.c estimated size: 28
 
 mcc_generated_files/tmr4.c
 		_TMR4_ISR      		CODE           	0B3E	0000	15
@@ -3192,15 +3176,15 @@ mcc_generated_files/interrupt_manager.c
 
 mcc_generated_files/interrupt_manager.c estimated size: 48
 
-C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\Umul16.c
-		___wmul        		CODE           	0C42	0000	32
+C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\xxtofl.c
+		___xxtofl      		CODE           	0F53	0000	173
 
-C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\Umul16.c estimated size: 32
+C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\xxtofl.c estimated size: 173
 
-C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\Umul8_16.c
-		__Umul8_16     		CODE           	0CA4	0000	36
+C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\abs.c
+		_abs           		CODE           	0C09	0000	28
 
-C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\Umul8_16.c estimated size: 36
+C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\abs.c estimated size: 28
 
 mcc_generated_files/pin_manager.c
 		_IOCBF3_DefaultInterruptHandler		CODE           	0003	0000	1
@@ -3234,20 +3218,10 @@ mcc_generated_files/adc.c
 
 mcc_generated_files/adc.c estimated size: 41
 
-C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\awdiv.c
-		___awdiv       		CODE           	0D8D	0000	95
+C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\Umul8_16.c
+		__Umul8_16     		CODE           	0CA4	0000	36
 
-C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\awdiv.c estimated size: 95
-
-C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\fltol.c
-		___fltol       		CODE           	0ED3	0000	128
-
-C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\fltol.c estimated size: 128
-
-C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\xxtofl.c
-		___xxtofl      		CODE           	0F53	0000	173
-
-C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\xxtofl.c estimated size: 173
+C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\Umul8_16.c estimated size: 36
 
 shared
 		i1_EPWM1_LoadDutyValue		CODE           	0BBA	0000	23
@@ -3268,17 +3242,42 @@ mcc_generated_files/pwm3.c
 
 mcc_generated_files/pwm3.c estimated size: 37
 
+C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\sprcmul.c
+		___flmul       		CODE           	0048	0000	599
+
+C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\sprcmul.c estimated size: 599
+
 mcc_generated_files/tmr1.c
 		_TMR1_Initialize		CODE           	0B4D	0000	16
 		_TMR1_WriteTimer		CODE           	0B6D	0000	17
 
 mcc_generated_files/tmr1.c estimated size: 33
 
+C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\awdiv.c
+		___awdiv       		CODE           	0D8D	0000	95
+
+C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\awdiv.c estimated size: 95
+
+C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\sprcdiv.c
+		___fldiv       		CODE           	049D	0000	436
+
+C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\sprcdiv.c estimated size: 436
+
 mcc_generated_files/epwm1.c
 		_EPWM1_LoadDutyValue		CODE           	0BD1	0000	28
 		_EPWM1_Initialize		CODE           	0AE5	0000	14
 
 mcc_generated_files/epwm1.c estimated size: 42
+
+C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\fltol.c
+		___fltol       		CODE           	0ED3	0000	128
+
+C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\fltol.c estimated size: 128
+
+C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\Umul16.c
+		___wmul        		CODE           	0C42	0000	32
+
+C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\Umul16.c estimated size: 32
 
 mcc_generated_files/eusart.c
 		_EUSART_Read   		CODE           	0B5D	0000	16
